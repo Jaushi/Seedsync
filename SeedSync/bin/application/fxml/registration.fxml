@@ -2,11 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane prefHeight="600.0" prefWidth="550.0">
         <columnConstraints>
@@ -28,9 +29,9 @@
           <RowConstraints maxHeight="563.0" minHeight="10.0" prefHeight="546.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="550.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="10.0" right="5.0" />
                      </HBox.margin>
@@ -42,7 +43,7 @@
                   <Label fx:id="sync" text="Sync" />
                </children>
             </HBox>
-            <VBox fx:id="registrationField" prefHeight="521.0" prefWidth="490.0" GridPane.rowIndex="1">
+            <VBox fx:id="registrationField" prefHeight="586.0" prefWidth="472.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="30.0" right="30.0" top="5.0" />
                </GridPane.margin>
@@ -92,7 +93,7 @@
                         <VBox prefHeight="42.0" prefWidth="152.0">
                            <children>
                               <Label text="Birthdate" />
-                              <TextField prefHeight="25.0" prefWidth="135.0" promptText="YYYY-MM-DD" />
+                              <TextField prefHeight="25.0" prefWidth="135.0" promptText="YYYY-MM-DD" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="117.0">
@@ -120,23 +121,19 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="480.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="480.0">
                      <children>
                         <VBox prefHeight="42.0" prefWidth="152.0">
                            <children>
                               <Label text="Region" />
-                              <ListView prefHeight="200.0" prefWidth="200.0" />
+                              <ChoiceBox prefHeight="25.0" prefWidth="161.0" styleClass="box-textField" />
                            </children>
                         </VBox>
-                        <Pane prefHeight="42.0" prefWidth="117.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" layoutX="14.0" prefHeight="42.0" prefWidth="45.0" />
-                           </children>
-                        </Pane>
-                        <VBox prefHeight="42.0" prefWidth="208.0">
+                        <Pane prefHeight="43.0" prefWidth="21.0" />
+                        <VBox prefHeight="43.0" prefWidth="260.0">
                            <children>
                               <Label text="City" />
-                              <TextField promptText="Input here" styleClass="line-textField" />
+                              <TextField prefHeight="25.0" prefWidth="253.0" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -163,14 +160,14 @@
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="New Password" />
-                              <TextField promptText="example@gmail.com" />
+                              <TextField promptText="Enter password" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="76.0" />
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="Confirm New Password" />
-                              <TextField promptText="Input Here" />
+                              <TextField promptText="Enter password" styleClass="box-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -192,17 +189,20 @@
                               </Label>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="Farmers">
+                                    <RadioButton fx:id="farmer" mnemonicParsing="false" text="Farmers">
+                                       <HBox.margin>
+                                          <Insets right="25.0" />
+                                       </HBox.margin>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="accountType" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="buyer" mnemonicParsing="false" text="Buyers" toggleGroup="$accountType">
                                        <HBox.margin>
                                           <Insets right="25.0" />
                                        </HBox.margin>
                                     </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="Buyers">
-                                       <HBox.margin>
-                                          <Insets right="25.0" />
-                                       </HBox.margin>
-                                    </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="Middle Man" />
+                                    <RadioButton fx:id="seller" mnemonicParsing="false" text="Middle Man" toggleGroup="$accountType" />
                                  </children>
                               </HBox>
                            </children>
@@ -215,12 +215,12 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label text="Oopps Something went wrong to your input. Please double check the details">
+                  <Label styleClass="header-three" text="Oopps Something went wrong to your input. Please double check the details">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="680.0" text="Register Now">
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="680.0" styleClass="button-one" text="Register Now">
                      <VBox.margin>
                         <Insets bottom="3.0" />
                      </VBox.margin>
