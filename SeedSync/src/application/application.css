@@ -10,12 +10,12 @@ AnchorPane{
 	-fx-light-primary-color: "0C7489";
 }
 
-.header-one{
+.header-one, #seed, #sync{
 	-fx-font-family: "Bebas Neue";
 	-fx-font-size: 18px;
 }
 
-.header-two{
+.header-two Label{
 	-fx-font-family: "Inter";
 	-fx-font-size: 12px;
 }
@@ -34,10 +34,6 @@ AnchorPane{
 
 #sync{
 	-fx-text-fill: -fx-light-primary-color;
-}
-
-#authenticationField > Label{
-	
 }
 
 #registrationField{
