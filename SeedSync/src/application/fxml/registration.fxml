@@ -20,7 +20,7 @@
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@../assets/images/logo2.png" />
+                        <Image url="@../assets/images/logo.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="seed" text="Seed" />

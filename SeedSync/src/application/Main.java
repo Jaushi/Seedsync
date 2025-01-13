@@ -13,7 +13,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));
 			
-			Image logo = new Image(getClass().getResource("assets/images/logo2.png").toExternalForm());
+			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
