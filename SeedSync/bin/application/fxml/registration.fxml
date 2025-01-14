@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegistrationController">
    <children>
       <GridPane prefHeight="600.0" prefWidth="550.0">
         <columnConstraints>
@@ -53,14 +53,14 @@
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="First Name" />
-                              <TextField promptText="Input here" styleClass="line-textField" />
+                              <TextField fx:id="firstNameFX" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="76.0" />
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="Last Name" />
-                              <TextField promptText="Input here" styleClass="line-textField" />
+                              <TextField fx:id="lastNameFX" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -73,14 +73,14 @@
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="New Email" />
-                              <TextField promptText="example@gmail.com" styleClass="line-textField" />
+                              <TextField fx:id="emailAccountFX" promptText="example@gmail.com" styleClass="line-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="76.0" />
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="New Username" />
-                              <TextField promptText="Input here" styleClass="line-textField" />
+                              <TextField fx:id="usernameAccountFX" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -93,19 +93,19 @@
                         <VBox prefHeight="42.0" prefWidth="152.0">
                            <children>
                               <Label text="Birthdate" />
-                              <TextField prefHeight="25.0" prefWidth="135.0" promptText="YYYY-MM-DD" styleClass="box-textField" />
+                              <TextField fx:id="birthDateFX" prefHeight="25.0" prefWidth="135.0" promptText="YYYY-MM-DD" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="117.0">
                            <children>
                               <VBox alignment="TOP_CENTER" layoutX="14.0" prefHeight="42.0" prefWidth="45.0">
                                  <children>
-                                    <Label text="Age">
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="47.0" text="Age" textAlignment="CENTER">
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="32.0" text="18" textAlignment="CENTER" />
+                                    <Label fx:id="calculatedAge" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="30.0" textAlignment="CENTER" />
                                  </children>
                               </VBox>
                            </children>
@@ -113,7 +113,7 @@
                         <VBox prefHeight="42.0" prefWidth="208.0">
                            <children>
                               <Label text="Phone Number" />
-                              <TextField promptText="Input here" styleClass="line-textField" />
+                              <TextField fx:id="phoneNumberFX" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -126,14 +126,14 @@
                         <VBox prefHeight="42.0" prefWidth="152.0">
                            <children>
                               <Label text="Region" />
-                              <ChoiceBox prefHeight="25.0" prefWidth="161.0" styleClass="box-textField" />
+                              <ChoiceBox fx:id="regionAddressFX" prefHeight="25.0" prefWidth="161.0" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="43.0" prefWidth="21.0" />
                         <VBox prefHeight="43.0" prefWidth="260.0">
                            <children>
                               <Label text="City" />
-                              <TextField prefHeight="25.0" prefWidth="253.0" promptText="Input here" styleClass="line-textField" />
+                              <TextField fx:id="cityAddressFX" prefHeight="25.0" prefWidth="253.0" promptText="Input here" styleClass="line-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -146,7 +146,7 @@
                         <VBox prefHeight="42.0" prefWidth="430.0">
                            <children>
                               <Label text="Address" />
-                              <TextField prefHeight="25.0" prefWidth="215.0" promptText="Input here" styleClass="line-textField">
+                              <TextField fx:id="fullAddressFX" prefHeight="25.0" prefWidth="215.0" promptText="Input here" styleClass="line-textField">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
@@ -160,14 +160,14 @@
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="New Password" />
-                              <TextField promptText="Enter password" styleClass="box-textField" />
+                              <TextField fx:id="passwordAccountFX" promptText="Enter password" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="76.0" />
                         <VBox prefHeight="58.0" prefWidth="223.0">
                            <children>
                               <Label text="Confirm New Password" />
-                              <TextField promptText="Enter password" styleClass="box-textField" />
+                              <TextField fx:id="passwordVerificationAccountFX" promptText="Enter password" styleClass="box-textField" />
                            </children>
                         </VBox>
                      </children>
@@ -189,7 +189,7 @@
                               </Label>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <RadioButton fx:id="farmer" mnemonicParsing="false" text="Farmers">
+                                    <RadioButton fx:id="farmerTypeFX" mnemonicParsing="false" text="Farmer">
                                        <HBox.margin>
                                           <Insets right="25.0" />
                                        </HBox.margin>
@@ -197,12 +197,12 @@
                                           <ToggleGroup fx:id="accountType" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="buyer" mnemonicParsing="false" text="Buyers" toggleGroup="$accountType">
+                                    <RadioButton fx:id="buyerTypeFX" mnemonicParsing="false" text="Buyer" toggleGroup="$accountType">
                                        <HBox.margin>
                                           <Insets right="25.0" />
                                        </HBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="seller" mnemonicParsing="false" text="Middle Man" toggleGroup="$accountType" />
+                                    <RadioButton fx:id="middleManTypeFX" mnemonicParsing="false" text="Middle Man" toggleGroup="$accountType" />
                                  </children>
                               </HBox>
                            </children>
@@ -220,7 +220,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="680.0" styleClass="button-one" text="Register Now">
+                  <Button mnemonicParsing="false" onAction="#registerAccount" prefHeight="25.0" prefWidth="680.0" styleClass="button-one" text="Register Now">
                      <VBox.margin>
                         <Insets bottom="3.0" />
                      </VBox.margin>

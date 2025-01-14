@@ -1,0 +1,75 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+AnchorPane{
+	-fx-background-image: url("assets/images/authenticationBackground.png");
+}
+
+.root{
+	-fx-dark-primary-color: "1A535C";
+	-fx-light-primary-color: "0C7489";
+}
+
+.header-one, #seed, #sync{
+	-fx-font-family: "Bebas Neue";
+	-fx-font-size: 18px;
+}
+
+.header-two, Label{
+	-fx-font-family: "Inter";
+	-fx-font-size: 12px;
+}
+
+.header-three{
+	-fx-text-fill: "Red";
+	-fx-font-size: 10px;
+}
+
+.box-textField{
+	-fx-background-color: transparent;
+	-fx-border-color: -fx-dark-primary-color;
+	-fx-border-radius: 8px;
+}
+
+.line-textField{
+	-fx-background-color: transparent;
+	-fx-border-width: 0 0 1px 0;
+	-fx-border-style: none none solid none;
+	-fx-border-color: -fx-dark-primary-color;
+	-fx-font-size: 13px;
+}
+
+.button-one{
+	-fx-background-color: -fx-dark-primary-color;
+	-fx-text-fill: "White";
+}
+
+.button-one:hover{
+	-fx-background-color: -fx-light-primary-color;
+	-fx-scale-x: 1.01;
+}
+
+.button-two{
+	-fx-background-color: -fx-light-primary-color;
+	-fx-text-fill: "White";
+}
+
+.button-two:hover{
+	-fx-background-color: -fx-dark-primary-color;
+	-fx-scale-x: 0.5;
+}
+
+#seed{
+	-fx-text-fill: -fx-dark-primary-color;
+}
+
+#sync{
+	-fx-text-fill: -fx-light-primary-color;
+}
+
+#registrationField{
+	-fx-background-color: "White";
+	-fx-background-radius: 15px;
+}
+
+

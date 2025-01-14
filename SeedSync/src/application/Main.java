@@ -11,12 +11,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Registration.fxml"));
 			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
 			
 			primaryStage.setResizable(false);
 			primaryStage.getIcons().add(logo);
