@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -93,19 +94,19 @@
                         <VBox prefHeight="42.0" prefWidth="152.0">
                            <children>
                               <Label text="Birthdate" />
-                              <TextField fx:id="birthDateFX" prefHeight="25.0" prefWidth="135.0" promptText="YYYY-MM-DD" styleClass="box-textField" />
+                              <DatePicker fx:id="birthDateFX" onAction="#displayAge" styleClass="box-textField" />
                            </children>
                         </VBox>
                         <Pane prefHeight="42.0" prefWidth="117.0">
                            <children>
                               <VBox alignment="TOP_CENTER" layoutX="14.0" prefHeight="42.0" prefWidth="45.0">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="47.0" text="Age" textAlignment="CENTER">
+                                    <Label alignment="CENTER" prefHeight="9.0" prefWidth="45.0" text="Age" textAlignment="CENTER">
                                        <VBox.margin>
-                                          <Insets bottom="5.0" />
+                                          <Insets />
                                        </VBox.margin>
                                     </Label>
-                                    <Label fx:id="calculatedAge" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="30.0" textAlignment="CENTER" />
+                                    <Label fx:id="calculatedAge" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="31.0" styleClass="box-bordered" textAlignment="CENTER" />
                                  </children>
                               </VBox>
                            </children>

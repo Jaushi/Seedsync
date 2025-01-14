@@ -8,6 +8,7 @@ AnchorPane{
 .root{
 	-fx-dark-primary-color: "1A535C";
 	-fx-light-primary-color: "0C7489";
+	-fx-secondary-color: "BBB5BD";
 }
 
 .header-one, #seed, #sync{
@@ -23,6 +24,13 @@ AnchorPane{
 .header-three{
 	-fx-text-fill: "Red";
 	-fx-font-size: 10px;
+}
+
+.box-bordered{
+	-fx-border-color: "Black"; 
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
 }
 
 .box-textField{
