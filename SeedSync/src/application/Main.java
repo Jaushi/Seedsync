@@ -1,5 +1,5 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -11,7 +11,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Registration.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Login.fxml"));
 			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
