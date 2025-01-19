@@ -13,38 +13,26 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 public class RegistrationController implements Initializable {
 	@FXML
-	private TextField firstNameFX;
-	@FXML
-	private TextField lastNameFX;
-    @FXML
-    private TextField emailAccountFX;
-    @FXML
-    private TextField usernameAccountFX;
+	private TextField firstNameFX, lastNameFX, emailAccountFX, usernameAccountFX, phoneNumberFX, cityAddressFX, fullAddressFX;
     @FXML
     private DatePicker birthDateFX;
     @FXML
-    private Label calculatedAge;
+    private Label calculatedAge, accountTypeFX, statusTextFX;
     @FXML
-    private TextField phoneNumberFX;
+    private ChoiceBox<String> regionAddressFX, provinceAddressFX;
     @FXML
-    private ChoiceBox<String> regionAddressFX;
+    private PasswordField passwordAccountFX, passwordVerificationAccountFX;
     @FXML
-    private ChoiceBox<String> provinceAddressFX;
-    @FXML
-    private TextField cityAddressFX;
-    @FXML
-    private TextField fullAddressFX;
-    @FXML
-    private PasswordField passwordAccountFX;
-    @FXML
-    private PasswordField passwordVerificationAccountFX;
+    private RadioButton farmerType, buyerType, middleManType;
+
     
     private String[] regions = {"Region I", "Region II", "Region III", "Region IV", "MIMAROPA", "Region V", "Region VI", "Region VII", "Region VIII", "Region IX", "Region X", "Region XI", "Region XII", "Region XIII", "NIR", "NCR", "CAR", "BARMM"};
-    
+    private String userTypeAccount;
     
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -144,6 +132,16 @@ public class RegistrationController implements Initializable {
 	   calculatedAge.setText(strAge);
 	   calculatedAge.setStyle("-fx-background-color: D9D9D9;");
    }
+   
+   public void getUserType(ActionEvent event) {
+	   if(farmerType.isSelected()) {
+		   userTypeAccount = "Farmer";
+	   }else if(buyerType.isSelected()) {
+		   userTypeAccount = "Buyer";
+	   }else if(middleManType.isSelected()) {
+		   userTypeAccount = "Middle Man";
+	   }
+   }
     
 	public void registerAccount(ActionEvent event) {
 		String firstName = firstNameFX.getText();
@@ -231,23 +229,28 @@ public class RegistrationController implements Initializable {
 			fullAddressFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
 		}
 		
-		if(passwordAccount.isEmpty()) {
-			passwordAccountFX.setStyle("-fx-border-color: red;");
-			isVerified = false;
-		}else {
-			passwordAccountFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-		}
-		
-		if(passwordVerificationAccount.isEmpty() || !passwordAccount.equals(passwordVerificationAccount)) {
+		if((passwordAccount.isEmpty() || passwordVerificationAccount.isEmpty()) || !passwordAccount.equals(passwordVerificationAccount) || passwordAccount.length() < 8) {
 			passwordAccountFX.setStyle("-fx-border-color: red;");
 			passwordVerificationAccountFX.setStyle("-fx-border-color: red;");
 			isVerified = false;
 		}else {
+			passwordAccountFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
 			passwordVerificationAccountFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
 		}
 		
+		if(userTypeAccount == null) {
+			accountTypeFX.setStyle("-fx-text-fill: red;");
+			isVerified = false;
+		}else {
+			accountTypeFX.setStyle("-fx-text-fill: -fx-dark-primary-color;");
+		}
+		
 		if(isVerified) {
-			System.out.println(regionAddress + provinceAddress);
+			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-dark-primary-color;");
+			statusTextFX.setText("You are now registered. Proceed to login.");
+		}else {
+			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
+			statusTextFX.setText("Oopps Something went wrong with your input. Make sure everything is valid.");
 		}
 	}
 

@@ -184,21 +184,26 @@
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </HBox>
+                  <Label styleClass="header-four" text="Make your password atleast 8 characters long">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
                   <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="480.0">
                      <children>
                         <VBox prefHeight="34.0" prefWidth="287.0">
                            <children>
-                              <Label text="Account Type">
+                              <Label fx:id="accountTypeFX" text="Account Type">
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <RadioButton fx:id="farmerTypeFX" mnemonicParsing="false" text="Farmer">
+                                    <RadioButton fx:id="farmerType" mnemonicParsing="false" onAction="#getUserType" text="Farmer">
                                        <HBox.margin>
                                           <Insets right="25.0" />
                                        </HBox.margin>
@@ -206,12 +211,12 @@
                                           <ToggleGroup fx:id="accountType" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="buyerTypeFX" mnemonicParsing="false" text="Buyer" toggleGroup="$accountType">
+                                    <RadioButton fx:id="buyerType" mnemonicParsing="false" onAction="#getUserType" text="Buyer" toggleGroup="$accountType">
                                        <HBox.margin>
                                           <Insets right="25.0" />
                                        </HBox.margin>
                                     </RadioButton>
-                                    <RadioButton fx:id="middleManTypeFX" mnemonicParsing="false" text="Middle Man" toggleGroup="$accountType" />
+                                    <RadioButton fx:id="middleManType" mnemonicParsing="false" onAction="#getUserType" text="Middle Man" toggleGroup="$accountType" />
                                  </children>
                               </HBox>
                            </children>
@@ -224,7 +229,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label styleClass="header-three" text="Oopps Something went wrong to your input. Please double check the details">
+                  <Label fx:id="statusTextFX" styleClass="header-three">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>

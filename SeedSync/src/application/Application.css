@@ -24,6 +24,13 @@ AnchorPane{
 .header-three{
 	-fx-text-fill: "Red";
 	-fx-font-size: 10px;
+	-fx-opacity: 0;
+}
+
+.header-four{
+	-fx-text-fill: "Black";
+	-fx-opacity: 0.50;
+	-fx-font-size: 10px;
 }
 
 .box-bordered{
