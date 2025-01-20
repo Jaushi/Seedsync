@@ -1,16 +1,11 @@
 package application.controller.ProductClass;
 
-public class Products {
-	private String _pictureURL, _name, _location;
-	private float _weight, _price;
+abstract class Products {
+	protected String _pictureURL, _name, _location;
+	protected float _weight, _price;
+	
+	public abstract String[] getProduct();
 	
 }
-public String[] getInfo() {
-	String[] productInfo(){
-		
-		return _pictureURL;
-		return _name;
-		return _location;
-			
-	}
-}
+
+
