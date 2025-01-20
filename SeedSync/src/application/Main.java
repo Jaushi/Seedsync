@@ -1,5 +1,8 @@
 package application;
 	
+import java.util.Arrays;
+
+import application.controller.ProductClass.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -30,6 +33,11 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		launch(args);
+		Fish item1 = new Fish("Salmon", "Ocean", "Large", "http://example.com/salmon.jpg", "Wild Salmon", "Pacific Coast", 5.5f, 20.0f);
+		
+		String[] data = item1.getProduct();
+		
+		System.out.println(Arrays.toString(data));
+		//launch(args);
 	}
 }
