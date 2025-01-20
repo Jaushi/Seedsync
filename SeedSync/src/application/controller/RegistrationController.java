@@ -16,7 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-public class RegistrationController implements Initializable {
+public class RegistrationController extends DatabaseQueries implements Initializable {
 	@FXML
 	private TextField firstNameFX, lastNameFX, emailAccountFX, usernameAccountFX, phoneNumberFX, cityAddressFX, fullAddressFX;
     @FXML
@@ -247,6 +247,14 @@ public class RegistrationController implements Initializable {
 		
 		if(isVerified) {
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-dark-primary-color;");
+			
+			int age = Integer.parseInt(calculatedAge.getText());
+			
+			//database processing
+			registerAccountDBS(emailAccount, usernameAccount, passwordAccount, userTypeAccount);
+			registerAccountDetailDBS(firstName.toUpperCase(), lastName.toUpperCase(), birthDate.toString(), age, phoneNumber);
+			registerAccountAddressDBS(regionAddress, provinceAddress, cityAddress, fullAddress);
+			
 			statusTextFX.setText("You are now registered. Proceed to login.");
 		}else {
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
