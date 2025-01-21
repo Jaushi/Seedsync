@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .  # Path to the directory containing the Dockerfile
+      dockerfile: Dockerfile  # Ensure you have a Dockerfile in your Java project directory
+    ports:
+      - "8080:8080"  # Expose port 8080 for the Java application
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/exampledb  # JDBC URL for the MySQL database
+      - SPRING_DATASOURCE_USERNAME=root  # MySQL username
+      - SPRING_DATASOURCE_PASSWORD=rootpassword  # MySQL password
+    depends_on:
+      - db  # Ensure the database service starts before the app
+
+  db:
+    image: mysql:8.0  # Use the latest MySQL image
+    restart: always
+    environment:
+      - MYSQL_DATABASE=exampledb  # Set the name of the default database
+      - MYSQL_ROOT_PASSWORD=rootpassword  # Set the MySQL root password
+    ports:
+      - "3306:3306"  # Expose the MySQL port
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persist MySQL data
+
+volumes:
+  mysql-data:  # Define a volume for MySQL data persistence
