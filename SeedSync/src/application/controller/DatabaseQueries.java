@@ -103,7 +103,6 @@ public class DatabaseQueries {
 			preparedStatement.setString(1, region);
 			preparedStatement.setString(2, province);
 			preparedStatement.setString(3, city);
-			preparedStatement.setString(4, address);
 			preparedStatement.setString(5, userID);
 			
 			preparedStatement.executeUpdate();			
@@ -115,5 +114,72 @@ public class DatabaseQueries {
 		}
 	}
 	
+	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
+		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id)"
+			+ "VALUES(?, ?, ?, ?, ?, ?)";
 	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			
+			preparedStatement.setString(1, pictureURL);
+			preparedStatement.setString(2, name);
+			preparedStatement.setString(3, location);
+			preparedStatement.setFloat(4, weight);
+			preparedStatement.setFloat(5, price);
+			preparedStatement.setString(6, user_id);
+			
+			preparedStatement.executeUpdate();			
+			
+			System.out.println("GOod");
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	public void addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
+		query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
+				+ "VALUES(?, ?, ?, ?)";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			
+			preparedStatement.setString(1, type);
+			preparedStatement.setInt(2, age);
+			preparedStatement.setString(3, feed_diet);
+			preparedStatement.setInt(4, product_count);
+				
+			preparedStatement.executeUpdate();			
+				
+			System.out.println("GOod");
+				
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public void addItemRiceDBS(String type, int age, String feed_diet, int product_count) {
+		query = "INSERT INTO rice(type, age, feed_diet, product_count)"
+				+ "VALUES(?, ?, ?, ?)";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			
+			preparedStatement.setString(1, type);
+			preparedStatement.setInt(2, age);
+			preparedStatement.setString(3, feed_diet);
+			preparedStatement.setInt(4, product_count);
+				
+			preparedStatement.executeUpdate();			
+				
+			System.out.println("GOod");
+				
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
+
 }
+	
