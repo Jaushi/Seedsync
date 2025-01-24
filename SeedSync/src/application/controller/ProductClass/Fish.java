@@ -3,7 +3,16 @@ package application.controller.ProductClass;
 public class Fish extends Products{
 	private String _type, _source, _size;
 	
-	public Fish(String type, String source, String size, String pictureURL, String name, String location, float weight, float price){
+	public Fish(String type, 
+			    String source, 
+			    String size, 
+			    String pictureURL, 
+			    String name, 
+			    String location, 
+			    float weight, 
+			    float price){
+		
+		
 		_pictureURL = pictureURL;
 		_name = name;
 		_location = location;
@@ -15,7 +24,15 @@ public class Fish extends Products{
 	}
 	
 	public String[] getProduct() {
-		String[] productDetails = {_pictureURL, _name, _location, String.valueOf(_weight), String.valueOf(_price), this._type, this._source, this._size};
+		String[] productDetails = {_pictureURL, 
+								   _name, 
+								   _location, 
+								   String.valueOf(_weight), 
+								   String.valueOf(_price), 
+								   this._type, 
+								   this._source, 
+								   this._size
+								   };
 		
 		return productDetails;
 	}

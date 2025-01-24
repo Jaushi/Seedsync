@@ -4,14 +4,38 @@ public class Livestock extends Products{
 	private String _type, _feedDiet;
 	private int _age;
 	
-	Livestock(String type, String feedDiet, int age, String _pictureURL, String _name, String _location, float _weight, float _price){
+	public Livestock(String type, 
+					 String feedDiet, 
+					 String pictureURL, 
+					 String name, 
+					 String location, 
+					 int age,
+					 float weight, 
+					 float price){
+		
+		_pictureURL = pictureURL;
+		_name = name;
+		_location = location;
+		_weight = weight;
+		_price = price;
 		this._type = type;
 		this._feedDiet = feedDiet;
 		this._age = age;
 	}
-
-	public String get_type() {
-		return _type;
+	
+	@Override
+	public String[] getProduct() {
+		String[] productDetails = {_pictureURL, 
+								   _name, 
+								   _location, 
+								   String.valueOf(_weight), 
+								   String.valueOf(_price), 
+								   String.valueOf(_age),
+								   this._type, 
+								   this._feedDiet
+								   };
+		
+		return productDetails;
 	}
 
 	
