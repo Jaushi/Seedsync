@@ -8,18 +8,21 @@ services:
     ports:
       - "8080:8080"  # Expose port 8080 for the Java application
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/exampledb  # JDBC URL for the MySQL database
-      - SPRING_DATASOURCE_USERNAME=root  # MySQL username
-      - SPRING_DATASOURCE_PASSWORD=rootpassword  # MySQL password
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=mydatabase
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypassword
     depends_on:
       - db  # Ensure the database service starts before the app
 
   db:
-    image: mysql:8.0  # Use the latest MySQL image
+    image: mysql:latest
     restart: always
     environment:
-      - MYSQL_DATABASE=exampledb  # Set the name of the default database
+      - MYSQL_DATABASE=mydatabase  # Set the name of the default database
       - MYSQL_ROOT_PASSWORD=rootpassword  # Set the MySQL root password
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypassword
     ports:
       - "3306:3306"  # Expose the MySQL port
     volumes:
