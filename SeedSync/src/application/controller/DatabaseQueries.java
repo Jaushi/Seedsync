@@ -158,17 +158,15 @@ public class DatabaseQueries {
 		}
 	}
 	
-	public void addItemRiceDBS(String type, int age, String feed_diet, int product_count) {
-		query = "INSERT INTO rice(type, age, feed_diet, product_count)"
-				+ "VALUES(?, ?, ?, ?)";
+	public void addItemRiceDBS(String type, int product_count) {
+		query = "INSERT INTO rice(type, product_count)"
+				+ "VALUES(?, ?)";
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
 			
 			preparedStatement.setString(1, type);
-			preparedStatement.setInt(2, age);
-			preparedStatement.setString(3, feed_diet);
-			preparedStatement.setInt(4, product_count);
+			preparedStatement.setInt(2, product_count);
 				
 			preparedStatement.executeUpdate();			
 				
