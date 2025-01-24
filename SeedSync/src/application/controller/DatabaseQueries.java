@@ -158,16 +158,18 @@ public class DatabaseQueries {
 		}
 	}
 	
-	public void addItemRiceDBS(String type, int product_count) {
-		query = "INSERT INTO rice(type, product_count)"
-				+ "VALUES(?, ?)";
+	public void addItemRiceDBS(String quality, String texture, String color, int product_count) {
+		query = "INSERT INTO rice(quality, texture, color, product_count)"
+				+ "VALUES(?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
 			
-			preparedStatement.setString(1, type);
-			preparedStatement.setInt(2, product_count);
-				
+			preparedStatement.setString(1, quality);
+			preparedStatement.setString(2, texture);
+			preparedStatement.setString(3, color);
+			preparedStatement.setInt(4, product_count);
+			
 			preparedStatement.executeUpdate();			
 				
 			System.out.println("GOod");
