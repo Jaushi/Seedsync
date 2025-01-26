@@ -3,6 +3,8 @@ package application.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseQueries {
 	private DatabaseConnection connectNow = new DatabaseConnection();
@@ -388,4 +390,34 @@ public class DatabaseQueries {
 		}
 	}
 	
+	public void getMatchItemDBS(String criteria, String value) {
+		query = "SELECT * FROM products WHERE " + criteria + " = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, value);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			System.out.println("Matched Items:");
+			while (resultSet.next()) {
+				String pictureURL = resultSet.getString("pictureURL");
+				String name = resultSet.getString("name");
+				String location = resultSet.getString("location");
+				float weight = resultSet.getFloat("weight");
+				float price = resultSet.getFloat("price");
+				String user_id = resultSet.getString("user_id");
+	
+				System.out.println("---------------------------------------");
+				System.out.println("Name: " + name);
+				System.out.println("Picture URL: " + pictureURL);
+				System.out.println("Location: " + location);
+				System.out.println("Weight: " + weight + " kg");
+				System.out.println("Price: PHP " + price);
+				System.out.println("Seller ID: " + user_id);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="loginSeed" text="Seed" />
+                  <Label fx:id="loginSync" text="Sync" />
+               </children>
+            </HBox>
+            <Pane prefHeight="49.0" prefWidth="400.0" />
+            <VBox prefHeight="143.0" prefWidth="240.0">
+               <children>
+                  <Label text="Email or Username">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="loginUsernameEmailFX" promptText="Enter  Email or Username" styleClass="box-textField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Password" />
+                  <PasswordField fx:id="loginPasswordFX" promptText="Enter Password" styleClass="box-textField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Label styleClass="header-three" text="Email/Username or Password is invalid">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loginAccount" prefHeight="25.0" prefWidth="758.0" styleClass="button-one" text="Sign In" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="752.0" styleClass="header-five" text="Not a member? Sign up now!" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets left="80.0" right="80.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
