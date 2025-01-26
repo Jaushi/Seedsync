@@ -232,9 +232,65 @@ public class DatabaseQueries {
 		}
 	}
 
-	
-
-	
+	public void addItemFruitDBS(String quality, String flavor, String size, int product_count) {
+	    query = "INSERT INTO fruit(quality, flavor, size, product_count)"
+	            + "VALUES(?, ?, ?, ?)";
+	    
+	    try {
+	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+	        
+	        preparedStatement.setString(1, quality);
+	        preparedStatement.setString(2, flavor);
+	        preparedStatement.setString(3, size);
+	        preparedStatement.setInt(4, product_count);
+	            
+	        preparedStatement.executeUpdate();			
+	            
+	        System.out.println("GOod");
+	            
+	    }catch(Exception ex) {
+	        ex.printStackTrace();
+	    }
+	}
+	public void addItemVegetableDBS(String quality, String size, int product_count) {
+	    query = "INSERT INTO vegetable(quality, size, product_count)"
+	            + "VALUES(?, ?, ?)";
+	    
+	    try {
+	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+	        
+	        preparedStatement.setString(1, quality);
+	        preparedStatement.setString(2, size);
+	        preparedStatement.setInt(3, product_count);
+	            
+	        preparedStatement.executeUpdate();			
+	            
+	        System.out.println("GOod");
+	            
+	    }catch(Exception ex) {
+	        ex.printStackTrace();
+	    }
+	}
+	public void addItemFishDBS(String type, String source, String size, int product_count) {
+	    query = "INSERT INTO fish(type, source, size, product_count)"
+	            + "VALUES(?, ?, ?, ?)";
+	    
+	    try {
+	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+	        
+	        preparedStatement.setString(1, type);
+	        preparedStatement.setString(2, source);
+	        preparedStatement.setString(3, size);
+	        preparedStatement.setInt(4, product_count);
+	            
+	        preparedStatement.executeUpdate();			
+	            
+	        System.out.println("GOod");
+	            
+	    }catch(Exception ex) {
+	        ex.printStackTrace();
+	    }
+	}
 	
 
 }
