@@ -16,7 +16,7 @@ public class DatabaseQueries {
 		int count = 0;
 		
 		query = "SELECT COUNT(user_id) AS count "
-				+ "FROM users_account "
+		+ "FROM users_account "
 				+ "WHERE account_type = ?";
 		
 		try {
@@ -42,39 +42,43 @@ public class DatabaseQueries {
 		int userNumber = getAccountCount(accountType) + 1;
 		String userID = "";
 		
-		if(accountType == "Farmer")
+		if(accountType.equals ("Farmer"))
 			userID = String.format("FA%03d", userNumber);
-		else if(accountType == "Buyer")
+		else if(accountType.equals("Buyer"))
 			userID = String.format("BY%03d", userNumber);
-		else if (accountType == "Middle Man")
+		else if (accountType.equals ("Middle Man"))
 			userID = String.format("MM%03d", userNumber);
 		return userID;
 	}
 	
 	public void registerAccountDBS(String email, String username, String password, String accountType) {
+		if (checkDuplicateAccountsDBS(email, username)) {
+			System.out.println("Account with the given email or username already exists.");
+			return;
+		}
+	
 		userID = generateUserID(accountType);
-		
-		query = "INSERT INTO users_account(user_id, email, username, password, account_type) "
-				+ "VALUES (?, ?, ?, ?, ?)";
-		
+	
+		query = "INSERT INTO users_account(user_id, email, username, password, account_type) VALUES (?, ?, ?, ?, ?)";
+	
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			
 			preparedStatement.setString(1, userID);
 			preparedStatement.setString(2, email);
 			preparedStatement.setString(3, username);
 			preparedStatement.setString(4, password);
 			preparedStatement.setString(5, accountType);
-			
-			preparedStatement.executeUpdate();			
-		}catch(Exception ex) {
+			preparedStatement.executeUpdate();
+	
+			System.out.println("Account registered successfully.");
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 	
 	public void registerAccountDetailDBS(String firstName, String lastName, String birthdate, int age, String phoneNumber) {
 		query = "INSERT INTO users_detail(firstname, lastname, birthdate, age, phone_number, user_id) "
-				+ "VALUES (?, ?, ?, ?, ?, ?)";
+		+ "VALUES (?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -95,7 +99,7 @@ public class DatabaseQueries {
 	
 	public void registerAccountAddressDBS(String region, String province, String city, String address) {
 		query = "INSERT INTO users_address(region, province, city, address, user_id) "
-				+ "VALUES (?, ?, ?, ?, ?)";
+		+ "VALUES (?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -115,6 +119,7 @@ public class DatabaseQueries {
 		}
 	}
 	
+<<<<<<< HEAD
 	public String searchAccountDBS(String loginUsernameEmail) {
 		String userID = "";
 		
@@ -146,6 +151,31 @@ public class DatabaseQueries {
 	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
 		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
 			+ "VALUES(?, ?, ?, ?, ?, ?)";
+=======
+	public boolean checkDuplicateAccountsDBS(String email, String username) {
+		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, username);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			if (resultSet.next() && resultSet.getInt(1) > 0) {
+				System.out.println("Duplicate account detected.");
+				return true; 
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	
+		return false; 
+	}
+	
+	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
+		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id)"
+		+ "VALUES(?, ?, ?, ?, ?, ?)";
+>>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
 	
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -159,7 +189,7 @@ public class DatabaseQueries {
 			
 			preparedStatement.executeUpdate();			
 			
-			System.out.println("GOod");
+			System.out.println("Good");
 			
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -167,8 +197,13 @@ public class DatabaseQueries {
 	}
 
 	public void addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
+<<<<<<< HEAD
 		query = "INSERT INTO livestock(type, age, feed_diet, product_count) "
 				+ "VALUES(?, ?, ?, ?)";
+=======
+		query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
+		+ "VALUES(?, ?, ?, ?)";
+>>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -188,8 +223,13 @@ public class DatabaseQueries {
 	}
 	
 	public void addItemRiceDBS(String quality, String texture, String color, int product_count) {
+<<<<<<< HEAD
 		query = "INSERT INTO rice(quality, texture, color, product_count) "
 				+ "VALUES(?, ?, ?, ?)";
+=======
+		query = "INSERT INTO rice(quality, texture, color, product_count)"
+		+ "VALUES(?, ?, ?, ?)";
+>>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -207,6 +247,9 @@ public class DatabaseQueries {
 			ex.printStackTrace();
 		}
 	}
+
+	
+
 	
 	
 
