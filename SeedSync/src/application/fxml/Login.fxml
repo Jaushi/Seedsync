@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <children>
-      <ImageView fitHeight="263.0" fitWidth="240.0" layoutX="382.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../Documents/GitHub/Seedsync/SeedSync/src/application/assets/images/logo.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="358.0" layoutY="387.0" prefHeight="55.0" prefWidth="270.0" styleClass="title-text" stylesheets="@primary.css" text="SeedSync">
-         <font>
-            <Font name="Charter Black" size="50.0" />
-         </font>
-      </Label>
-      <Label layoutX="176.0" layoutY="686.0" prefHeight="26.0" prefWidth="248.0" text="Password">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <TextField layoutX="172.0" layoutY="581.0" prefHeight="71.0" prefWidth="660.0" style="-fx-background-color: WHITE;" stylesheets="@primary.css" text="Enter  Email or Username">
-         <effect>
-            <Glow />
-         </effect>
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="173.0" layoutY="732.0" prefHeight="71.0" prefWidth="660.0" style="-fx-background-color: WHITE;" stylesheets="@primary.css" text="Enter Password">
-         <effect>
-            <Glow />
-         </effect>
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label layoutX="175.0" layoutY="535.0" stylesheets="@primary.css" text="Email or Username">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <TextField alignment="CENTER" layoutX="170.0" layoutY="882.0" prefHeight="71.0" prefWidth="664.0" styleClass="text-sign" stylesheets="@primary.css" text="Sign in">
-         <effect>
-            <Glow />
-         </effect>
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label layoutX="173.0" layoutY="815.0" prefHeight="37.0" prefWidth="487.0" styleClass="text-invalid" stylesheets="@primary.css" text="Invalid Emai/Username or Password">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Label>
-      <Label layoutX="379.0" layoutY="964.0" prefHeight="37.0" prefWidth="487.0" styleClass="text-member" stylesheets="@primary.css" text="Not a member? Sign Up now">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Label>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="loginSeed" text="Seed" />
+                  <Label fx:id="loginSync" text="Sync" />
+               </children>
+            </HBox>
+            <Pane prefHeight="49.0" prefWidth="400.0" />
+            <VBox prefHeight="143.0" prefWidth="240.0">
+               <children>
+                  <Label text="Email or Username">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="loginUsernameEmailFX" promptText="Enter  Email or Username" styleClass="box-textField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Password" />
+                  <PasswordField fx:id="loginPasswordFX" promptText="Enter Password" styleClass="box-textField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Label styleClass="header-three" text="Email/Username or Password is invalid">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loginAccount" prefHeight="25.0" prefWidth="758.0" styleClass="button-one" text="Sign In" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="752.0" styleClass="header-five" text="Not a member? Sign up now!" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets left="80.0" right="80.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

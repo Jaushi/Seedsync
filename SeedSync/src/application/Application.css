@@ -11,9 +11,13 @@ AnchorPane{
 	-fx-secondary-color: "BBB5BD";
 }
 
-.header-one, #seed, #sync{
+.header-one, #seed, #sync, #loginSeed, #loginSync{
 	-fx-font-family: "Bebas Neue";
 	-fx-font-size: 18px;
+}
+
+#loginSeed, #loginSync{
+	-fx-font-size: 30px;
 }
 
 .header-two, Label{
@@ -30,6 +34,11 @@ AnchorPane{
 .header-four{
 	-fx-text-fill: "Black";
 	-fx-opacity: 0.50;
+	-fx-font-size: 10px;
+}
+
+.header-five{
+	-fx-text-fill: -fx-light-primary-color;
 	-fx-font-size: 10px;
 }
 
@@ -71,14 +80,14 @@ AnchorPane{
 
 .button-two:hover{
 	-fx-background-color: -fx-dark-primary-color;
-	-fx-scale-x: 0.5;
+	-fx-scale-x: 1.01;
 }
 
-#seed{
+#seed, #loginSeed{
 	-fx-text-fill: -fx-dark-primary-color;
 }
 
-#sync{
+#sync, #loginSync{
 	-fx-text-fill: -fx-light-primary-color;
 }
 

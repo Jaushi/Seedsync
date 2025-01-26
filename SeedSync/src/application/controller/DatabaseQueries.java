@@ -103,6 +103,7 @@ public class DatabaseQueries {
 			preparedStatement.setString(1, region);
 			preparedStatement.setString(2, province);
 			preparedStatement.setString(3, city);
+			preparedStatement.setString(4, address);
 			preparedStatement.setString(5, userID);
 			
 			preparedStatement.executeUpdate();			
@@ -114,8 +115,36 @@ public class DatabaseQueries {
 		}
 	}
 	
+	public String searchAccountDBS(String loginUsernameEmail) {
+		String userID = "";
+		
+		query = "SELECT user_id "
+				+ "FROM users_account "
+				+ "WHERE username = ? "
+				+ "OR email = ?";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			
+			preparedStatement.setString(1, loginUsernameEmail);
+			preparedStatement.setString(2, loginUsernameEmail);
+			
+			ResultSet result = preparedStatement.executeQuery();
+			
+			if(result.next()) {
+				userID = result.getString("user_id");
+			}else {
+				System.out.println("No account Found");
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		return userID;
+	}
+	
 	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
-		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id)"
+		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
 			+ "VALUES(?, ?, ?, ?, ?, ?)";
 	
 		try {
@@ -138,7 +167,7 @@ public class DatabaseQueries {
 	}
 
 	public void addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
-		query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
+		query = "INSERT INTO livestock(type, age, feed_diet, product_count) "
 				+ "VALUES(?, ?, ?, ?)";
 		
 		try {
@@ -159,7 +188,7 @@ public class DatabaseQueries {
 	}
 	
 	public void addItemRiceDBS(String quality, String texture, String color, int product_count) {
-		query = "INSERT INTO rice(quality, texture, color, product_count)"
+		query = "INSERT INTO rice(quality, texture, color, product_count) "
 				+ "VALUES(?, ?, ?, ?)";
 		
 		try {
