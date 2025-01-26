@@ -420,4 +420,22 @@ public class DatabaseQueries {
 		}
 	}
 
+	public void removeItemDBS(int itemID) {
+		query = "DELETE FROM products WHERE item_id = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setInt(1, itemID);
+	
+			int rowsAffected = preparedStatement.executeUpdate();
+			if (rowsAffected > 0) {
+				System.out.println("Item with ID " + itemID + " successfully removed.");
+			} else {
+				System.out.println("No item found with ID " + itemID);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}	
+
 }
