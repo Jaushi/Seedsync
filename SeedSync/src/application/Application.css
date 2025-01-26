@@ -32,14 +32,28 @@ AnchorPane{
 }
 
 .header-four{
+	-fx-font-family: "Inter";
 	-fx-text-fill: "Black";
 	-fx-opacity: 0.50;
 	-fx-font-size: 10px;
 }
 
 .header-five{
+	-fx-font-family: "Inter";
 	-fx-text-fill: -fx-light-primary-color;
 	-fx-font-size: 10px;
+}
+
+.header-six{
+	-fx-font-family: "Inter";
+	-fx-text-fill: "Black";
+	-fx-font-size: 28px;
+}
+
+.header-seven{
+	-fx-font-family: "Inter";
+	-fx-text-fill: "Black";
+	-fx-font-size: 20px;
 }
 
 .box-bordered{
