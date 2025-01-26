@@ -148,6 +148,30 @@ public class DatabaseQueries {
 		return userID;
 	}
 	
+	public boolean verifyPasswordDBS(String userID, String userPassword) {
+		boolean verified = false;
+		
+		query = "SELECT password "
+				+ "FROM users_account "
+				+ "WHERE user_id = ? "
+				+ "AND password = ?";
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			
+			preparedStatement.setString(1, userID);
+			preparedStatement.setString(2, userPassword);
+			
+			ResultSet result = preparedStatement.executeQuery();
+			
+			if(result.next()) {
+				verified = true;
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return verified;
+	}
+	
 	public boolean checkDuplicateAccountsDBS(String email, String username, String phone_number) {
 		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ? OR phone_number = ?";
 	
