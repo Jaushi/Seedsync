@@ -261,6 +261,5 @@ public class RegistrationController extends DatabaseQueries implements Initializ
 			statusTextFX.setText("Oopps Something went wrong with your input. Make sure everything is valid.");
 		}
 	}
-
 	
 }
