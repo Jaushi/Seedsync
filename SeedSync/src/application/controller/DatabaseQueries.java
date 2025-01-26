@@ -119,7 +119,6 @@ public class DatabaseQueries {
 		}
 	}
 	
-<<<<<<< HEAD
 	public String searchAccountDBS(String loginUsernameEmail) {
 		String userID = "";
 		
@@ -148,10 +147,6 @@ public class DatabaseQueries {
 		return userID;
 	}
 	
-	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
-		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
-			+ "VALUES(?, ?, ?, ?, ?, ?)";
-=======
 	public boolean checkDuplicateAccountsDBS(String email, String username) {
 		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ?";
 	
@@ -173,10 +168,9 @@ public class DatabaseQueries {
 	}
 	
 	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
-		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id)"
+		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
 		+ "VALUES(?, ?, ?, ?, ?, ?)";
->>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
-	
+
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
 			
@@ -197,13 +191,8 @@ public class DatabaseQueries {
 	}
 
 	public void addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
-<<<<<<< HEAD
-		query = "INSERT INTO livestock(type, age, feed_diet, product_count) "
-				+ "VALUES(?, ?, ?, ?)";
-=======
 		query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
 		+ "VALUES(?, ?, ?, ?)";
->>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -223,13 +212,8 @@ public class DatabaseQueries {
 	}
 	
 	public void addItemRiceDBS(String quality, String texture, String color, int product_count) {
-<<<<<<< HEAD
-		query = "INSERT INTO rice(quality, texture, color, product_count) "
-				+ "VALUES(?, ?, ?, ?)";
-=======
 		query = "INSERT INTO rice(quality, texture, color, product_count)"
 		+ "VALUES(?, ?, ?, ?)";
->>>>>>> f81876ce285f8b33ca3d36eb2633c02376d3ef4b
 		
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
