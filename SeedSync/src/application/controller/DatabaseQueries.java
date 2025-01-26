@@ -51,12 +51,7 @@ public class DatabaseQueries {
 		return userID;
 	}
 	
-	public void registerAccountDBS(String email, String username, String phone_number, String password, String accountType) {
-		if (checkDuplicateAccountsDBS(email, username, phone_number)) {
-			System.out.println("Account already exists. Please use different email, username, or phone number.");
-		} else {
-			System.out.println("No duplicates found. Proceeding with account creation.");
-		}
+	public void registerAccountDBS(String email, String username, String password, String accountType) {
 	
 		userID = generateUserID(accountType);
 	
@@ -172,64 +167,6 @@ public class DatabaseQueries {
 		return verified;
 	}
 	
-	public boolean checkDuplicateAccountsDBS(String email, String username, String phone_number) {
-		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ? OR phone_number = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, username);
-			preparedStatement.setString(3, phone_number);
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			if (resultSet.next() && resultSet.getInt(1) > 0) {
-				System.out.println("Duplicate account detected.");
-				return true; 
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	
-		return false;
-	}
-
-	public void getProfileAccountDBS(String user_id) {
-		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
-			+ "ua.region, ua.province, ua.city, ua.address "
-			+ "FROM users_detail ud "
-			+ "JOIN users_address ua ON ud.user_id = ua.user_id "
-			+ "WHERE ud.user_id = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, user_id);
-	
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			if (resultSet.next()) {
-				String firstname = resultSet.getString("firstname");
-				String lastname = resultSet.getString("lastname");
-				String birthdate = resultSet.getString("birthdate");
-				int age = resultSet.getInt("age");
-				String phoneNumber = resultSet.getString("phone_number");
-				String region = resultSet.getString("region");
-				String province = resultSet.getString("province");
-				String city = resultSet.getString("city");
-				String address = resultSet.getString("address");
-	
-				System.out.println("User Profile:");
-				System.out.println("Name: " + firstname + " " + lastname);
-				System.out.println("Birthdate: " + birthdate);
-				System.out.println("Age: " + age);
-				System.out.println("Phone Number: " + phoneNumber);
-				System.out.println("Address: " + address + ", " + city + ", " + province + ", " + region);
-			} else {
-				System.out.println("No profile found for user_id: " + user_id);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
 	
 	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
 		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
@@ -356,6 +293,65 @@ public class DatabaseQueries {
 	    }catch(Exception ex) {
 	        ex.printStackTrace();
 	    }
+	}
+	
+	public boolean checkDuplicateAccountsDBS(String email, String username, String phone_number) {
+		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ? OR phone_number = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, username);
+			preparedStatement.setString(3, phone_number);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			if (resultSet.next() && resultSet.getInt(1) > 0) {
+				System.out.println("Duplicate account detected.");
+				return true; 
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	
+		return false;
+	}
+ 
+ 	public void getProfileAccountDBS(String user_id) {
+		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
+			+ "ua.region, ua.province, ua.city, ua.address "
+			+ "FROM users_detail ud "
+			+ "JOIN users_address ua ON ud.user_id = ua.user_id "
+			+ "WHERE ud.user_id = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, user_id);
+	
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			if (resultSet.next()) {
+				String firstname = resultSet.getString("firstname");
+				String lastname = resultSet.getString("lastname");
+				String birthdate = resultSet.getString("birthdate");
+				int age = resultSet.getInt("age");
+				String phoneNumber = resultSet.getString("phone_number");
+				String region = resultSet.getString("region");
+				String province = resultSet.getString("province");
+				String city = resultSet.getString("city");
+				String address = resultSet.getString("address");
+	
+				System.out.println("User Profile:");
+				System.out.println("Name: " + firstname + " " + lastname);
+				System.out.println("Birthdate: " + birthdate);
+				System.out.println("Age: " + age);
+				System.out.println("Phone Number: " + phoneNumber);
+				System.out.println("Address: " + address + ", " + city + ", " + province + ", " + region);
+			} else {
+				System.out.println("No profile found for user_id: " + user_id);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 	
 	public void getItemsDBS() {
