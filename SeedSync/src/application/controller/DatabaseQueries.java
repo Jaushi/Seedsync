@@ -184,15 +184,14 @@ public class DatabaseQueries {
 	
 			if (resultSet.next() && resultSet.getInt(1) > 0) {
 				System.out.println("Duplicate account detected.");
-				return true; // Duplicate exists
+				return true; 
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	
-		return false; // No duplicate found
+		return false;
 	}
-	
 
 	public void getProfileAccountDBS(String user_id) {
 		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
@@ -231,7 +230,6 @@ public class DatabaseQueries {
 			ex.printStackTrace();
 		}
 	}
-	
 	
 	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
 		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
@@ -318,6 +316,7 @@ public class DatabaseQueries {
 	        ex.printStackTrace();
 	    }
 	}
+
 	public void addItemVegetableDBS(String quality, String size, int product_count) {
 	    query = "INSERT INTO vegetable(quality, size, product_count)"
 	            + "VALUES(?, ?, ?)";
@@ -337,6 +336,7 @@ public class DatabaseQueries {
 	        ex.printStackTrace();
 	    }
 	}
+
 	public void addItemFishDBS(String type, String source, String size, int product_count) {
 	    query = "INSERT INTO fish(type, source, size, product_count)"
 	            + "VALUES(?, ?, ?, ?)";
@@ -358,6 +358,34 @@ public class DatabaseQueries {
 	    }
 	}
 	
-
-}
+	public void getItemsDBS() {
+		query = "SELECT pictureURL, name, location, weight, price, user_id FROM products";
 	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			System.out.println("Items List:");
+			while (resultSet.next()) {
+				String pictureURL = resultSet.getString("pictureURL");
+				String name = resultSet.getString("name");
+				String location = resultSet.getString("location");
+				float weight = resultSet.getFloat("weight");
+				float price = resultSet.getFloat("price");
+				String user_id = resultSet.getString("user_id");
+	
+				System.out.println("---------------------------------------");
+				System.out.println("Name: " + name);
+				System.out.println("Picture URL: " + pictureURL);
+				System.out.println("Location: " + location);
+				System.out.println("Weight: " + weight + " kg");
+				System.out.println("Price: PHP " + price);
+				System.out.println("Seller ID: " + user_id);
+				System.out.println("---------------------------------------");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+}
