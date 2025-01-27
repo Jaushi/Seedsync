@@ -25,7 +25,16 @@ public class UniversalController extends DatabaseQueries{
 	}
 	
 	//changeToLogin
-	
+	public void changeToLogin(ActionEvent event) throws Exception{
+
+		root = FXMLLoader.load(getClass().getResource("/application/fxml/Login.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		
+		stage.setFullScreen(true);
+		stage.setScene(scene);
+	}
 	
 	//changeToProfile
 }
