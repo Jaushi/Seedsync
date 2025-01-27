@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EditProfileController">
+   <children>
+      <BorderPane fx:id="mainPane" prefHeight="525.0" prefWidth="912.0">
+         <center>
+            <HBox prefHeight="445.0" prefWidth="676.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="395.0" prefWidth="485.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="219.0" prefWidth="440.0">
+                           <children>
+                              <ImageView fitHeight="110.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/profile.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane prefHeight="10.0" prefWidth="452.0" />
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="458.0" styleClass="header-six" text="Sza Bartolome">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="470.0" text="szabartolome@gmail.com" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" styleClass="button-two" text="Edit Profile" />
+                              <Pane layoutX="10.0" layoutY="115.0" prefHeight="10.0" prefWidth="452.0" />
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="28.0" prefWidth="452.0">
+                           <children>
+                              <Pane layoutX="140.0" layoutY="10.0" prefHeight="28.0" prefWidth="72.0" />
+                              <Label prefHeight="20.0" prefWidth="85.0" styleClass="header-two" text="Username:">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="28.0" prefWidth="38.0" />
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="Sza Bartolome">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="28.0" prefWidth="38.0" />
+                        <Label prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="Sza Sanchez Bartolome">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="10.0" layoutY="247.0" prefHeight="28.0" prefWidth="452.0">
+                           <children>
+                              <Pane prefHeight="28.0" prefWidth="72.0" />
+                              <Label prefHeight="20.0" prefWidth="85.0" styleClass="header-two" text="Phone Number:">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="28.0" prefWidth="38.0" />
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="*******3647">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="275.0" prefHeight="28.0" prefWidth="452.0">
+                           <children>
+                              <Pane prefHeight="28.0" prefWidth="72.0" />
+                              <Label prefHeight="20.0" prefWidth="85.0" styleClass="header-two" text="Gender">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="28.0" prefWidth="38.0" />
+                              <RadioButton mnemonicParsing="false" prefHeight="14.0" prefWidth="67.0" styleClass="header-two" text="Female" />
+                              <Pane layoutX="178.0" layoutY="10.0" prefHeight="28.0" prefWidth="7.0" />
+                              <RadioButton mnemonicParsing="false" styleClass="header-two" text="Male" />
+                              <Pane layoutX="307.0" layoutY="10.0" prefHeight="28.0" prefWidth="8.0" />
+                              <RadioButton layoutX="307.0" layoutY="10.0" mnemonicParsing="false" styleClass="header-two" text="Other" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="303.0" prefHeight="28.0" prefWidth="452.0">
+                           <children>
+                              <Pane prefHeight="28.0" prefWidth="72.0" />
+                              <Label prefHeight="20.0" prefWidth="85.0" styleClass="header-two" text="Date of Birth:">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="28.0" prefWidth="38.0" />
+                              <Label prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="**/10/20**">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="420.0" prefWidth="463.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="568.0" styleClass="header-seven" text="Edit Profile">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="24.0" prefWidth="463.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="59.0" styleClass="header-two" text="First Name">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="20.0" prefWidth="179.0" />
+                              <Label styleClass="header-two" text="Last Name">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="463.0">
+                           <children>
+                              <TextField prefHeight="26.0" prefWidth="179.0" promptText="Ex.: Juan" styleClass="line-textField" />
+                              <Pane prefHeight="23.0" prefWidth="77.0" />
+                              <TextField layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="179.0" promptText="Ex.: Dela Cruz" styleClass="line-textField" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="20.0" prefWidth="463.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="59.0" styleClass="header-two" text="Email">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="16.0" prefWidth="179.0" />
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="59.0" styleClass="header-two" text="Username">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="463.0">
+                           <children>
+                              <TextField prefHeight="26.0" prefWidth="179.0" promptText="Ex.: juandelacruz@gmail.com" styleClass="line-textField" />
+                              <Pane prefHeight="23.0" prefWidth="77.0" />
+                              <TextField prefHeight="26.0" prefWidth="179.0" promptText="Ex.: Juan123" styleClass="line-textField" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="22.0" prefWidth="463.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="59.0" styleClass="header-two" text="Birthdate">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="22.0" prefWidth="111.0" />
+                              <Label prefHeight="22.0" prefWidth="52.0" styleClass="header-two" text="Age">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutX="69.0" layoutY="10.0" prefHeight="18.0" prefWidth="18.0" />
+                              <Label styleClass="header-two" text="Phone  Number">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="38.0" prefWidth="463.0">
+                           <children>
+                              <DatePicker prefHeight="26.0" prefWidth="158.0" styleClass="box-textField" />
+                              <Pane prefHeight="38.0" prefWidth="25.0" />
+                              <Label prefHeight="30.0" prefWidth="43.0" styleClass="header-two" text="0" />
+                              <Pane layoutX="144.0" layoutY="10.0" prefHeight="38.0" prefWidth="15.0" />
+                              <TextField prefHeight="26.0" prefWidth="174.0" promptText="Ex.: 09xxxxxxxxx" styleClass="line-textField" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="19.0" prefWidth="463.0">
+                           <children>
+                              <Label styleClass="header-two" text="Region">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="17.0" prefWidth="106.0" />
+                              <Label prefHeight="22.0" prefWidth="59.0" styleClass="header-two" text="Province">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane layoutX="47.0" layoutY="10.0" prefHeight="17.0" prefWidth="80.0" />
+                              <Label layoutX="301.0" layoutY="10.0" prefHeight="22.0" prefWidth="59.0" styleClass="header-two" text="City">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="215.0" prefHeight="42.0" prefWidth="463.0">
+                           <children>
+                              <Label />
+                              <ChoiceBox prefHeight="25.0" prefWidth="120.0" />
+                              <Pane prefHeight="37.0" prefWidth="33.0" />
+                              <ComboBox prefHeight="26.0" prefWidth="120.0" styleClass="box-textField" />
+                              <Pane layoutX="79.0" layoutY="10.0" prefHeight="37.0" prefWidth="25.0" />
+                              <TextField layoutX="175.0" layoutY="10.0" prefHeight="26.0" prefWidth="130.0" promptText="Ex.: Manila" styleClass="line-textField" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="215.0" prefHeight="19.0" prefWidth="463.0">
+                           <children>
+                              <Label />
+                              <Label styleClass="header-two" text="Address">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="265.0" prefHeight="38.0" prefWidth="463.0">
+                           <children>
+                              <Label />
+                              <Label />
+                              <TextField id="line-textField" prefHeight="26.0" prefWidth="435.0" promptText="Ex.: Sta. Mesa, Manila" styleClass="line-textField" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="265.0" prefHeight="19.0" prefWidth="463.0">
+                           <children>
+                              <Label />
+                              <Label styleClass="header-two" text="New Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="17.0" prefWidth="164.0" />
+                              <Label layoutX="10.0" layoutY="10.0" styleClass="header-two" text="Confirm Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="315.0" prefHeight="43.0" prefWidth="460.0">
+                           <children>
+                              <Label />
+                              <Label />
+                              <Label layoutX="10.0" layoutY="10.0" />
+                              <PasswordField prefHeight="25.0" prefWidth="167.0" promptText="Enter Password" styleClass="box-textField" />
+                              <Pane prefHeight="35.0" prefWidth="78.0" />
+                              <PasswordField layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="167.0" promptText="Enter Password" styleClass="box-textField" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="334.0" prefHeight="35.0" prefWidth="463.0">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" styleClass="button-one" text="Save" />
+                              <Pane prefHeight="35.0" prefWidth="39.0" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="215.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" styleClass="button-two" text="Cancel" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+         </center>
+         <padding>
+            <Insets bottom="50.0" left="5.0" right="50.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
