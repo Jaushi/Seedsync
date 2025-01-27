@@ -12,7 +12,7 @@ public class LoginController extends DatabaseQueries{
 	private TextField loginUsernameEmailFX;
 	@FXML
 	private PasswordField loginPasswordFX;
-	
+	@FXML
 	private Label loginVerificationFX;
 	
 	public void loginAccount(ActionEvent event) {
@@ -21,18 +21,21 @@ public class LoginController extends DatabaseQueries{
 		String userID = searchAccountDBS(loginUsernameEmail);
 		
 		if(userID.isEmpty()) {
-			loginUsernameEmailFX.setStyle("-fx-opacity: 1; -fx-text-fill: red");
+			loginUsernameEmailFX.setStyle("-fx-border-color: red;");
+			loginVerificationFX.setStyle("-fx-opacity: 1;");
 			loginVerificationFX.setText("Account not found");
 		}else {
 			boolean verifyPassword = verifyPasswordDBS(userID, loginPassword);
-			if(verifyPassword) {
-				loginVerificationFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-dark-primary-color");
+			loginUsernameEmailFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+			if(verifyPassword) {	
+				loginPasswordFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+				loginVerificationFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-light-primary-color");
 				loginVerificationFX.setText("Login Sucessful!");
 			}else {
-				loginPasswordFX.setStyle("-fx-opacity: 1; -fx-text-fill: red");
+				loginPasswordFX.setStyle("-fx-border-color: red;");
+				loginVerificationFX.setText("-fx-opacity: 1;");
 				loginVerificationFX.setText("Incorrect Password");
 			}
-			System.out.println(userID);
 		}
 	}
 	

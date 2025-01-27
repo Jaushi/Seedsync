@@ -3,10 +3,9 @@ package application.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseQueries {
+	
 	private DatabaseConnection connectNow = new DatabaseConnection();
 	private Connection connectDatabase = connectNow.getConnection();
 	
@@ -30,9 +29,8 @@ public class DatabaseQueries {
 			
 			if(result.next()) {
 				count = result.getInt("count");
-			}else {
-				System.out.println("No account Found");
 			}
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
@@ -53,11 +51,36 @@ public class DatabaseQueries {
 		return userID;
 	}
 	
+	public boolean checkDuplicatePhoneNumberDBS(String phoneNumber) {
+			
+		query = "SELECT user_id "
+			+ "FROM users_detail "
+			+ "WHERE phone_number = ?";
+	
+		try {	
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, phoneNumber);
+				
+			ResultSet result = preparedStatement.executeQuery();
+				
+			if(result.next()) {
+					return true;
+			}
+			
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return false;
+	}
+	
+	//DITO KA ADD JOSHUA NG checkDuplicateAccountUsernameEmailDBS   -> PARAMETER email at username
+	
 	public void registerAccountDBS(String email, String username, String password, String accountType) {
 	
 		userID = generateUserID(accountType);
 	
-		query = "INSERT INTO users_account(user_id, email, username, password, account_type) VALUES (?, ?, ?, ?, ?)";
+		query = "INSERT INTO users_account(user_id, email, username, password, account_type) "
+				+ "VALUES (?, ?, ?, ?, ?)";
 	
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
@@ -135,9 +158,8 @@ public class DatabaseQueries {
 			
 			if(result.next()) {
 				userID = result.getString("user_id");
-			}else {
-				System.out.println("No account Found");
 			}
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
@@ -297,26 +319,7 @@ public class DatabaseQueries {
 	    }
 	}
 	
-	public boolean checkDuplicateAccountsDBS(String email, String username, String phone_number) {
-		query = "SELECT COUNT(*) FROM users_account WHERE email = ? OR username = ? OR phone_number = ?";
 	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, username);
-			preparedStatement.setString(3, phone_number);
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			if (resultSet.next() && resultSet.getInt(1) > 0) {
-				System.out.println("Duplicate account detected.");
-				return true; 
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	
-		return false;
-	}
  
  	public void getProfileAccountDBS(String user_id) {
 		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,20 +11,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="73.0" prefWidth="872.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="70.0" prefWidth="872.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <HBox alignment="CENTER" prefHeight="61.0" prefWidth="127.0">
                <children>
-                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                  <ImageView fitHeight="51.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                      <image>
-                        <Image url="@../../../bin/application/assets/images/logo.png" />
+                        <Image url="@../assets/images/headerLogo.png" />
                      </image>
                      <HBox.margin>
-                        <Insets right="10.0" />
+                        <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Label text="Seed" HBox.hgrow="ALWAYS" />
-                  <Label text="Sync" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <Pane prefHeight="44.0" prefWidth="40.0" HBox.hgrow="ALWAYS" />
@@ -81,5 +80,6 @@
             </ImageView>
          </children>
       </HBox>
+      <Separator layoutY="68.0" prefWidth="912.0" />
    </children>
 </AnchorPane>

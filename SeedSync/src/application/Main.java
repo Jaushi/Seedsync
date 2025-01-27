@@ -11,14 +11,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/EditProfile.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/sellerHomepage.fxml"));
 			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
 			
-			primaryStage.setResizable(false);
+			primaryStage.setResizable(true);
 			primaryStage.getIcons().add(logo);
 			primaryStage.setTitle("SeedSync");
 			primaryStage.setScene(scene);

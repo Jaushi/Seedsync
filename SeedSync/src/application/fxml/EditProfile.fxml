@@ -21,9 +21,6 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EditProfileController">
    <children>
       <BorderPane fx:id="mainPane" prefHeight="525.0" prefWidth="912.0">
-         <top>
-            <HBox prefHeight="59.0" prefWidth="857.0" BorderPane.alignment="CENTER" />
-         </top>
          <center>
             <HBox prefHeight="445.0" prefWidth="676.0" BorderPane.alignment="CENTER">
                <children>
@@ -37,29 +34,17 @@
                                  </image>
                               </ImageView>
                               <Pane prefHeight="10.0" prefWidth="452.0" />
-                              <HBox alignment="CENTER" prefHeight="21.0" prefWidth="452.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="40.0" prefWidth="458.0" styleClass="header-six" text="Sza Bartolome">
-                                       <font>
-                                          <Font name="System Bold" size="28.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="125.0" prefHeight="21.0" prefWidth="452.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="470.0" text="szabartolome@gmail.com" textAlignment="CENTER">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="159.0" prefHeight="58.0" prefWidth="440.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" styleClass="button-two" text="Edit Profile" />
-                                 </children>
-                              </HBox>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="458.0" styleClass="header-six" text="Sza Bartolome">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="470.0" text="szabartolome@gmail.com" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" styleClass="button-two" text="Edit Profile" />
                               <Pane layoutX="10.0" layoutY="115.0" prefHeight="10.0" prefWidth="452.0" />
                            </children>
                         </VBox>
@@ -79,22 +64,12 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="219.0" prefHeight="28.0" prefWidth="452.0">
-                           <children>
-                              <Pane prefHeight="28.0" prefWidth="72.0" />
-                              <Label prefHeight="20.0" prefWidth="85.0" styleClass="header-two" text="Name:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Pane prefHeight="28.0" prefWidth="38.0" />
-                              <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="Sza Sanchez Bartolome">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
+                        <Pane prefHeight="28.0" prefWidth="38.0" />
+                        <Label prefHeight="20.0" prefWidth="136.0" styleClass="header-two" text="Sza Sanchez Bartolome">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
                         <HBox layoutX="10.0" layoutY="247.0" prefHeight="28.0" prefWidth="452.0">
                            <children>
                               <Pane prefHeight="28.0" prefWidth="72.0" />
@@ -221,7 +196,7 @@
                            <children>
                               <DatePicker prefHeight="26.0" prefWidth="158.0" styleClass="box-textField" />
                               <Pane prefHeight="38.0" prefWidth="25.0" />
-                              <Label prefHeight="30.0" prefWidth="45.0" styleClass="header-two" text="0" />
+                              <Label prefHeight="30.0" prefWidth="43.0" styleClass="header-two" text="0" />
                               <Pane layoutX="144.0" layoutY="10.0" prefHeight="38.0" prefWidth="15.0" />
                               <TextField prefHeight="26.0" prefWidth="174.0" promptText="Ex.: 09xxxxxxxxx" styleClass="line-textField" />
                            </children>

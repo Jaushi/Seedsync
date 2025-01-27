@@ -46,7 +46,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </PasswordField>
-                  <Label styleClass="header-three" text="Email/Username or Password is invalid">
+                  <Label fx:id="loginVerificationFX" styleClass="header-three" text="Email/Username or Password is invalid">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
