@@ -112,4 +112,21 @@
 	-fx-background-radius: 15px;
 }
 
+.box-textField: hover {
+    -fx-border-color: -fx-light-primary-color;
+    -fx-opacity: 1;
+}
 
+.box-textField: focused {
+    -fx-border-color: -fx-dark-primary-color;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
+}
+
+.line-textField: hover{
+	-fx-border-color: -fx-light-primary-color;
+    -fx-opacity: 1;
+}
+
+.line-textField: focused {
+    -fx-border-color: -fx-dark-primary-color;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
