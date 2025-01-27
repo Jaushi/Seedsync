@@ -2,31 +2,30 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="-2.0" prefHeight="83.0" prefWidth="912.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="70.0" prefWidth="872.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="146.0">
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="127.0">
                <children>
-                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                  <ImageView fitHeight="51.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                      <image>
-                        <Image url="@../../../bin/application/assets/images/logo.png" />
+                        <Image url="@../assets/images/headerLogo.png" />
                      </image>
                      <HBox.margin>
-                        <Insets right="10.0" />
+                        <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Label text="Seed" HBox.hgrow="ALWAYS" />
-                  <Label text="Sync" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <Pane prefHeight="83.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
+            <Pane prefHeight="44.0" prefWidth="40.0" HBox.hgrow="ALWAYS" />
             <Label text="Vegetables" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets />
@@ -59,7 +58,7 @@
             <Pane layoutX="529.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
             <Label layoutX="522.0" layoutY="43.0" text="Fish" HBox.hgrow="ALWAYS">
                <HBox.margin>
-                  <Insets />
+                  <Insets right="5.0" />
                </HBox.margin>
             </Label>
             <Pane layoutX="156.0" layoutY="10.0" prefHeight="83.0" prefWidth="214.0" HBox.hgrow="ALWAYS" />
@@ -68,7 +67,7 @@
                   <Image url="@../../../bin/application/assets/images/shoppingCartIcon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets left="5.0" right="15.0" />
                </HBox.margin>
             </ImageView>
             <ImageView fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
@@ -76,10 +75,11 @@
                   <Image url="@../../../bin/application/assets/images/profileIcon.png" />
                </image>
                <HBox.margin>
-                  <Insets />
+                  <Insets right="20.0" />
                </HBox.margin>
             </ImageView>
          </children>
       </HBox>
+      <Separator layoutY="68.0" prefWidth="912.0" />
    </children>
 </AnchorPane>

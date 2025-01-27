@@ -320,10 +320,9 @@ public class DatabaseQueries {
 	}
 	
 	
-<<<<<<< Updated upstream
- 
- 	public void getProfileAccountDBS(String user_id) {
-=======
+	public boolean checkDuplicateDBS(String email, String username, String phone_number) {
+		String query = "SELECT COUNT(*) FROM users WHERE email = ? AND username = ? AND phone_number = ?";
+	
 		try {
 			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
 			preparedStatement.setString(1, email);
@@ -340,10 +339,9 @@ public class DatabaseQueries {
 		}
 	
 		return false;
-	}
+	} 
 
 	public void getProfileAccountDBS(String user_id) {
->>>>>>> Stashed changes
 		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
 			+ "ua.region, ua.province, ua.city, ua.address "
 			+ "FROM users_detail ud "
