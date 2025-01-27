@@ -16,7 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-public class RegistrationController extends DatabaseQueries implements Initializable {
+public class RegistrationController extends UniversalController implements Initializable {
 	@FXML
 	private TextField firstNameFX, lastNameFX, emailAccountFX, usernameAccountFX, phoneNumberFX, cityAddressFX, fullAddressFX;
     @FXML
@@ -38,6 +38,10 @@ public class RegistrationController extends DatabaseQueries implements Initializ
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		regionAddressFX.getItems().addAll(regions);
 		
+	}
+    
+    public void clickedLogin(ActionEvent event) throws Exception {
+    	changeToLogin(event);
 	}
     
     public void getCorrespondingProvince(ActionEvent event) {

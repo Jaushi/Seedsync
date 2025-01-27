@@ -1,12 +1,14 @@
 package application.controller;
 
+import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginController extends DatabaseQueries{
+
+public class LoginController extends UniversalController{
 	
 	@FXML
 	private TextField loginUsernameEmailFX;
@@ -37,6 +39,10 @@ public class LoginController extends DatabaseQueries{
 				loginVerificationFX.setText("Incorrect Password");
 			}
 		}
+	}
+	
+	public void clickedRegistration(ActionEvent event) throws Exception {
+		changeToRegistration(event);
 	}
 	
 	
