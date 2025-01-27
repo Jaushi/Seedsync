@@ -320,8 +320,30 @@ public class DatabaseQueries {
 	}
 	
 	
+<<<<<<< Updated upstream
  
  	public void getProfileAccountDBS(String user_id) {
+=======
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, username);
+			preparedStatement.setString(3, phone_number);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			if (resultSet.next() && resultSet.getInt(1) > 0) {
+				System.out.println("Duplicate account detected.");
+				return true; 
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	
+		return false;
+	}
+
+	public void getProfileAccountDBS(String user_id) {
+>>>>>>> Stashed changes
 		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
 			+ "ua.region, ua.province, ua.city, ua.address "
 			+ "FROM users_detail ud "
