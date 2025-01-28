@@ -257,18 +257,28 @@ public class RegistrationController extends UniversalController implements Initi
 			
 			//database processing
 			duplicateAccount = checkDuplicatePhoneNumberDBS(phoneNumber);
-			duplicateAccount = checkDuplicateUsernamePasswordDBS(emailAccount, usernameAccount);
-			if(!duplicateAccount) {
+			if (duplicateAccount) {
+			    statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
+			    statusTextFX.setText("Oops! There was an issue. Please verify your input and ensure it’s not a duplicate account.");
+			    return;
+			}
+
+			duplicateAccount = checkDuplicateUsernameEmailDBS(usernameAccount, emailAccount);
+			if (duplicateAccount) {
+			    statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
+			    statusTextFX.setText("Oops! There was an issue. Please verify your input and ensure it’s not a duplicate account.");
+			    return;
+			} else {
 				registerAccountDBS(emailAccount, usernameAccount, passwordAccount, userTypeAccount);
-				registerAccountDetailDBS(firstName.toUpperCase(), lastName.toUpperCase(), birthDate.toString(), age, phoneNumber);
-				registerAccountAddressDBS(regionAddress, provinceAddress, cityAddress, fullAddress);
-				
-				statusTextFX.setText("You are now registered. Proceed to login.");
+			    registerAccountDetailDBS(firstName.toUpperCase(), lastName.toUpperCase(), birthDate.toString(), age, phoneNumber);
+			    registerAccountAddressDBS(regionAddress, provinceAddress, cityAddress, fullAddress);
+			    
+			    statusTextFX.setText("You are now registered. Proceed to login.");
 			}
-			}else {
+		}else {
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
-			statusTextFX.setText("Oops! There was an issue. Please verify your input and ensure it’s not a duplicate account.");
-			}
-	}
+		    statusTextFX.setText("Oops! There was an issue. Make sure everything is correct.");
+		}
 	
+	}
 }

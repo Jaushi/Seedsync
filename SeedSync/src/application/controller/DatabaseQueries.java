@@ -73,7 +73,7 @@ public class DatabaseQueries {
 		return false;
 	}
 	
-	public boolean DuplicateAccountUsernameEmailDBS(String username, String email) {
+	public boolean checkDuplicateUsernameEmailDBS(String username, String email) {
 		query = "SELECT user_id "
 				+ "FROM users_account "
 				+ "WHERE username = ? "
