@@ -189,6 +189,8 @@ AnchorPane{
 
 .status-label{
 	-fx-text-fill: white;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
 }
 
 .shadow{
