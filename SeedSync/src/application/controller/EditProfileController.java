@@ -21,5 +21,9 @@ public class EditProfileController implements Initializable{
 		Pane view = object.getPage("UserHeader");
 		mainPane.setTop(view);
 	}
+	
+	//Update input
+	
+	//set Profile
 
 }

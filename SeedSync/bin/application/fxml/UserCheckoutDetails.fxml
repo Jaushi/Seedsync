@@ -1,81 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="51.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-         <image>
-            <Image url="@../../assets/images/headerLogo.png" />
-         </image>
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </ImageView>
-      <Pane prefHeight="63.0" prefWidth="41.0" HBox.hgrow="ALWAYS" />
-      <Label prefHeight="17.0" prefWidth="73.0" text="Vegetables" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="564.0" layoutY="10.0" prefHeight="63.0" prefWidth="39.0" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Pane>
-      <Label layoutX="223.0" layoutY="43.0" prefHeight="17.0" prefWidth="43.0" text="Fruits" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="301.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
-      <Label layoutX="287.0" layoutY="43.0" prefHeight="17.0" prefWidth="130.0" text="Livestock and Poultry" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="340.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
-      <Label layoutX="346.0" layoutY="43.0" prefHeight="17.0" prefWidth="76.0" text="Vegetables" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="461.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
-      <Label layoutX="444.0" layoutY="43.0" prefHeight="17.0" prefWidth="46.0" text="Crops" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="529.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
-      <Label layoutX="522.0" layoutY="43.0" prefHeight="17.0" prefWidth="37.0" text="Fish" HBox.hgrow="ALWAYS">
-         <HBox.margin>
-            <Insets right="5.0" />
-         </HBox.margin>
-      </Label>
-      <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="75.0" HBox.hgrow="ALWAYS" />
-      <ImageView fitHeight="20.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-         <image>
-            <Image url="@../../assets/images/shoppingCartIcon.png" />
-         </image>
-         <HBox.margin>
-            <Insets left="5.0" right="15.0" />
-         </HBox.margin>
-      </ImageView>
-      <ImageView fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-         <image>
-            <Image url="@../../assets/images/profileIcon.png" />
-         </image>
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-      </ImageView>
+      <BorderPane prefHeight="525.0" prefWidth="912.0">
+         <top>
+            <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="525.0" prefWidth="912.0">
+                     <content>
+                        <VBox prefHeight="675.0" prefWidth="883.0">
+                           <children>
+                              <Label text="Checkout Details">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="70.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="30.0" text="Delivery Address">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="70.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="69.0" text="Lorem ipsum odor amet, consectetuer adipiscing elit. Nullam pulvinar ipsum dignissim aliquet dictum et convallis libero dui! Neque torquent pretium maximus lorem netus turpis nulla pellentesque. Vehicula nam laoreet rhoncus natoque volutpat leo euismod." wrapText="true">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" top="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Label layoutX="80.0" layoutY="69.0" text="Products Ordered">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="70.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <VBox prefHeight="280.0" prefWidth="883.0">
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <VBox prefHeight="100.0" prefWidth="743.0" />
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="743.0" />
+                                    <VBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="743.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="98.0" prefWidth="743.0">
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="Method of Payment">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="743.0">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../../../../../../Documents/GitHub/Seedsync/SeedSync/src/application/assets/images/GCash_Logo.png" />
+                                             </image>
+                                          </ImageView>
+                                          <RadioButton mnemonicParsing="false" text="Gcash" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" prefHeight="25.0" prefWidth="743.0">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../../../../../../Documents/GitHub/Seedsync/SeedSync/src/application/assets/images/cash-on-deliver.png" />
+                                             </image>
+                                          </ImageView>
+                                          <RadioButton mnemonicParsing="false" text="Cash on Deliver">
+                                             <HBox.margin>
+                                                <Insets left="2.0" />
+                                             </HBox.margin>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="24.0" prefWidth="743.0">
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Subtotal" />
+                                    <Pane prefHeight="24.0" prefWidth="106.0" />
+                                    <Label layoutX="10.0" layoutY="10.0" text="\$1,800.00" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" layoutX="80.0" layoutY="561.0" prefHeight="24.0" prefWidth="743.0">
+                                 <children>
+                                    <Label text="Shipping Total" />
+                                    <Pane prefHeight="24.0" prefWidth="101.0" />
+                                    <Label layoutX="10.0" layoutY="10.0" text="\$300" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" layoutX="80.0" layoutY="585.0" prefHeight="24.0" prefWidth="743.0">
+                                 <children>
+                                    <Label text="Total Payment" />
+                                    <Pane prefHeight="24.0" prefWidth="89.0" />
+                                    <Label layoutX="10.0" layoutY="10.0" text="\$2,100">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" text="Proceed">
+                                 <VBox.margin>
+                                    <Insets left="670.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
    </children>
-   <padding>
-      <Insets left="30.0" right="30.0" />
-   </padding>
-</HBox>
+</AnchorPane>

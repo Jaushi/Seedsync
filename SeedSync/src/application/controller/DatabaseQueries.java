@@ -3,6 +3,8 @@ package application.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseQueries {
 	
@@ -216,269 +218,242 @@ public class DatabaseQueries {
 	}
 	
 	
-	public void addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
+    public boolean addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
 		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
 		+ "VALUES(?, ?, ?, ?, ?, ?)";
 
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			
-			preparedStatement.setString(1, pictureURL);
-			preparedStatement.setString(2, name);
-			preparedStatement.setString(3, location);
-			preparedStatement.setFloat(4, weight);
-			preparedStatement.setFloat(5, price);
-			preparedStatement.setString(6, user_id);
-			
-			preparedStatement.executeUpdate();			
-			
-			System.out.println("Good");
-			
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, pictureURL);
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, location);
+            preparedStatement.setFloat(4, weight);
+            preparedStatement.setFloat(5, price);
+            preparedStatement.setString(6, user_id);
+            
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
-	public void addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
-		query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
-		+ "VALUES(?, ?, ?, ?)";
-		
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			
-			preparedStatement.setString(1, type);
-			preparedStatement.setInt(2, age);
-			preparedStatement.setString(3, feed_diet);
-			preparedStatement.setInt(4, product_count);
-				
-			preparedStatement.executeUpdate();			
-				
-			System.out.println("GOod");
-				
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-	
-	public void addItemRiceDBS(String quality, String texture, String color, int product_count) {
-		query = "INSERT INTO rice(quality, texture, color, product_count)"
-		+ "VALUES(?, ?, ?, ?)";
-		
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			
-			preparedStatement.setString(1, quality);
-			preparedStatement.setString(2, texture);
-			preparedStatement.setString(3, color);
-			preparedStatement.setInt(4, product_count);
-			
-			preparedStatement.executeUpdate();			
-				
-			System.out.println("GOod");
-				
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+    public boolean addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
+        query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
+        + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, type);
+            preparedStatement.setInt(2, age);
+            preparedStatement.setString(3, feed_diet);
+            preparedStatement.setInt(4, product_count);
+                
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean addItemRiceDBS(String quality, String texture, String color, int product_count) {
+        query = "INSERT INTO rice(quality, texture, color, product_count)"
+        + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, texture);
+            preparedStatement.setString(3, color);
+            preparedStatement.setInt(4, product_count);
+            
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
-	public void addItemFruitDBS(String quality, String flavor, String size, int product_count) {
-	    query = "INSERT INTO fruit(quality, flavor, size, product_count)"
-	            + "VALUES(?, ?, ?, ?)";
-	    
-	    try {
-	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-	        
-	        preparedStatement.setString(1, quality);
-	        preparedStatement.setString(2, flavor);
-	        preparedStatement.setString(3, size);
-	        preparedStatement.setInt(4, product_count);
-	            
-	        preparedStatement.executeUpdate();			
-	            
-	        System.out.println("GOod");
-	            
-	    }catch(Exception ex) {
-	        ex.printStackTrace();
-	    }
-	}
+    public boolean addItemFruitDBS(String quality, String flavor, String size, int product_count) {
+        query = "INSERT INTO fruit(quality, flavor, size, product_count)"
+                + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, flavor);
+            preparedStatement.setString(3, size);
+            preparedStatement.setInt(4, product_count);
+                
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
-	public void addItemVegetableDBS(String quality, String size, int product_count) {
-	    query = "INSERT INTO vegetable(quality, size, product_count)"
-	            + "VALUES(?, ?, ?)";
-	    
-	    try {
-	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-	        
-	        preparedStatement.setString(1, quality);
-	        preparedStatement.setString(2, size);
-	        preparedStatement.setInt(3, product_count);
-	            
-	        preparedStatement.executeUpdate();			
-	            
-	        System.out.println("GOod");
-	            
-	    }catch(Exception ex) {
-	        ex.printStackTrace();
-	    }
-	}
+    public boolean addItemVegetableDBS(String quality, String size, int product_count) {
+        query = "INSERT INTO vegetable(quality, size, product_count)"
+                + "VALUES(?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, size);
+            preparedStatement.setInt(3, product_count);
+                
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
-	public void addItemFishDBS(String type, String source, String size, int product_count) {
-	    query = "INSERT INTO fish(type, source, size, product_count)"
-	            + "VALUES(?, ?, ?, ?)";
-	    
-	    try {
-	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-	        
-	        preparedStatement.setString(1, type);
-	        preparedStatement.setString(2, source);
-	        preparedStatement.setString(3, size);
-	        preparedStatement.setInt(4, product_count);
-	            
-	        preparedStatement.executeUpdate();			
-	            
-	        System.out.println("GOod");
-	            
-	    }catch(Exception ex) {
-	        ex.printStackTrace();
-	    }
-	}
-	
-	
-	public boolean checkDuplicateDBS(String email, String username, String phone_number) {
-		String query = "SELECT COUNT(*) FROM users WHERE email = ? AND username = ? AND phone_number = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, username);
-			preparedStatement.setString(3, phone_number);
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			if (resultSet.next() && resultSet.getInt(1) > 0) {
-				System.out.println("Duplicate account detected.");
-				return true; 
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	
-		return false;
-	} 
+    public boolean addItemFishDBS(String type, String source, String size, int product_count) {
+        query = "INSERT INTO fish(type, source, size, product_count)"
+                + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, type);
+            preparedStatement.setString(2, source);
+            preparedStatement.setString(3, size);
+            preparedStatement.setInt(4, product_count);
+                
+            preparedStatement.executeUpdate();            
+            return true;
+        }catch(Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    public boolean checkDuplicateDBS(String email, String username, String phone_number) {
+        String query = "SELECT COUNT(*) FROM users WHERE email = ? AND username = ? AND phone_number = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, username);
+            preparedStatement.setString(3, phone_number);
+            ResultSet resultSet = preparedStatement.executeQuery();
+    
+            if (resultSet.next() && resultSet.getInt(1) > 0) {
+                return true; 
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    
+        return false;
+    } 
 
-	public void getProfileAccountDBS(String user_id) {
-		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
-			+ "ua.region, ua.province, ua.city, ua.address "
-			+ "FROM users_detail ud "
-			+ "JOIN users_address ua ON ud.user_id = ua.user_id "
-			+ "WHERE ud.user_id = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, user_id);
-	
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			if (resultSet.next()) {
-				String firstname = resultSet.getString("firstname");
-				String lastname = resultSet.getString("lastname");
-				String birthdate = resultSet.getString("birthdate");
-				int age = resultSet.getInt("age");
-				String phoneNumber = resultSet.getString("phone_number");
-				String region = resultSet.getString("region");
-				String province = resultSet.getString("province");
-				String city = resultSet.getString("city");
-				String address = resultSet.getString("address");
+    public UserProfile getProfileAccountDBS(String user_id) {
+        query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
+            + "ua.region, ua.province, ua.city, ua.address "
+            + "FROM users_detail ud "
+            + "JOIN users_address ua ON ud.user_id = ua.user_id "
+            + "WHERE ud.user_id = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, user_id);
+    
+            ResultSet resultSet = preparedStatement.executeQuery();
+    
+            if (resultSet.next()) {
+                String firstname = resultSet.getString("firstname");
+                String lastname = resultSet.getString("lastname");
+                String birthdate = resultSet.getString("birthdate");
+                int age = resultSet.getInt("age");
+                String phoneNumber = resultSet.getString("phone_number");
+                String region = resultSet.getString("region");
+                String province = resultSet.getString("province");
+                String city = resultSet.getString("city");
+                String address = resultSet.getString("address");
 
-				System.out.println("User Profile:");
-				System.out.println("Name: " + firstname + " " + lastname);
-				System.out.println("Birthdate: " + birthdate);
-				System.out.println("Age: " + age);
-				System.out.println("Phone Number: " + phoneNumber);
-				System.out.println("Address: " + address + ", " + city + ", " + province + ", " + region);
-			} else {
-				System.out.println("No profile found for user_id: " + user_id);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-	
-	public void getItemsDBS() {
-		query = "SELECT pictureURL, name, location, weight, price, user_id FROM products";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			System.out.println("Items List:");
-			while (resultSet.next()) {
-				String pictureURL = resultSet.getString("pictureURL");
-				String name = resultSet.getString("name");
-				String location = resultSet.getString("location");
-				float weight = resultSet.getFloat("weight");
-				float price = resultSet.getFloat("price");
-				String user_id = resultSet.getString("user_id");
-	
-				System.out.println("---------------------------------------");
-				System.out.println("Name: " + name);
-				System.out.println("Picture URL: " + pictureURL);
-				System.out.println("Location: " + location);
-				System.out.println("Weight: " + weight + " kg");
-				System.out.println("Price: PHP " + price);
-				System.out.println("Seller ID: " + user_id);
-				System.out.println("---------------------------------------");
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-	
-	public void getMatchItemDBS(String criteria, String value) {
-		query = "SELECT * FROM products WHERE " + criteria + " = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setString(1, value);
-			ResultSet resultSet = preparedStatement.executeQuery();
-	
-			System.out.println("Matched Items:");
-			while (resultSet.next()) {
-				String pictureURL = resultSet.getString("pictureURL");
-				String name = resultSet.getString("name");
-				String location = resultSet.getString("location");
-				float weight = resultSet.getFloat("weight");
-				float price = resultSet.getFloat("price");
-				String user_id = resultSet.getString("user_id");
-	
-				System.out.println("---------------------------------------");
-				System.out.println("Name: " + name);
-				System.out.println("Picture URL: " + pictureURL);
-				System.out.println("Location: " + location);
-				System.out.println("Weight: " + weight + " kg");
-				System.out.println("Price: PHP " + price);
-				System.out.println("Seller ID: " + user_id);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+                return new UserProfile(firstname, lastname, birthdate, age, phoneNumber, address, city, province, region);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    public List<Product> getItemsDBS() {
+        List<Product> items = new ArrayList<>();
+        query = "SELECT pictureURL, name, location, weight, price, user_id FROM products";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+    
+            while (resultSet.next()) {
+                String pictureURL = resultSet.getString("pictureURL");
+                String name = resultSet.getString("name");
+                String location = resultSet.getString("location");
+                float weight = resultSet.getFloat("weight");
+                float price = resultSet.getFloat("price");
+                String user_id = resultSet.getString("user_id");
+    
+                items.add(new Product(pictureURL, name, location, weight, price, user_id));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return items;
+    }
+    
+    public List<Product> getMatchItemDBS(String criteria, String value) {
+        List<Product> matchedItems = new ArrayList<>();
+        query = "SELECT * FROM products WHERE " + criteria + " = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+    
+            while (resultSet.next()) {
+                String pictureURL = resultSet.getString("pictureURL");
+                String name = resultSet.getString("name");
+                String location = resultSet.getString("location");
+                float weight = resultSet.getFloat("weight");
+                float price = resultSet.getFloat("price");
+                String user_id = resultSet.getString("user_id");
+    
+                matchedItems.add(new Product(pictureURL, name, location, weight, price, user_id));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return matchedItems;
+    }
 
-	public void removeItemDBS(int itemID) {
-		query = "DELETE FROM products WHERE item_id = ?";
-	
-		try {
-			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-			preparedStatement.setInt(1, itemID);
-	
-			int rowsAffected = preparedStatement.executeUpdate();
-			if (rowsAffected > 0) {
-				System.out.println("Item with ID " + itemID + " successfully removed.");
-			} else {
-				System.out.println("No item found with ID " + itemID);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}	
+    public boolean removeItemDBS(int itemID) {
+        query = "DELETE FROM products WHERE item_id = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setInt(1, itemID);
+    
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }    
 
 }
