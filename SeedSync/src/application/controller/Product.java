@@ -17,6 +17,11 @@ public class Product {
         this.user_id = user_id;
     }
 
+    public Product(String name, float price) {
+        this.name = name;
+        this.price = price;
+    }
+    
     public String getPictureURL() {
         return pictureURL;
     }
