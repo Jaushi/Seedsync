@@ -4,82 +4,78 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="-2.0" prefHeight="83.0" prefWidth="912.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
-         <children>
-            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="146.0">
-               <children>
-                  <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                     <image>
-                        <Image url="@../../../bin/application/assets/images/logo.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label text="Seed" HBox.hgrow="ALWAYS" />
-                  <Label text="Sync" HBox.hgrow="ALWAYS" />
-               </children>
-            </HBox>
-            <Pane prefHeight="83.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-            <Label text="Vegetables" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="564.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-            <Label layoutX="223.0" layoutY="43.0" text="Fruits" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="301.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-            <Label layoutX="287.0" layoutY="43.0" text="Livestock and Poultry" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="340.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-            <Label layoutX="346.0" layoutY="43.0" text="Vegetables" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="461.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-            <Label layoutX="444.0" layoutY="43.0" text="Crops" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="529.0" layoutY="10.0" prefHeight="83.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-            <Label layoutX="522.0" layoutY="43.0" text="Fish" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <Pane layoutX="156.0" layoutY="10.0" prefHeight="83.0" prefWidth="214.0" HBox.hgrow="ALWAYS" />
-            <ImageView fitHeight="20.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-               <image>
-                  <Image url="@../../../bin/application/assets/images/shoppingCartIcon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-               <image>
-                  <Image url="@../../../bin/application/assets/images/profileIcon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </ImageView>
-         </children>
-      </HBox>
+      <ImageView fitHeight="51.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+         <image>
+            <Image url="@../../assets/images/headerLogo.png" />
+         </image>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </ImageView>
+      <Pane prefHeight="63.0" prefWidth="41.0" HBox.hgrow="ALWAYS" />
+      <Label prefHeight="17.0" prefWidth="73.0" text="Vegetables" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="564.0" layoutY="10.0" prefHeight="63.0" prefWidth="39.0" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Pane>
+      <Label layoutX="223.0" layoutY="43.0" prefHeight="17.0" prefWidth="43.0" text="Fruits" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="301.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
+      <Label layoutX="287.0" layoutY="43.0" prefHeight="17.0" prefWidth="130.0" text="Livestock and Poultry" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="340.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
+      <Label layoutX="346.0" layoutY="43.0" prefHeight="17.0" prefWidth="76.0" text="Vegetables" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="461.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
+      <Label layoutX="444.0" layoutY="43.0" prefHeight="17.0" prefWidth="46.0" text="Crops" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="529.0" layoutY="10.0" prefHeight="83.0" prefWidth="39.0" HBox.hgrow="ALWAYS" />
+      <Label layoutX="522.0" layoutY="43.0" prefHeight="17.0" prefWidth="37.0" text="Fish" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets right="5.0" />
+         </HBox.margin>
+      </Label>
+      <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="75.0" HBox.hgrow="ALWAYS" />
+      <ImageView fitHeight="20.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+         <image>
+            <Image url="@../../assets/images/shoppingCartIcon.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="5.0" right="15.0" />
+         </HBox.margin>
+      </ImageView>
+      <ImageView fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+         <image>
+            <Image url="@../../assets/images/profileIcon.png" />
+         </image>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </ImageView>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets left="30.0" right="30.0" />
+   </padding>
+</HBox>

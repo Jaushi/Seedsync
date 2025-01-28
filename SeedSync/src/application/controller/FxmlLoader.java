@@ -10,7 +10,7 @@ private Pane view;
 
 public Pane getPage(String fileName) {
 	try {
-		URL fileUrl = getClass().getResource("/application/fxml/" + fileName + ".fxml");
+		URL fileUrl = getClass().getResource("/application/fxml/components/" + fileName + ".fxml");
 		if(fileUrl == null) {
 			throw new java.io.FileNotFoundException("FXML file not found");	
 		}
