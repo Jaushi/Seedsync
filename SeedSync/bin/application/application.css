@@ -6,14 +6,20 @@ AnchorPane{
 	/*-fx-background-image: url("assets/images/authenticationBackground.png");*/
 =======
 
+<<<<<<< HEAD
 
 .background{
 	-fx-background-image: url("assets/images/background.png") ;
 	-fx-background-size: cover;
     -fx-background-position: center;
 >>>>>>> 563ee0e6f9f6a26ca6ba6e3a1790ab0d8b99fe5c
+=======
+/*
+	AnchorPane{
+	-fx-background-image: url("assets/images/authenticationBackground.png");
+>>>>>>> parent of 563ee0e (UPDATE)
 }
-
+ */
 .root{
 	-fx-dark-primary-color: "1A535C";
 	-fx-light-primary-color: "0C7489";
@@ -210,22 +216,21 @@ AnchorPane{
 	-fx-background-radius: 15px;
 }
 
-.box-textField:hover {
+.box-textField: hover {
     -fx-border-color: -fx-light-primary-color;
     -fx-opacity: 1;
 }
 
-.box-textField:focused {
+.box-textField: focused {
     -fx-border-color: -fx-dark-primary-color;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
 }
 
-.line-textField:hover{
+.line-textField: hover{
 	-fx-border-color: -fx-light-primary-color;
     -fx-opacity: 1;
 }
 
-.line-textField:focused {
+.line-textField: focused {
     -fx-border-color: -fx-dark-primary-color;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
-}
