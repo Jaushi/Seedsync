@@ -26,7 +26,7 @@
                      <children>
                         <ImageView fitHeight="91.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/cropped_image.png" />
+                              <Image url="@../assets/images/profileIcon.png" />
                            </image>
                         </ImageView>
                         <Label text="Sza Bartolome">

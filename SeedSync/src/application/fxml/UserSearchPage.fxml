@@ -29,7 +29,7 @@
                      <children>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../Documents/filter.png" />
+                              <Image url="@../assets/images/SearchIcon.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="35.0" />

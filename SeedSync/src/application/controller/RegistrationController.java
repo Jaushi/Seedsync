@@ -16,7 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-public class RegistrationController extends DatabaseQueries implements Initializable {
+public class RegistrationController extends UniversalController implements Initializable {
 	@FXML
 	private TextField firstNameFX, lastNameFX, emailAccountFX, usernameAccountFX, phoneNumberFX, cityAddressFX, fullAddressFX;
     @FXML
@@ -38,6 +38,10 @@ public class RegistrationController extends DatabaseQueries implements Initializ
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		regionAddressFX.getItems().addAll(regions);
 		
+	}
+    
+    public void clickedLogin(ActionEvent event) throws Exception {
+    	changeToLogin(event);
 	}
     
     public void getCorrespondingProvince(ActionEvent event) {
@@ -249,17 +253,22 @@ public class RegistrationController extends DatabaseQueries implements Initializ
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-dark-primary-color;");
 			
 			int age = Integer.parseInt(calculatedAge.getText());
+			boolean duplicateAccount;
 			
 			//database processing
-			registerAccountDBS(emailAccount, usernameAccount, passwordAccount, userTypeAccount);
-			registerAccountDetailDBS(firstName.toUpperCase(), lastName.toUpperCase(), birthDate.toString(), age, phoneNumber);
-			registerAccountAddressDBS(regionAddress, provinceAddress, cityAddress, fullAddress);
-			
-			statusTextFX.setText("You are now registered. Proceed to login.");
-		}else {
+			duplicateAccount = checkDuplicatePhoneNumberDBS(phoneNumber);
+			duplicateAccount = checkDuplicateUsernamePasswordDBS(emailAccount, usernameAccount);
+			if(!duplicateAccount) {
+				registerAccountDBS(emailAccount, usernameAccount, passwordAccount, userTypeAccount);
+				registerAccountDetailDBS(firstName.toUpperCase(), lastName.toUpperCase(), birthDate.toString(), age, phoneNumber);
+				registerAccountAddressDBS(regionAddress, provinceAddress, cityAddress, fullAddress);
+				
+				statusTextFX.setText("You are now registered. Proceed to login.");
+			}
+			}else {
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
-			statusTextFX.setText("Oopps Something went wrong with your input. Make sure everything is valid.");
-		}
+			statusTextFX.setText("Oops! There was an issue. Please verify your input and ensure it’s not a duplicate account.");
+			}
 	}
 	
 }

@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
          <top>
@@ -24,11 +23,11 @@
                <children>
                   <HBox prefHeight="445.0" prefWidth="406.0">
                      <children>
-                        <VBox prefHeight="445.0" prefWidth="117.0">
+                        <VBox prefHeight="181.0" prefWidth="115.0">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
+                                    <Image url="@../assets/images/background.jpg" />
                                  </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
@@ -36,7 +35,7 @@
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
+                                    <Image url="@../assets/images/background.jpg" />
                                  </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
@@ -44,7 +43,7 @@
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
+                                    <Image url="@../assets/images/background.jpg" />
                                  </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
@@ -52,25 +51,25 @@
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
+                                    <Image url="@../assets/images/background.jpg" />
                                  </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
-                                 </image>
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
+                                 <image>
+                                    <Image url="@../assets/images/background.jpg" />
+                                 </image>
                               </ImageView>
                            </children>
                         </VBox>
-                        <ImageView fitHeight="270.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="195.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../Documents/Bunch-of-bananas-67e91d5.jpg" />
+                              <Image url="@../assets/images/background.jpg" />
                            </image>
                            <HBox.margin>
                               <Insets top="10.0" />
@@ -145,7 +144,7 @@
                      <children>
                         <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../Downloads/cropped_image.png" />
+                              <Image url="@../assets/images/profileIcon.png" />
                            </image>
                            <VBox.margin>
                               <Insets left="50.0" />

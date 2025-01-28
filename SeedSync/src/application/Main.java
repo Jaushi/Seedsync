@@ -11,11 +11,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-<<<<<<< HEAD
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/sellerProductBar.fxml"));
-=======
+
 			Parent root = FXMLLoader.load(getClass().getResource("fxml/Login.fxml"));
->>>>>>> parent of 563ee0e (UPDATE)
+
 			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
