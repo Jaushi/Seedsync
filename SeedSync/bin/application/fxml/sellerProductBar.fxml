@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="product-container">
+         <children>
+            <Label layoutX="18.0" layoutY="22.0" text="Product Name" AnchorPane.leftAnchor="60.0" />
+            <AnchorPane layoutX="295.0" layoutY="21.0" prefHeight="20.0" prefWidth="80.0" styleClass="status-container" AnchorPane.leftAnchor="307.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <Label layoutX="23.0" layoutY="1.0" prefWidth="33.0" styleClass="status-label" text="Active" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="424.0" layoutY="17.0" text="0" AnchorPane.leftAnchor="433.0" AnchorPane.topAnchor="21.0" />
+            <Label layoutX="443.0" layoutY="31.0" text="0" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="21.0" />
+            <Label layoutX="591.0" layoutY="24.0" text="0.00" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="21.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" AnchorPane.leftAnchor="20.0">
+               <image>
+                  <Image url="@../../../../../../../Downloads/pexels-akio-1093038.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
