@@ -344,8 +344,28 @@ public class DatabaseQueries {
 	}
 	
 	
- 
- 	public void getProfileAccountDBS(String user_id) {
+	public boolean checkDuplicateDBS(String email, String username, String phone_number) {
+		String query = "SELECT COUNT(*) FROM users WHERE email = ? AND username = ? AND phone_number = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, username);
+			preparedStatement.setString(3, phone_number);
+			ResultSet resultSet = preparedStatement.executeQuery();
+	
+			if (resultSet.next() && resultSet.getInt(1) > 0) {
+				System.out.println("Duplicate account detected.");
+				return true; 
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	
+		return false;
+	} 
+
+	public void getProfileAccountDBS(String user_id) {
 		query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
 			+ "ua.region, ua.province, ua.city, ua.address "
 			+ "FROM users_detail ud "

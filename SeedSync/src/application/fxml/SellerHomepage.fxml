@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="131.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
+               </top>
+               <left>
+                  <AnchorPane prefHeight="446.0" prefWidth="186.0" BorderPane.alignment="CENTER" />
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="15.0" layoutY="35.0" prefHeight="375.0" prefWidth="695.0">
+                           <children>
+                              <AnchorPane layoutX="21.0" layoutY="60.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.topAnchor="60.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Pending Orders" AnchorPane.leftAnchor="14.0">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="169.0" layoutY="48.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="43.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)%20(1)/Pending%20Orders.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="248.0" layoutY="62.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.topAnchor="60.0">
+                                 <children>
+                                    <Label layoutX="9.0" layoutY="14.0" style="-fx-font-style: italic;" text="Total Unpaid Orders">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="178.0" layoutY="46.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/Total%20Unpaid.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="475.0" layoutY="60.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.rightAnchor="20.200000000000045" AnchorPane.topAnchor="60.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Total Paid Orders">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="170.0" layoutY="49.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="22.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/Total%20Paid%20Orders.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="20.0" layoutY="160.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.topAnchor="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="To Ship">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="170.0" layoutY="48.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="21.6" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/To%20Ship.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="247.0" layoutY="162.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.topAnchor="162.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Processed Shipping">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="133.0" layoutY="40.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="60.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/Processed%20Shipping.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="475.0" layoutY="160.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.rightAnchor="20.200000000000045" AnchorPane.topAnchor="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Completed Shipping">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="155.0" layoutY="40.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="36.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/Complete%20Shipping.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="21.0" layoutY="260.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.topAnchor="260.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="To Deliver">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="142.0" layoutY="31.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="19.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/To%20Deliver.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="246.0" layoutY="261.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Delivered">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="177.0" layoutY="48.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="78.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)/Delivered.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="475.0" layoutY="261.0" prefHeight="80.0" prefWidth="200.0" styleClass="dashboard-info-container" AnchorPane.rightAnchor="20.200000000000045">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-style: italic;" text="Cancelled Orders">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font></Label>
+                                    <Label layoutX="179.0" layoutY="52.0" styleClass="seller-homepage-header-2" text="0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="11.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/Icons%20(PLS%20LABEL%20PAGES)%20(1)/Cancelled%20Orders.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="21.0" layoutY="25.0" style="-fx-font-weight: bold;" styleClass="seller-homepage-header" text="Dashboard" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="dashboard-container" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
