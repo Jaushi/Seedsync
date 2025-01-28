@@ -18,8 +18,8 @@ public class EditProfileController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		FxmlLoader object = new FxmlLoader();
-		Pane view = object.getPage("UserHeader");
-		mainPane.setTop(view);
+		Pane header = object.getPage("UserHeader");
+		mainPane.setTop(header);
 	}
 
 }

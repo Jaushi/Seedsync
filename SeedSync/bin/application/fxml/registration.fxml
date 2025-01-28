@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegistrationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="550.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegistrationController">
    <children>
       <GridPane prefHeight="600.0" prefWidth="550.0">
         <columnConstraints>
@@ -33,16 +33,14 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="550.0">
                <children>
-                  <ImageView fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets left="10.0" right="5.0" />
-                     </HBox.margin>
+                  <ImageView fitHeight="45.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/images/logo.png" />
+                        <Image url="@../assets/images/headerLogo.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
                   </ImageView>
-                  <Label fx:id="seed" styleClass="." text="Seed" />
-                  <Label fx:id="sync" text="Sync" />
                </children>
             </HBox>
             <VBox fx:id="registrationField" prefHeight="586.0" prefWidth="472.0" GridPane.rowIndex="1">

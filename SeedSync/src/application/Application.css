@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/*
-	AnchorPane{
-	-fx-background-image: url("assets/images/authenticationBackground.png");
+
+.background{
+	-fx-background-image: url("assets/images/background.png") ;
+	-fx-background-size: cover;
+    -fx-background-position: center;
 }
- */
+
 .root{
 	-fx-dark-primary-color: "1A535C";
 	-fx-light-primary-color: "0C7489";
@@ -112,21 +114,22 @@
 	-fx-background-radius: 15px;
 }
 
-.box-textField: hover {
+.box-textField:hover {
     -fx-border-color: -fx-light-primary-color;
     -fx-opacity: 1;
 }
 
-.box-textField: focused {
+.box-textField:focused {
     -fx-border-color: -fx-dark-primary-color;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
 }
 
-.line-textField: hover{
+.line-textField:hover{
 	-fx-border-color: -fx-light-primary-color;
     -fx-opacity: 1;
 }
 
-.line-textField: focused {
+.line-textField:focused {
     -fx-border-color: -fx-dark-primary-color;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
+}
