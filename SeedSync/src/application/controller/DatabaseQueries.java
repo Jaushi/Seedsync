@@ -73,7 +73,31 @@ public class DatabaseQueries {
 		return false;
 	}
 	
-	//DITO KA ADD JOSHUA NG checkDuplicateAccountUsernameEmailDBS   -> PARAMETER email at username
+	public boolean DuplicateAccountUsernameEmailDBS(String username, String email) {
+		query = "SELECT user_id "
+				+ "FROM users_account "
+				+ "WHERE username = ? "
+				+ "OR email = ?";
+	
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, username);
+			preparedStatement.setString(2, email);
+	
+			ResultSet result = preparedStatement.executeQuery();
+	
+			if (result.next()) {
+				System.out.println("Username or email already exists.");
+				return true;
+			} else {
+				System.out.println("Username and email are available.");
+				return false;
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 	
 	public void registerAccountDBS(String email, String username, String password, String accountType) {
 	
@@ -344,7 +368,7 @@ public class DatabaseQueries {
 				String province = resultSet.getString("province");
 				String city = resultSet.getString("city");
 				String address = resultSet.getString("address");
-	
+
 				System.out.println("User Profile:");
 				System.out.println("Name: " + firstname + " " + lastname);
 				System.out.println("Birthdate: " + birthdate);

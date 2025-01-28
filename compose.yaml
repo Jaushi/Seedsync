@@ -16,7 +16,7 @@ services:
       - db  # Ensure the database service starts before the app
 
   db:
-    image: mysql:latest
+    image: mysql:8.0
     restart: always
     environment:
       - MYSQL_DATABASE=mydatabase  # Set the name of the default database
