@@ -191,6 +191,117 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);
 }
 
+.tab-style .tab-label{
+    -fx-background-color: transparent; /* Transparent background for tabs */
+    -fx-alignment: CENTER;
+}
+
+.tab-style{ 
+    -fx-background-color: transparent;
+    -fx-background-inserts: 0.0;  /* Slightly darker color on hover */
+    -fx-background-radius: 0;
+	-fx-padding: 0 5 0 5; 
+}
+
+.tab-style:hover{
+    -fx-background-color: -fx-secondary-color;
+}
+
+.tab-style:selected{
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0.0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.tab-style:focused{
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.tab-pane *.tab-header-background{
+	-fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.add-image{
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 2px;
+    -fx-border-style: dashed; 
+} 
+
+.add-description{
+	-fx-background-color: transparent;
+    -fx-border-color: -fx-dark-primary-color;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.add-description:hover {
+    -fx-border-color: -fx-light-primary-color;
+    -fx-opacity: 1; 
+}
+
+.add-description:focused {
+    -fx-border-color: -fx-dark-primary-color;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.2), 10, 0, 0, 0);
+}
+
+.button-three{
+	-fx-background-color: transparent;
+	-fx-border-color: -fx-secondary-color;
+	-fx-text-fill: black;
+}
+
+.button-three:hover{
+	-fx-background-color: -fx-secondary-color;
+	-fx-text-fill: white;
+	-fx-scale-x: 1.01;
+}
+
+.delete-button{
+	-fx-background-color: -fx-light-primary-color;
+	-fx-text-fill: white;
+	-fx-background-radius: 50px;
+}
+
+.delete-button:hover{
+	-fx-background-color: -fx-dark-primary-color;
+	-fx-text-fill: white;
+	-fx-background-radius: 50px;
+	-fx-scale-x: 1.01;
+}
+
+.customer-page-header{ 
+	-fx-font-family: "Inter";
+	-fx-alignment: left;
+	-fx-text-alignment: left;
+	-fx-font-size: 20px;
+    -fx-wrap-text: true;
+    -fx-max-width: 500px;
+    -fx-padding: 1px;
+}
+
+.customer-page-header-2{ 
+	-fx-font-family: "Inter";
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+	-fx-font-size: 15px;
+    -fx-wrap-text: true;
+    -fx-max-width: 400px;
+    -fx-padding: -1px;
+}
+
+.scroll-pane{
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}
+
 #seed, #loginSeed{
 	-fx-text-fill: -fx-dark-primary-color;
 }
