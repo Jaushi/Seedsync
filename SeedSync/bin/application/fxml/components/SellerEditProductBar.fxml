@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="product-container">
+         <children>
+            <CheckBox focusTraversable="false" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #1A535C;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="135.0" layoutY="23.0" pickOnBounds="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="53.0">
+               <image>
+                  <Image url="@../../../../../../../Downloads/pexels-timmossholder-1738520.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="212.0" layoutY="29.0" text="Product Name" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="90.0" />
+            <AnchorPane layoutX="233.0" layoutY="20.0" prefHeight="20.0" prefWidth="80.0" styleClass="status-container" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="295.0">
+               <children>
+                  <Label layoutX="23.0" layoutY="1.0" prefHeight="20.0" prefWidth="80.0" styleClass="status-label" text="Active" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="100.0" layoutY="31.0" text="0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="448.0" />
+            <Label layoutX="458.0" layoutY="31.0" text="0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="555.0" />
+            <Label layoutX="565.0" layoutY="31.0" text="0.00" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="658.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
