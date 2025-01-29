@@ -525,5 +525,49 @@ public class DatabaseQueries {
             return false;
         }
     }    
+    
+    
+    
+    
+    
+    //EVERY FUNCTION NAME DAPAT MAYY 'DBS' SA DULO
+    
+    //getters of users_account
+    
+    //setters of users_account
+    
+    //getters of users_detail
+    
+    //setters of users_detail
+    
+    //getters of users_address
+    
+    //setters of users_address
+    
+    
+    //getters of products
+    
+    //setters of products
+    
+    //getters of livestock
+    
+    //setters of livestock
+    
+    //getters of rice
+    
+    //setters of rice
+    
+    //getters of fruit
+    
+    //setters of fruit
+    
+    //getters of vegetable
+    
+    //setters of vegetable
+    
+    //getters of fish
+    
+    //setters of fish
+    
 
 }

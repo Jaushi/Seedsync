@@ -4,6 +4,23 @@ public class Rice extends Products{
 	private String _quality, _color;
 	private float _texture;
 	
+	//getter of quality
+	
+	//setter of quality
+	
+	//getter of color
+	
+	//setter of color
+	
+	//getter of texture
+	
+	//setter of texture
+	
+	
+	
+	
+	
+	
 	public Rice(String quality, 
 				String color, 
 				float texture, 

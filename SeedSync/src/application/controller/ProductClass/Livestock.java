@@ -4,6 +4,26 @@ public class Livestock extends Products{
 	private String _type, _feedDiet;
 	private int _age;
 	
+	//getter of type
+	
+	//setter of type
+	
+	//getter of feedDiet
+	
+	//setter of feedDiet
+	
+	//getter of age
+	
+	//setter of age
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Livestock(String type, 
 					 String feedDiet, 
 					 String pictureURL, 

@@ -3,6 +3,20 @@ package application.controller.ProductClass;
 public class Vegetable extends Products{
 	private String _quality, _size;
 	
+	//getter of quality
+	
+	//setter of quality
+	
+	//getter of size
+	
+	//setter of size
+	
+	
+	
+	
+	
+	
+	
 	public Vegetable(String quality, 
 				     String size, 
 				     String pictureURL, 

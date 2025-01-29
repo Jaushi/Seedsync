@@ -3,6 +3,24 @@ package application.controller.ProductClass;
 public class Fish extends Products{
 	private String _type, _source, _size;
 	
+	
+	//getter of type
+	
+	//setter of type
+	
+	//getter of source
+	
+	//setter of source
+	
+	//getter of size
+	
+	//setter of size
+	
+	
+	
+	
+	
+	
 	public Fish(String type, 
 			    String source, 
 			    String size, 

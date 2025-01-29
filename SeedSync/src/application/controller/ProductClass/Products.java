@@ -6,6 +6,26 @@ abstract class Products {
 	
 	public abstract String[] getProduct();
 	
+	//getter of pictureURL
+	
+	//setter of pictureURL
+	
+	//getter of name
+	
+	//setter of name
+	
+	//getter of location
+	
+	//setter of location
+	
+	//getter of weight
+	
+	//setter of weight
+	
+	//getter of price
+	
+	//setter of price
+	
 }
 
 

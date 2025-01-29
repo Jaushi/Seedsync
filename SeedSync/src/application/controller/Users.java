@@ -17,10 +17,10 @@ abstract class Users {
 	
 	private Stage stage;
 	
-	public String getAccount() {
-		return email;
-	}
-	
+    //getters of all attributes
+    
+    //setters of all attributes
+
 	
 	
 	

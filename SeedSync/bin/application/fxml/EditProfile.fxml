@@ -160,18 +160,18 @@
                               <HBox layoutX="15.0" layoutY="82.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Birthdate" />
-                                    <Pane prefHeight="22.0" prefWidth="86.0" />
+                                    <Pane prefHeight="21.0" prefWidth="95.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Age" />
-                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="22.0" prefWidth="86.0" />
+                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="21.0" prefWidth="75.0" />
                                     <Label layoutX="146.0" layoutY="10.0" text="Phone Number" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <DatePicker fx:id="birthdateFieldFX" editable="true" prefHeight="26.0" prefWidth="117.0" />
-                                    <Pane prefHeight="26.0" prefWidth="26.0" />
-                                    <Label text="0" />
-                                    <Pane layoutX="127.0" layoutY="10.0" prefHeight="26.0" prefWidth="91.0" />
+                                    <DatePicker fx:id="birthdateFieldFX" editable="true" prefHeight="25.0" prefWidth="129.0" />
+                                    <Pane prefHeight="25.0" prefWidth="27.0" />
+                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="33.0" text="0" textAlignment="CENTER" />
+                                    <Pane layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="79.0" />
                                     <TextField fx:id="phoneNumberFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="189.0" styleClass="line-textField" />
                                  </children>
                                  <padding>
