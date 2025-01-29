@@ -4,16 +4,32 @@ public class Fruit extends Products{
 	private String _quality, _flavour, _size;
 	
 	//getter of quality
+	public String getQuality() {
+		return _quality;
+	}
 	
 	//setter of quality
+	public void setQuality(String quality) {
+		this._quality = quality;
+	}
 	
 	//getter of flavour
-	
+	public String getFlavour() {
+		return _flavour;
+	}
 	//setter of flavour
-	
+	public void setFlavour(String flavour) {
+		this._flavour = flavour;
+	}
 	//getter of size
+	public String getSize() {
+		return _size;
+	}
 	
 	//setter of size
+	public void setSize(String size) {
+		this._size = size;
+	}
 	
 	
 	

@@ -5,16 +5,32 @@ public class Fish extends Products{
 	
 	
 	//getter of type
-	
+	public String getType() {
+		return _type;
+	}
+
 	//setter of type
+	public void setType(String type) {
+		this._type = type;
+	}
 	
 	//getter of source
+	public String getSource() {
+		return _source;
+	}
 	
 	//setter of source
-	
+	public void setSource(String source) {
+		this._source = source;
+	}
 	//getter of size
-	
+	public String getSize() {
+		return _size;
+	}
 	//setter of size
+	public void setSize(String size) {
+		this._size = size;
+	}
 	
 	
 	
