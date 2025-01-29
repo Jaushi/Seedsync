@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <children>
@@ -24,11 +25,17 @@
             </ImageView>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="400.0">
                <children>
-                  <Label fx:id="loginSeed" text="Seed" />
-                  <Label fx:id="loginSync" text="Sync" />
+                  <Label fx:id="loginSeed" text="Seed" textFill="#1a535c">
+                     <font>
+                        <Font name="Gill Sans MT Condensed" size="40.0" />
+                     </font></Label>
+                  <Label fx:id="loginSync" text="Sync" textFill="#0c7489">
+                     <font>
+                        <Font name="Gill Sans MT Condensed" size="40.0" />
+                     </font></Label>
                </children>
             </HBox>
-            <Pane prefHeight="49.0" prefWidth="400.0" />
+            <Pane prefHeight="49.0" prefWidth="400.0" styleClass="shadow" />
             <VBox prefHeight="143.0" prefWidth="240.0">
                <children>
                   <Label text="Email or Username">
@@ -36,13 +43,13 @@
                         <Insets bottom="2.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="loginUsernameEmailFX" promptText="Enter  Email or Username" styleClass="box-textField">
+                  <TextField fx:id="loginUsernameEmailFX" promptText="Enter Email or Username" style="-fx-background-color: white; -fx-background-radius: 10px;" styleClass="box-textField">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
                   <Label text="Password" />
-                  <PasswordField fx:id="loginPasswordFX" promptText="Enter Password" styleClass="box-textField">
+                  <PasswordField fx:id="loginPasswordFX" promptText="Enter Password" style="-fx-background-color: white; -fx-background-radius: 10px;" styleClass="box-textField">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -60,7 +67,7 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="87.0" styleClass="header-two" text="Not a member?" textAlignment="CENTER" />
-                        <Hyperlink onAction="#clickedRegistration" prefHeight="24.0" prefWidth="81.0" styleClass="header-five" text="Sign up now!" />
+                        <Hyperlink onAction="#clickedRegistration" prefHeight="24.0" prefWidth="81.0" styleClass="shadow" text="Sign up now!" textFill="#025119" />
                      </children>
                   </HBox>
                </children>
