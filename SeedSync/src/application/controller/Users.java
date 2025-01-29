@@ -18,21 +18,61 @@ abstract class Users {
 	private Stage stage;
 	
     //getters of all attributes
+    public String[] getUsers() {
+    	String[] user = {userProfile, 
+    			         userID, 
+    			         email, 
+    			         username, 
+    			         password, 
+    			         accountType, 
+    			         firstName, 
+    			         lastName, 
+    			         birthdate, 
+    			         phoneNumber, 
+    			         region, 
+    			         province, 
+    			         city, 
+    			         address,
+    			         String.valueOf(age)
+    				    };
+		return user;
+    }
     
     //setters of all attributes
+    public void setUsers(String userProfile, 
+    					 String userID, 
+    					 String email, 
+    					 String username, 
+    					 String password, 
+    					 String accountType, 
+    					 String firstName, 
+    					 String lastName, 
+    					 String birthdate, 
+    					 String phoneNumber, 
+    					 String region, 
+    					 String province, 
+    					 String city, 
+    					 String address, 
+    					 int age) {
+    	
+    	this.userProfile = userProfile;
+    	this.userID = userID;
+    	this.email = email;
+    	this.username = username;
+    	this.password = password;
+    	this.accountType = accountType;
+    	this.firstName = firstName;
+    	this.lastName = lastName;
+    	this.birthdate = birthdate;
+    	this.phoneNumber = phoneNumber;
+        this.region = region;
+        this.province = province;
+        this.city = city;
+        this.address = address;
+        this.age = age;
+    	
+    }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public void setProfile(ActionEvent event) {
 			
