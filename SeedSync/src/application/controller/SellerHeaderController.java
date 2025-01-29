@@ -11,18 +11,18 @@ import java.io.IOException;
 
 public class SellerHeaderController {
 
-    @FXML
-    private ImageView profileIcon;
-
-    @FXML
-    private void initialize() {
-        profileIcon.setOnMouseClicked(event -> openProfilePage());
-    }
-    
-    @FXML
-    private void handleProfileClick() {
-        System.out.println("Profile clicked!");
-    }
+//    @FXML
+//    private ImageView profileIcon;
+//
+//    @FXML
+//    private void initialize() {
+//        profileIcon.setOnMouseClicked(event -> openProfilePage());
+//    }
+//    
+//    @FXML
+//    private void handleProfileClick() {
+//        System.out.println("Profile clicked!");
+//    }
 
     private void openProfilePage() {
         try {
