@@ -45,7 +45,7 @@
                   <Insets left="5.0" right="15.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="profileIcon" fitHeight="15.0" fitWidth="29.0" onMouseClicked="#handleProfileClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+            <ImageView fx:id="profileIcon" fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <image>
                   <Image url="@../../assets/images/profileIcon.png" />
                </image>

@@ -19,7 +19,32 @@ public class Buyer extends Users{
 		this.city = _city;
 		this.address = _address;
 	}
-	 
+	
+	private List<Product> items = new ArrayList<>();
+	private static final double BASE_DELIVERY_FEE = 50.0;
+
+	public void addItem(String name, float price) {
+		items.add(new Product(name, price));
+	}
+
+	public double computeSubtotal() {
+		double subtotal = 0;
+		for (Product item : items) {
+			subtotal += item.getPrice();
+		}
+		return subtotal;
+	}
+
+	public double computeDeliveryFee() {
+        return BASE_DELIVERY_FEE;
+	}
+
+    public double computeTotal() {
+    double subtotal = computeSubtotal();
+    double deliveryFee = computeDeliveryFee();
+    double total = subtotal + deliveryFee;
+    return total;
+    }
 	
 }
 
