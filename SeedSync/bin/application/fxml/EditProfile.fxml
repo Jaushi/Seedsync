@@ -5,34 +5,42 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EditProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="525.0" prefWidth="912.0" AnchorPane.bottomAnchor="-0.33333333333337123" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="525.0" prefWidth="912.0">
+         <top>
+            <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+         </top>
          <center>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="CENTER" prefHeight="445.0" prefWidth="453.0" HBox.hgrow="ALWAYS">
+                  <VBox alignment="TOP_CENTER" prefHeight="620.0" prefWidth="339.0" styleClass="vbox-style" stylesheets="@primary.css">
                      <children>
-                        <ImageView fx:id="userProfileFX" fitHeight="76.0" fitWidth="262.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="77.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/profileIcon.png" />
+                              <Image url="@../../../../../../../../Downloads/cropped_image.png" />
                            </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </ImageView>
-                        <Label fx:id="displayNameFX" alignment="CENTER" prefHeight="21.0" prefWidth="505.0" text="Sza Bartolome">
+                        <Label styleClass="vbox-label" stylesheets="@primary.css" text="Sza Bartolome">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -40,79 +48,141 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="emailFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="456.0" text="szabartolome@gmail.com" textAlignment="CENTER" />
-                        <Button mnemonicParsing="false" onAction="#clickedEditPhoto" prefHeight="25.0" prefWidth="102.0" text="Edit Photo">
+                        <Label styleClass="vbox-label" text="szabartolome@gmail.com" />
+                        <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="83.0" styleClass="edit-photo-button" stylesheets="@primary.css" text="Edit Photo">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <GridPane alignment="CENTER">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                        <HBox prefHeight="29.0" prefWidth="453.0">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="342.0" text="Username" textAlignment="CENTER">
+                              <Pane layoutX="62.0" layoutY="10.0" prefHeight="29.0" prefWidth="25.0" />
+                              <Label styleClass="vbox-label" stylesheets="@primary.css" text="Username">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="usernameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="314.0" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="282.0" text="Full Name" textAlignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="fullNameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="350.0" text="Sza Sanchez Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="332.0" text="Phone Number" textAlignment="CENTER" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="phoneNumberFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="301.0" text="********3647" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="323.0" text="Date of Birth" textAlignment="CENTER" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="birthdateFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="326.0" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Pane prefHeight="29.0" prefWidth="68.0" />
+                              <Label layoutX="10.0" layoutY="10.0" styleClass="vbox-label" stylesheets="@primary.css" text="Sza Bartolome">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
                            </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </GridPane>
-                     </children>
-                     <padding>
-                        <Insets left="25.0" right="25.0" />
-                     </padding>
-                  </VBox>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="713.0" prefWidth="460.0" vbarPolicy="NEVER">
-                     <content>
-                        <VBox prefHeight="557.0" prefWidth="431.0">
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="168.0" prefHeight="25.0" prefWidth="453.0">
                            <children>
-                              <Label text="Edit Profile">
+                              <Pane prefHeight="29.0" prefWidth="25.0" />
+                              <Label styleClass="vbox-label" stylesheets="@primary.css" text="Full Name">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="25.0" prefWidth="70.0" />
+                              <Label layoutX="10.0" layoutY="10.0" styleClass="vbox-label" stylesheets="@primary.css" text="Sza Sanchez Bartolome">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="213.0" prefHeight="27.0" prefWidth="453.0">
+                           <children>
+                              <Pane prefHeight="29.0" prefWidth="25.0" />
+                              <Label styleClass="vbox-label" stylesheets="@primary.css" text="Phone Number">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="27.0" prefWidth="44.0" />
+                              <Label layoutX="10.0" layoutY="10.0" styleClass="vbox-label" stylesheets="@primary.css" text="********3647">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="258.0" prefHeight="24.0" prefWidth="453.0">
+                           <children>
+                              <Pane prefHeight="29.0" prefWidth="25.0" />
+                              <Label styleClass="vbox-label" stylesheets="@primary.css" text="Gender">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="24.0" prefWidth="81.0" />
+                              <Label layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton mnemonicParsing="false" styleClass="vbox-label" stylesheets="@primary.css" text="Male">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton layoutX="275.0" layoutY="14.0" mnemonicParsing="false" styleClass="vbox-label" stylesheets="@primary.css" text="Female">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton layoutX="292.0" layoutY="14.0" mnemonicParsing="false" styleClass="vbox-label" stylesheets="@primary.css" text="Other">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="303.0" prefHeight="32.0" prefWidth="453.0">
+                           <children>
+                              <Pane prefHeight="29.0" prefWidth="25.0" />
+                              <Label styleClass="vbox-label" stylesheets="@primary.css" text="Birthdate">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="32.0" prefWidth="74.0" />
+                              <Label layoutX="10.0" layoutY="10.0" styleClass="vbox-label" stylesheets="@primary.css" text="01/01/1995">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <ScrollPane prefHeight="580.0" prefWidth="576.0" styleClass="scrollpane-style" stylesheets="@primary.css">
+                     <content>
+                        <VBox prefHeight="510.0" prefWidth="548.0" styleClass="scrollpane-style" stylesheets="@primary.css">
+                           <children>
+                              <Label styleClass="title-label" stylesheets="@primary.css" text="Edit Profile">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -126,15 +196,15 @@
                               <HBox prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="First Name" />
-                                    <Pane prefHeight="22.0" prefWidth="183.0" />
+                                    <Pane prefHeight="22.0" prefWidth="229.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Last Name" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <TextField fx:id="firstNameFieldFX" prefHeight="25.0" prefWidth="201.0" styleClass="line-textField" />
-                                    <Pane prefHeight="26.0" prefWidth="48.0" />
-                                    <TextField fx:id="lastNameFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="191.0" styleClass="line-textField" />
+                                    <TextField prefHeight="26.0" prefWidth="250.0" promptText="Ex. Chris" styleClass="line-textField" stylesheets="@primary.css" />
+                                    <Pane prefHeight="26.0" prefWidth="38.0" />
+                                    <TextField layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="250.0" promptText="Ex. Piamonte" styleClass="line-textField" />
                                  </children>
                                  <padding>
                                     <Insets bottom="5.0" />
@@ -143,15 +213,15 @@
                               <HBox layoutX="15.0" layoutY="34.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Email" />
-                                    <Pane prefHeight="22.0" prefWidth="214.0" />
+                                    <Pane prefHeight="22.0" prefWidth="258.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Username" />
                                  </children>
                               </HBox>
                               <HBox layoutX="15.0" layoutY="56.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <TextField fx:id="emailFieldFX" prefHeight="26.0" prefWidth="198.0" styleClass="line-textField" />
-                                    <Pane prefHeight="26.0" prefWidth="48.0" />
-                                    <TextField fx:id="usernameFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="189.0" styleClass="line-textField" />
+                                    <TextField prefHeight="26.0" prefWidth="250.0" promptText="Ex. chrispiamonte06@gmail.com" styleClass="line-textField" />
+                                    <Pane prefHeight="26.0" prefWidth="38.0" />
+                                    <TextField layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="250.0" promptText="Ex. ChrisPiamonte" styleClass="line-textField" />
                                  </children>
                                  <padding>
                                     <Insets bottom="5.0" />
@@ -160,19 +230,19 @@
                               <HBox layoutX="15.0" layoutY="82.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Birthdate" />
-                                    <Pane prefHeight="21.0" prefWidth="95.0" />
+                                    <Pane prefHeight="22.0" prefWidth="142.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Age" />
-                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="21.0" prefWidth="75.0" />
+                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="22.0" prefWidth="73.0" />
                                     <Label layoutX="146.0" layoutY="10.0" text="Phone Number" />
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
+                              <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <DatePicker fx:id="birthdateFieldFX" editable="true" onAction="#displayAge" prefHeight="25.0" prefWidth="129.0" />
-                                    <Pane prefHeight="25.0" prefWidth="27.0" />
-                                    <Label fx:id="calculatedAgeFX" alignment="CENTER" prefHeight="25.0" prefWidth="33.0" text="0" textAlignment="CENTER" />
-                                    <Pane layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="79.0" />
-                                    <TextField fx:id="phoneNumberFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="189.0" styleClass="line-textField" />
+                                    <DatePicker prefHeight="26.0" prefWidth="163.0" />
+                                    <Pane prefHeight="26.0" prefWidth="37.0" />
+                                    <Label text="0" />
+                                    <Pane layoutX="127.0" layoutY="10.0" prefHeight="26.0" prefWidth="82.0" />
+                                    <TextField layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="250.0" promptText="Ex. 09123456789" styleClass="line-textField" />
                                  </children>
                                  <padding>
                                     <Insets bottom="5.0" />
@@ -181,27 +251,30 @@
                               <HBox layoutX="15.0" layoutY="130.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Region" />
-                                    <Pane prefHeight="22.0" prefWidth="86.0" />
+                                    <Pane prefHeight="22.0" prefWidth="119.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Province" />
-                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="22.0" prefWidth="76.0" />
+                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="22.0" prefWidth="83.0" />
                                     <Label layoutX="146.0" layoutY="10.0" text="City" />
                                  </children>
                               </HBox>
                               <HBox layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <ChoiceBox fx:id="regionFieldFX" onAction="#getCorrespondingProvince" prefHeight="22.0" prefWidth="103.0" />
+                                    <ChoiceBox prefHeight="26.0" prefWidth="130.0" styleClass="box-textField" stylesheets="@primary.css" />
                                     <Pane prefHeight="26.0" prefWidth="25.0" />
-                                    <ChoiceBox fx:id="provinceFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="99.0" />
-                                    <Pane layoutX="113.0" layoutY="10.0" prefHeight="26.0" prefWidth="20.0" />
-                                    <TextField fx:id="cityFieldFX" prefHeight="26.0" prefWidth="189.0" styleClass="line-textField" />
+                                    <ChoiceBox layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="118.0" styleClass="box-textField" stylesheets="@primary.css" />
+                                    <Pane layoutX="113.0" layoutY="10.0" prefHeight="26.0" prefWidth="18.0" />
+                                    <TextField prefHeight="26.0" prefWidth="250.0" promptText="Ex. Manila" styleClass="line-textField" />
                                  </children>
                                  <padding>
                                     <Insets bottom="5.0" />
                                  </padding>
                               </HBox>
                               <Label text="Address" />
-                              <TextField fx:id="addressFieldFX" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField" />
-                              <Label layoutX="15.0" layoutY="15.0" text="Change Password">
+                              <TextField prefHeight="26.0" prefWidth="543.0" promptText="Ex. Sta. Mesa, Manila" styleClass="line-textField">
+                                 <VBox.margin>
+                                    <Insets right="5.0" />
+                                 </VBox.margin></TextField>
+                              <Label layoutX="15.0" layoutY="15.0" styleClass="title-label" stylesheets="@primary.css" text="Change Password">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -214,9 +287,9 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="oldPasswordFieldFX" layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Password" styleClass="box-textField" stylesheets="@primary.css">
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets right="18.0" />
                                  </VBox.margin>
                               </TextField>
                               <Label layoutX="15.0" layoutY="288.0" text="New Password">
@@ -224,9 +297,9 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="passwordFieldFX" layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Password" styleClass="box-textField" stylesheets="@primary.css">
                                  <VBox.margin>
-                                    <Insets bottom="5.0" />
+                                    <Insets right="18.0" />
                                  </VBox.margin>
                               </TextField>
                               <Label layoutX="15.0" layoutY="331.0" text="Confirm Passwrd">
@@ -234,17 +307,16 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="passwordVerificationFieldFX" layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Password" styleClass="box-textField">
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets right="18.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Label fx:id="statusTextFX" prefHeight="17.0" prefWidth="451.0" />
-                              <HBox prefHeight="52.0" prefWidth="433.0">
+                              <HBox prefHeight="33.0" prefWidth="552.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#clickedSave" prefHeight="26.0" prefWidth="70.0" text="Save" />
+                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" styleClass="button-one" stylesheets="@primary.css" text="Save" />
                                     <Pane prefHeight="26.0" prefWidth="20.0" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="26.0" prefWidth="69.0" text="Cancel" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" styleClass="button-one" stylesheets="@primary.css" text="Cancel" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
@@ -258,18 +330,15 @@
                               </HBox>
                            </children>
                            <padding>
-                              <Insets left="5.0" right="5.0" top="5.0" />
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </VBox>
                      </content>
                      <HBox.margin>
-                        <Insets left="25.0" right="25.0" />
+                        <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </ScrollPane>
                </children>
-               <BorderPane.margin>
-                  <Insets bottom="25.0" top="10.0" />
-               </BorderPane.margin>
             </HBox>
          </center>
       </BorderPane>
