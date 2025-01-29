@@ -1,6 +1,4 @@
-package application.controller.UserClass;
-
-import application.controller.Users;
+package application.controller;
 
 public class Seller extends Users{
 	

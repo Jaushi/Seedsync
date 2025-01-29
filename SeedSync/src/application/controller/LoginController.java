@@ -1,8 +1,6 @@
 package application.controller;
 
 import javafx.scene.input.MouseEvent;
-import application.controller.UserClass.Buyer;
-import application.controller.UserClass.Seller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

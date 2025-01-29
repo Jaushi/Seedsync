@@ -1,6 +1,4 @@
-package application.controller.UserClass;
-
-import application.controller.Users;
+package application.controller;
 
 public class Buyer extends Users{
 	
@@ -21,7 +19,7 @@ public class Buyer extends Users{
 		this.city = _city;
 		this.address = _address;
 	}
-
+	 
+	
 }
-
 
