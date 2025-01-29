@@ -72,10 +72,10 @@ public class DatabaseQueries {
 		}catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		return false;
-	}
-	
-	public boolean checkDuplicateUsernameEmailDBS(String username, String email) {
+            return false;
+        }
+        
+    public boolean checkDuplicateUsernameEmailDBS(String username, String email) {
 		query = "SELECT user_id "
 				+ "FROM users_account "
 				+ "WHERE username = ? "
@@ -524,50 +524,107 @@ public class DatabaseQueries {
             ex.printStackTrace();
             return false;
         }
-    }    
-    
-    
-    
-    
-    
-    //EVERY FUNCTION NAME DAPAT MAYY 'DBS' SA DULO
-    
-    //getters of users_account
-    
-    //setters of users_account
-    
-    //getters of users_detail
-    
-    //setters of users_detail
-    
-    //getters of users_address
-    
-    //setters of users_address
-    
-    
-    //getters of products
-    
-    //setters of products
-    
-    //getters of livestock
-    
-    //setters of livestock
-    
-    //getters of rice
-    
-    //setters of rice
-    
-    //getters of fruit
-    
-    //setters of fruit
-    
-    //getters of vegetable
-    
-    //setters of vegetable
-    
-    //getters of fish
-    
-    //setters of fish
-    
 
+        public List<Product> sortProductsByPriceAscDBS() {
+            List<Product> sortedProducts = new ArrayList<>();
+            query = "SELECT * FROM products ORDER BY price ASC";
+            
+            try {
+                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    float price = resultSet.getFloat("price");
+                    sortedProducts.add(new Product(name, price));
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+            return sortedProducts;
+        }
+        
+        public List<Product> sortProductsByPriceDescDBS() {
+            List<Product> sortedProducts = new ArrayList<>();
+            query = "SELECT * FROM products ORDER BY price DESC";
+            
+            try {
+                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    float price = resultSet.getFloat("price");
+                    sortedProducts.add(new Product(name, price));
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+            return sortedProducts;
+        }
+
+        public List<Product> sortProductsByPopularityRatingDBS() {
+            List<Product> sortedProducts = new ArrayList<>();
+            query = "SELECT * FROM products ORDER BY popularity_rating DESC"; 
+            
+            try {
+                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    float price = resultSet.getFloat("price");
+
+                    sortedProducts.add(new Product(name, price));
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+            return sortedProducts;
+        }
+
+        public List<Product> sortProductsByAttributesDBS(String attribute) {
+            List<Product> sortedProducts = new ArrayList<>();
+            query = "SELECT * FROM products ORDER BY " + attribute + " ASC"; 
+            
+            try {
+                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    float price = resultSet.getFloat("price");
+
+                    sortedProducts.add(new Product(name, price));
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+            return sortedProducts;
+        }
+
+        public List<Product> sortProductsByDateAddedDBS() {
+            List<Product> sortedProducts = new ArrayList<>();
+            query = "SELECT * FROM products ORDER BY date_added DESC"; 
+            
+            try {
+                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                
+                while (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    float price = resultSet.getFloat("price");
+
+                    sortedProducts.add(new Product(name, price));
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            
+            return sortedProducts;
+        }
 }
