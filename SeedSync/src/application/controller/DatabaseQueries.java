@@ -15,7 +15,7 @@ public class DatabaseQueries {
 	
 	private String userID;
 	
-	public int getAccountCount(String accountType) {
+	public int getAccountCountDBS(String accountType) {
 		int count = 0;
 		
 		query = "SELECT COUNT(user_id) AS count "
@@ -40,8 +40,8 @@ public class DatabaseQueries {
 		return count;
 	}
 	
-	public String generateUserID(String accountType) {
-		int userNumber = getAccountCount(accountType) + 1;
+	public String generateUserIdDBS(String accountType) {
+		int userNumber = getAccountCountDBS(accountType) + 1;
 		String userID = "";
 		
 		if(accountType.equals ("Farmer"))
@@ -103,7 +103,7 @@ public class DatabaseQueries {
 	
 	public void registerAccountDBS(String email, String username, String password, String accountType) {
 	
-		userID = generateUserID(accountType);
+		userID = generateUserIdDBS(accountType);
 	
 		query = "INSERT INTO users_account(user_id, email, username, password, account_type) "
 				+ "VALUES (?, ?, ?, ?, ?)";
