@@ -49,7 +49,6 @@
                                                       <TableColumn prefWidth="75.0" text="City" />
                                                       <TableColumn prefWidth="75.0" text="Address" />
                                                       <TableColumn prefWidth="75.0" text="Contact #" />
-                                                      <TableColumn editable="false" prefWidth="75.0" text="Payment Method" />
                                                   </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -86,8 +85,6 @@
                                     <TextArea disable="true" layoutX="18.0" layoutY="379.0" prefHeight="86.0" prefWidth="416.0" styleClass="add-description" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="379.0" />
                                     <Label layoutX="18.0" layoutY="215.0" text="Contact Number" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="215.0" />
                                     <TextField disable="true" layoutX="18.0" layoutY="233.0" prefWidth="190.0" styleClass="line-textField" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="233.0" />
-                                    <TextField disable="true" layoutX="246.0" layoutY="233.0" prefWidth="190.0" styleClass="line-textField" AnchorPane.topAnchor="233.0" />
-                                    <Label layoutX="246.0" layoutY="215.0" text="Payment Method" AnchorPane.topAnchor="215.0" />
                                     <Button layoutX="503.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" styleClass="button-two" text="Process Order" />
                                     <Label layoutX="463.0" layoutY="69.0" text="Select Courier" AnchorPane.topAnchor="69.0" />
                                     <ComboBox layoutX="463.0" layoutY="87.0" prefHeight="26.0" prefWidth="190.0" promptText="Select Courier" style="-fx-background-color: transparent; -fx-border-color: #1A535C;" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="87.0" />

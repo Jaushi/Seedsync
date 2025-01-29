@@ -264,9 +264,10 @@
 }
 
 .delete-button{
-	-fx-background-color: -fx-light-primary-color;
-	-fx-text-fill: white;
+	-fx-background-color: transparent;
+	-fx-border-color: -fx-secondary-color;
 	-fx-background-radius: 50px;
+	-fx-border-radius: 50px;
 }
 
 .delete-button:hover{
@@ -302,6 +303,37 @@
     -fx-background-insets: 0;
 }
 
+.box-textField-white{
+	-fx-background-color: transparent;
+	-fx-border-color: -fx-secondary-color;
+	-fx-border-radius: 8px;
+	
+}
+
+.box-textField-white:hover {
+    -fx-border-color: gray;
+    -fx-opacity: 1;
+}
+
+.box-textField-white:focused {
+    -fx-border-color: gray;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.2), 10, 0, 0, 0);
+}
+
+.search-button{
+	-fx-background-color: -fx-light-primary-color;
+	-fx-text-fill: white;
+	-fx-background-radius: 50px;
+	-fx-border-radius: 50px;
+}
+
+.search-button:hover{
+	-fx-background-color: -fx-dark-primary-color;
+	-fx-text-fill: white;
+	-fx-background-radius: 50px;
+	-fx-scale-x: 1.01;
+}
+
 #seed, #loginSeed{
 	-fx-text-fill: -fx-dark-primary-color;
 }
@@ -325,7 +357,7 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
 }
 
-.line-textField:hover{
+.line-textField:hover{ 
 	-fx-border-color: -fx-light-primary-color;
     -fx-opacity: 1;
 }

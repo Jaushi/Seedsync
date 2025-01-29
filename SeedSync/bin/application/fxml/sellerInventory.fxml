@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -19,20 +21,22 @@
             <AnchorPane prefHeight="402.0" prefWidth="726.0" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="seller-homepage-header" text="My Inventory" AnchorPane.leftAnchor="20.0" />
-                  <Label layoutX="96.0" layoutY="43.0" text="Products" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="639.0" layoutY="42.0" text="Price" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="536.0" layoutY="43.0" text="Category" AnchorPane.rightAnchor="142.39999999999998" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="458.0" layoutY="43.0" text="Stock" AnchorPane.rightAnchor="238.79999999999995" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="456.0" layoutY="53.0" text="Status" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="50.0" />
+                  <Label layoutX="96.0" layoutY="43.0" text="Products" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="639.0" layoutY="42.0" text="Price" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="536.0" layoutY="43.0" text="Category" AnchorPane.rightAnchor="142.39999999999998" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="458.0" layoutY="43.0" text="Stock" AnchorPane.rightAnchor="238.79999999999995" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="456.0" layoutY="53.0" text="Status" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="80.0" />
                   <AnchorPane layoutX="14.0" layoutY="61.0" prefHeight="384.0" prefWidth="706.0" AnchorPane.leftAnchor="20.0">
                      <children>
-                        <ScrollPane layoutX="39.0" layoutY="31.0" prefHeight="384.0" prefWidth="691.0" styleClass="scroll-pane &gt; .viewport &gt; .scroll-bar:vertical" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+                        <ScrollPane layoutX="39.0" layoutY="36.0" prefHeight="338.0" prefWidth="666.0" styleClass="scroll-pane &gt; .viewport &gt; .scroll-bar:vertical" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="36.0">
                           <content>
-                            <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="785.0" prefWidth="650.0" />
+                            <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="650.0" />
                           </content>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
+                  <TextField layoutX="39.2" layoutY="41.0" prefHeight="16.0" prefWidth="598.0" promptText="Search for producs" styleClass="box-textField-white" AnchorPane.leftAnchor="39.0" />
+                  <Button layoutX="643.0" layoutY="41.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="66.0" styleClass="search-button" text="Search" />
                </children>
             </AnchorPane>
          </center>
