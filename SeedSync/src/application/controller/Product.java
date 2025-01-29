@@ -1,33 +1,21 @@
 package application.controller;
 
 public class Product {
-    private String pictureURL;
     private String name;
-    private String location;
-    private float weight;
     private float price;
-    private String user_id;
-
-    public Product(String pictureURL, String name, String location, float weight, float price, String user_id) {
-        this.pictureURL = pictureURL;
-        this.name = name;
-        this.location = location;
-        this.weight = weight;
-        this.price = price;
-        this.user_id = user_id;
-    }
+    private String dateAdded;
+    private float popularityRating;
 
     public Product(String name, float price) {
         this.name = name;
         this.price = price;
     }
-    
-    public String getPictureURL() {
-        return pictureURL;
-    }
 
-    public void setPictureURL(String pictureURL) {
-        this.pictureURL = pictureURL;
+    public Product(String name, float price, String dateAdded, float popularityRating) {
+        this.name = name;
+        this.price = price;
+        this.dateAdded = dateAdded;
+        this.popularityRating = popularityRating;
     }
 
     public String getName() {
@@ -38,22 +26,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
-
     public float getPrice() {
         return price;
     }
@@ -62,11 +34,19 @@ public class Product {
         this.price = price;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getDateAdded() {
+        return dateAdded;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setDateAdded(String dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    public float getPopularityRating() {
+        return popularityRating;
+    }
+
+    public void setPopularityRating(float popularityRating) {
+        this.popularityRating = popularityRating;
     }
 }
