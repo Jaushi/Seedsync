@@ -168,9 +168,9 @@
                               </HBox>
                               <HBox alignment="CENTER" layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <DatePicker fx:id="birthdateFieldFX" editable="true" prefHeight="25.0" prefWidth="129.0" />
+                                    <DatePicker fx:id="birthdateFieldFX" editable="true" onAction="#displayAge" prefHeight="25.0" prefWidth="129.0" />
                                     <Pane prefHeight="25.0" prefWidth="27.0" />
-                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="33.0" text="0" textAlignment="CENTER" />
+                                    <Label fx:id="calculatedAgeFX" alignment="CENTER" prefHeight="25.0" prefWidth="33.0" text="0" textAlignment="CENTER" />
                                     <Pane layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="79.0" />
                                     <TextField fx:id="phoneNumberFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="189.0" styleClass="line-textField" />
                                  </children>
@@ -189,7 +189,7 @@
                               </HBox>
                               <HBox layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <ChoiceBox fx:id="regionFieldFX" prefHeight="22.0" prefWidth="103.0" />
+                                    <ChoiceBox fx:id="regionFieldFX" onAction="#getCorrespondingProvince" prefHeight="22.0" prefWidth="103.0" />
                                     <Pane prefHeight="26.0" prefWidth="25.0" />
                                     <ChoiceBox fx:id="provinceFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="99.0" />
                                     <Pane layoutX="113.0" layoutY="10.0" prefHeight="26.0" prefWidth="20.0" />
@@ -214,7 +214,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField fx:id="oldPasswordFieldFX" layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
@@ -224,7 +224,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField fx:id="passwordFieldFX" layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
@@ -234,16 +234,17 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
+                              <TextField fx:id="passwordVerificationFieldFX" layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField">
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                               </TextField>
+                              <Label fx:id="statusTextFX" prefHeight="17.0" prefWidth="451.0" />
                               <HBox prefHeight="52.0" prefWidth="433.0">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Save" />
+                                    <Button mnemonicParsing="false" onAction="#clickedSave" prefHeight="26.0" prefWidth="70.0" text="Save" />
                                     <Pane prefHeight="26.0" prefWidth="20.0" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" text="Cancel" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="26.0" prefWidth="69.0" text="Cancel" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />

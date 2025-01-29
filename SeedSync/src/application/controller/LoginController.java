@@ -34,14 +34,14 @@ public class LoginController extends UniversalController{
 				loginVerificationFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-light-primary-color");
 				loginVerificationFX.setText("Login Sucessful!");
 				
-				userType = getUserTypeDBS(userID);
+				userTypeAccount = getUserTypeDBS(userID);
 				String[] userAccount = getUserAccountDBS(userID);
 				String[] userDetail = getUserDetailDBS(userID);
 				String[] userAddress = getUserAddressDBS(userID);
 				
-				if(userType.equals("Farmer") || userType.equals("Middle Man")) {
+				if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
 					userSeller = new Seller(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
-				}else if(userType.equals("Buyer")) {
+				}else if(userTypeAccount.equals("Buyer")) {
 					userBuyer = new Buyer(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
 					System.out.println(userBuyer.firstName);
 				}

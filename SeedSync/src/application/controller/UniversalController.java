@@ -12,9 +12,11 @@ public class UniversalController extends DatabaseQueries{
 	private Scene scene;
 	private Parent root;
 	
-	String userType;
+	public String userTypeAccount;
 	public Seller userSeller;
 	public Buyer userBuyer;
+	
+	public String[] regions = {"Region I", "Region II", "Region III", "Region IV", "MIMAROPA", "Region V", "Region VI", "Region VII", "Region VIII", "Region IX", "Region X", "Region XI", "Region XII", "Region XIII", "NIR", "NCR", "CAR", "BARMM"};
 	
 	public void setUserSeller(Seller userSeller) {
 		this.userSeller = userSeller;
@@ -71,9 +73,9 @@ public class UniversalController extends DatabaseQueries{
 		
 		EditProfileController controller = loader.getController();
 		
-		if(userType.equals("Farmer") || userType.equals("Middle Man")) {
+		if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
 			controller.setUserSeller(userSeller);
-		}else if(userType.equals("Buyer")) {
+		}else if(userTypeAccount.equals("Buyer")) {
 			controller.setUserBuyer(userBuyer);
 		}
 		

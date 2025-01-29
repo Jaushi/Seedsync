@@ -31,9 +31,7 @@ public class RegistrationController extends UniversalController implements Initi
     private RadioButton farmerType, buyerType, middleManType;
 
     
-    private String[] regions = {"Region I", "Region II", "Region III", "Region IV", "MIMAROPA", "Region V", "Region VI", "Region VII", "Region VIII", "Region IX", "Region X", "Region XI", "Region XII", "Region XIII", "NIR", "NCR", "CAR", "BARMM"};
-    private String userTypeAccount;
-    
+   
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		regionAddressFX.getItems().addAll(regions);
