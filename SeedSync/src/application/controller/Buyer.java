@@ -1,5 +1,8 @@
 package application.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Buyer extends Users{
 	
 	Buyer(){}
