@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SellerHeader">
    <children>
       <HBox alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="70.0" prefWidth="872.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
@@ -45,7 +45,7 @@
                   <Insets left="5.0" right="15.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fitHeight="15.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+            <ImageView fx:id="profileIcon" fitHeight="15.0" fitWidth="29.0" onMouseClicked="#handleProfileClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <image>
                   <Image url="@../../assets/images/profileIcon.png" />
                </image>
