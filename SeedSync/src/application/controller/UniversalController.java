@@ -12,6 +12,33 @@ public class UniversalController extends DatabaseQueries{
 	private Scene scene;
 	private Parent root;
 	
+	String userType;
+	public Seller userSeller;
+	public Buyer userBuyer;
+	
+	public void setUserSeller(Seller userSeller) {
+		this.userSeller = userSeller;
+	}
+	
+	public void setUserBuyer(Buyer userBuyer) {
+		this.userBuyer = userBuyer;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//changeToRegistration
 	public void changeToRegistration(ActionEvent event) throws Exception{
 
@@ -36,5 +63,30 @@ public class UniversalController extends DatabaseQueries{
 		stage.setScene(scene);
 	}
 	
-	//changeToProfile
+	//changeToEditProfile
+	public void changeToEditProfile(ActionEvent event) throws Exception{
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/EditProfile.fxml"));
+		root = loader.load();
+		
+		EditProfileController controller = loader.getController();
+		
+		if(userType.equals("Farmer") || userType.equals("Middle Man")) {
+			controller.setUserSeller(userSeller);
+		}else if(userType.equals("Buyer")) {
+			controller.setUserBuyer(userBuyer);
+		}
+		
+		controller.setAccount();
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		
+		stage.setFullScreen(true);
+		stage.setScene(scene);
+	}
+	
+	//setProfile
+	
 }

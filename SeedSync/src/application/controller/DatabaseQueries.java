@@ -359,38 +359,108 @@ public class DatabaseQueries {
     
         return false;
     } 
-
-    public UserProfile getProfileAccountDBS(String user_id) {
-        query = "SELECT ud.firstname, ud.lastname, ud.birthdate, ud.age, ud.phone_number, "
-            + "ua.region, ua.province, ua.city, ua.address "
-            + "FROM users_detail ud "
-            + "JOIN users_address ua ON ud.user_id = ua.user_id "
-            + "WHERE ud.user_id = ?";
+    
+    public String getUserTypeDBS(String userID) {
+    	String userType = "";
+    	query = "SELECT account_type "
+        		+ "FROM users_account "
+        		+ "WHERE user_id = ?";
     
         try {
             PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            preparedStatement.setString(1, user_id);
+            preparedStatement.setString(1, userID);
     
-            ResultSet resultSet = preparedStatement.executeQuery();
+            ResultSet result = preparedStatement.executeQuery();
     
-            if (resultSet.next()) {
-                String firstname = resultSet.getString("firstname");
-                String lastname = resultSet.getString("lastname");
-                String birthdate = resultSet.getString("birthdate");
-                int age = resultSet.getInt("age");
-                String phoneNumber = resultSet.getString("phone_number");
-                String region = resultSet.getString("region");
-                String province = resultSet.getString("province");
-                String city = resultSet.getString("city");
-                String address = resultSet.getString("address");
+            if (result.next()) {
+                userType = result.getString("account_type");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return userType;
+    }
 
-                return new UserProfile(firstname, lastname, birthdate, age, phoneNumber, address, city, province, region);
+    public String[] getUserAccountDBS(String userID) {	
+    	String[] userAccount = new String[4];
+        query = "SELECT email, username, password, account_type "
+        		+ "FROM users_account "
+        		+ "WHERE user_id = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, userID);
+    
+            ResultSet result = preparedStatement.executeQuery();
+    
+            if (result.next()) {
+            	userAccount[0] = result.getString("email");
+            	userAccount[1] = result.getString("username");
+            	userAccount[2] = result.getString("password");
+            	userAccount[3] = result.getString("account_type");
+            	
+                return userAccount;
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
     }
+    
+    public String[] getUserDetailDBS(String userID) {	
+    	String[] userDetail = new String[5];
+        query = "SELECT firstname, lastname, birthdate, age, phone_number "
+        		+ "FROM users_detail "
+        		+ "WHERE user_id = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, userID);
+    
+            ResultSet result = preparedStatement.executeQuery();
+    
+            if (result.next()) {
+            	userDetail[0] = result.getString("firstname");
+            	userDetail[1] = result.getString("lastname");
+            	userDetail[2] = result.getString("birthdate");
+            	userDetail[3] = String.valueOf(result.getInt("age"));
+            	userDetail[4] = result.getString("phone_number");
+            	
+                return userDetail;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    public String[] getUserAddressDBS(String userID) {	
+    	String[] userAddress = new String[4];
+        query = "SELECT region, province, city, address "
+        		+ "FROM users_address "
+        		+ "WHERE user_id = ?";
+    
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            preparedStatement.setString(1, userID);
+    
+            ResultSet result = preparedStatement.executeQuery();
+    
+            if (result.next()) {
+            	userAddress[0] = result.getString("region");
+            	userAddress[1] = result.getString("province");
+            	userAddress[2] = result.getString("city");
+            	userAddress[3] = result.getString("address");
+            	
+                return userAddress;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    
     
     public List<Product> getItemsDBS() {
         List<Product> items = new ArrayList<>();
