@@ -2,10 +2,11 @@ package application.controller.UserClass;
 
 import application.controller.Users;
 
-public class Buyer extends Users{
+public class Seller extends Users{
 	
-	Buyer(){}
-	Buyer(String _userID, String _email, String _userName, String _password, String _accountType, String _firstName, String _lastName, String _birthdate, int _age, String _phoneNumber, String _region, String _province, String _city, String _address){
+	Seller(){}
+	
+	Seller(String _userID, String _email, String _userName, String _password, String _accountType, String _firstName, String _lastName, String _birthdate, int _age, String _phoneNumber, String _region, String _province, String _city, String _address){
 		this.userID = _userID;
 		this.email = _email;
         this.username = _userName;
@@ -21,7 +22,4 @@ public class Buyer extends Users{
 		this.city = _city;
 		this.address = _address;
 	}
-
 }
-
-
