@@ -1,5 +1,7 @@
 package application.controller;
 
+import application.controller.UserClass.Buyer;
+import application.controller.UserClass.Seller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
