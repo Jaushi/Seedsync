@@ -18,21 +18,133 @@ abstract class Users {
 	private Stage stage;
 	
     //getters of all attributes
-    
-    //setters of all attributes
+	public String getUserProfile() {
+		return userProfile;
+	}
+	public String getUserID() {
+		return userID;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public String getAccountType() {
+		return accountType;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public String getBirthdate() {
+		return birthdate;
+	}
+	
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	public String getRegion() {
+		return region;
+	}
+	
+	public String getProvince() {
+		return province;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public Stage getStage() {
+		return stage;
+	}
+	
+	//setters of all attributes
+	public void setUserProfile(String userProfile) {
+		this.userProfile = userProfile;
+	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
 	
 	public void setProfile(ActionEvent event) {
 			
