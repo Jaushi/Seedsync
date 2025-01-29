@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserCheckoutDetailsController">
    <children>
-      <BorderPane prefHeight="525.0" prefWidth="912.0">
+      <BorderPane fx:id="mainPane" prefHeight="525.0" prefWidth="912.0">
          <top>
             <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
          </top>

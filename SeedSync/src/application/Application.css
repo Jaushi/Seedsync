@@ -366,3 +366,32 @@
     -fx-border-color: -fx-dark-primary-color;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 123, 255, 0.5), 10, 0, 0, 0);
 }
+
+.button-one{
+	-fx-background-color: -fx-dark-primary-color;
+	-fx-text-fill: "White";
+}
+.vbox-style {
+    -fx-background-color: -fx-light-primary-color;
+}
+
+.vbox-label {
+    -fx-text-fill: "White";
+}
+
+.edit-photo-button {
+    -fx-background-color: "White";
+    -fx-text-fill: black;
+    -fx-border-radius: 8px; 
+}
+.scrollpane-style {
+    -fx-border-color: transparent; 
+    -fx-background-color: transparent;  
+    -fx-padding: 0; 
+}
+
+.title-label {
+	-fx-font-family: "Inter";
+        -fx-font-size: 15px; 
+        -fx-font-weight: bold; 
+}
