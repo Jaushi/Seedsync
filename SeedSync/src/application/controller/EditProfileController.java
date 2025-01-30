@@ -144,7 +144,7 @@ public class EditProfileController extends UniversalController implements Initia
 		FxmlLoader object = new FxmlLoader();
 		Pane view = object.getPage("UserHeader");
 		mainPane.setTop(view);		
-		
+	
 		regionFieldFX.getItems().addAll(regions);
 	}
 	

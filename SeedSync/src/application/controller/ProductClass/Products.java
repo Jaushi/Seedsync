@@ -1,7 +1,7 @@
 package application.controller.ProductClass;
 
 abstract class Products {
-	protected String _pictureURL, _name, _location;
+	protected String _productID, _pictureURL, _name, _location;
 	protected float _weight, _price;
 	
 	public abstract String[] getProduct();
@@ -46,6 +46,8 @@ abstract class Products {
 	public void setPrice(float price) {
 		this._price = price;
 	}
+	
+	
 }
 
 

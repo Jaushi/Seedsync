@@ -16,6 +16,28 @@ public class UniversalController extends DatabaseQueries{
 	public Seller userSeller;
 	public Buyer userBuyer;
 	
+	public String[] productType = {"Livestock", "Rice", "Fruit", "Vegetable", "Fish"};
+	public String[] productOrderStatus = {"To pay", "Shipping", "Delivered"};
+	public String[] productsStatus = {"available", "out of stock"};
+
+	public String[] livestockType = {"cow", "chicken", "pig", "goat"};
+	public String[] livestockFeedDiet = {"grain-fed", "grass-fed"};
+
+	public String[] riceQuality = {"high", "medium", "low"};
+	public String[] riceTexture = {"soft", "medium", "hard"};
+	public String[] riceColor = {"white", "brown", "red"};
+
+	public String[] fruitQuality = {"high", "medium", "low"};
+	public String[] fruitFlavor = {"sweet", "sour"};
+	public String[] fruitSize = {"small", "medium", "large"};
+
+	public String[] vegetableQuality = {"high", "medium", "low"};
+	public String[] vegetableSize = {"small", "medium", "large"};
+
+	public String[] fishType = {"freshwater", "saltwater"};
+	public String[] fishSource = {"farm-raised", "wild-caught"};
+	public String[] fishSize = {"small", "medium", "large"};
+	
 	public String[] regions = {"Region I", "Region II", "Region III", "Region IV", "MIMAROPA", "Region V", "Region VI", "Region VII", "Region VIII", "Region IX", "Region X", "Region XI", "Region XII", "Region XIII", "NIR", "NCR", "CAR", "BARMM"};
 	
 	public void setUserSeller(Seller userSeller) {
