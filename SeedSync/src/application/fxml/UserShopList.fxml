@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -21,67 +22,67 @@
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
          <left>
-            <VBox prefHeight="445.0" prefWidth="176.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="445.0" prefWidth="176.0" styleClass="vbox-style" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="28.0" prefWidth="176.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="176.0">
                      <children>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/SearchIcon.png" />
+                              <Image url="@../../../bin/application/assets/images/SearchIcon.png" />
                            </image>
                            <HBox.margin>
-                              <Insets left="10.0" right="5.0" />
+                              <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <TextField prefHeight="25.0" prefWidth="132.0" />
+                        <TextField prefHeight="26.0" prefWidth="124.0" />
                      </children>
                   </HBox>
-                  <Label text="Category">
+                  <Label styleClass="shop-list-label-category" text="Category">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" top="5.0" />
+                        <Insets bottom="10.0" top="5.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
                      <padding>
-                        <Insets top="15.0" />
+                        <Insets left="15.0" top="15.0" />
                      </padding>
                   </Label>
-                  <CheckBox mnemonicParsing="false" text="Fish">
+                  <CheckBox mnemonicParsing="false" styleClass="shop-list-label" text="Fish">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" text="Fruit">
+                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" styleClass="shop-list-label" text="Fruit">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" text="Livestock">
+                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" styleClass="shop-list-label" text="Livestock">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" text="Vegetable">
+                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" styleClass="shop-list-label" text="Vegetable">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" text="Crops">
+                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" styleClass="shop-list-label" text="Crops">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
@@ -92,54 +93,77 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Separator>
-                  <Label text="Price">
+                  <Label styleClass="shop-list-label-category" text="Price">
                      <VBox.margin>
-                        <Insets bottom="5.0" left="35.0" top="5.0" />
+                        <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
                   </Label>
                   <HBox alignment="CENTER" prefHeight="44.0" prefWidth="176.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="42.0" promptText="\$MIN">
+                        <TextField prefHeight="26.0" prefWidth="62.0" promptText="\$MIN">
                            <font>
                               <Font size="12.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="shop-list-box-textField" />
+                              <String fx:value="shop-list-box-textField:hover" />
+                              <String fx:value="shop-list-box-textField:focused" />
+                           </styleClass>
                         </TextField>
-                        <Line endX="-83.54920959472656" endY="-0.5002034902572632" startX="-100.0">
+                        <Line endX="-82.70709991455078" startX="-100.0" stroke="#bbb5bd">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Line>
-                        <TextField layoutX="65.0" layoutY="19.0" prefHeight="26.0" prefWidth="42.0" promptText="\$MAX">
+                        <TextField layoutX="65.0" layoutY="19.0" prefHeight="26.0" prefWidth="62.0" promptText="\$MAX">
                            <font>
                               <Font size="12.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="shop-list-box-textField" />
+                              <String fx:value="shop-list-box-textField:hover" />
+                              <String fx:value="shop-list-box-textField:focused" />
+                           </styleClass>
                         </TextField>
                      </children>
                   </HBox>
-                  <Label layoutX="45.0" layoutY="201.0" text="Weight">
+                  <Label layoutX="45.0" layoutY="201.0" styleClass="shop-list-label-category" text="Weight">
                      <padding>
-                        <Insets bottom="5.0" left="35.0" top="5.0" />
+                        <Insets bottom="5.0" left="15.0" top="5.0" />
                      </padding>
                   </Label>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="218.0" prefHeight="44.0" prefWidth="176.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="42.0" promptText="MIN">
+                        <TextField prefHeight="26.0" prefWidth="62.0" promptText="MIN">
                            <font>
                               <Font size="12.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="shop-list-box-textField" />
+                              <String fx:value="shop-list-box-textField:hover" />
+                              <String fx:value="shop-list-box-textField:focused" />
+                           </styleClass>
                         </TextField>
-                        <Line endX="-83.54920959472656" endY="-0.5002034902572632" startX="-100.0">
+                        <Line endX="-83.54920959472656" startX="-100.0" stroke="#bbb5bd">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Line>
-                        <TextField layoutX="65.0" layoutY="19.0" prefHeight="26.0" prefWidth="42.0" promptText="MAX">
+                        <TextField layoutX="65.0" layoutY="19.0" prefHeight="26.0" prefWidth="62.0" promptText="MAX">
                            <font>
                               <Font size="12.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="shop-list-box-textField" />
+                              <String fx:value="shop-list-box-textField:hover" />
+                              <String fx:value="shop-list-box-textField:focused" />
+                           </styleClass>
                         </TextField>
                      </children>
                   </HBox>
@@ -148,9 +172,9 @@
                         <Insets left="5.0" right="5.0" top="10.0" />
                      </VBox.margin>
                   </Separator>
-                  <Label layoutX="10.0" layoutY="262.0" text="Shop Type">
+                  <Label layoutX="10.0" layoutY="262.0" styleClass="shop-list-label-category" text="Shop Type">
                      <padding>
-                        <Insets bottom="5.0" left="35.0" />
+                        <Insets bottom="5.0" left="15.0" />
                      </padding>
                      <VBox.margin>
                         <Insets bottom="5.0" top="15.0" />
@@ -159,20 +183,20 @@
                         <Font size="12.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" text="Farmer">
+                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" styleClass="shop-list-label" text="Farmer">
                      <font>
                         <Font size="12.0" />
                      </font>
                      <padding>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" text="Middle Man">
+                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" styleClass="shop-list-label" text="Middle Man">
                      <font>
                         <Font size="12.0" />
                      </font>
                      <padding>
-                        <Insets bottom="10.0" left="35.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </padding>
                   </CheckBox>
                   <Separator prefWidth="200.0">

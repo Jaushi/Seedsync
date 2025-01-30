@@ -12,7 +12,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/application/fxml/components/UserProfileCard.fxml"));
+//			 File path for components: "/application/fxml/components/component_name.fxml"
 
 			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());

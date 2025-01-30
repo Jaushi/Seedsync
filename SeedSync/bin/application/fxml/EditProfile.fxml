@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -26,22 +27,26 @@
          <center>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="CENTER" prefHeight="491.0" prefWidth="374.0" styleClass="vbox-style" stylesheets="@../com/mycompany/projectoop/primary.css" HBox.hgrow="ALWAYS">
+                  <VBox alignment="CENTER" prefHeight="491.0" prefWidth="374.0" styleClass="vbox-style" HBox.hgrow="ALWAYS">
                      <children>
                         <Circle fx:id="circle" fill="DODGERBLUE" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label fx:id="displayNameFX" alignment="CENTER" prefHeight="21.0" prefWidth="505.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Sza Bartolome">
+                        <Label fx:id="displayNameFX" alignment="CENTER" prefHeight="21.0" prefWidth="505.0" styleClass="vbox-title-label" text="Sza Bartolome">
                            <font>
-                              <Font name="System Bold" size="15.0" />
+                              <Font size="15.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="emailFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="456.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="szabartolome@gmail.com" textAlignment="CENTER" />
-                        <Button mnemonicParsing="false" onAction="#clickedEditPhoto" prefHeight="25.0" prefWidth="102.0" styleClass="edit-photo-button" stylesheets="@../com/mycompany/projectoop/primary.css" text="Edit Photo">
+                        <Label fx:id="emailFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="456.0" styleClass="vbox-label" text="szabartolome@gmail.com" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" onAction="#clickedEditPhoto" prefHeight="25.0" prefWidth="102.0" text="Edit Photo">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
+                           <styleClass>
+                              <String fx:value="edit-photo-button" />
+                              <String fx:value="edit-photo-button:hover" />
+                           </styleClass>
                         </Button>
                         <GridPane alignment="CENTER" prefHeight="131.0" prefWidth="329.0">
                           <columnConstraints>
@@ -55,42 +60,42 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="342.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Username" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="342.0" styleClass="vbox-label-category" text="Username" textAlignment="CENTER">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="usernameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="314.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1">
+                              <Label fx:id="usernameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="314.0" styleClass="vbox-label" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="282.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Full Name" textAlignment="CENTER" GridPane.rowIndex="1">
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="282.0" styleClass="vbox-label-category" text="Full Name" textAlignment="CENTER" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fullNameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="350.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Sza Sanchez Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="fullNameFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="350.0" styleClass="vbox-label" text="Sza Sanchez Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="332.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Phone Number" textAlignment="CENTER" GridPane.rowIndex="2">
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="332.0" styleClass="vbox-label-category" text="Phone Number" textAlignment="CENTER" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="phoneNumberFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="223.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="********3647" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="phoneNumberFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="223.0" styleClass="vbox-label" text="********3647" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="323.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Date of Birth" textAlignment="CENTER" GridPane.rowIndex="3">
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="323.0" styleClass="vbox-label-category" text="Date of Birth" textAlignment="CENTER" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="birthdateFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="326.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="birthdateFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="326.0" styleClass="vbox-label" text="Sza Bartolome" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -105,11 +110,11 @@
                         <Insets left="10.0" />
                      </padding>
                   </VBox>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="491.0" prefWidth="575.0" styleClass="scrollpane-style" stylesheets="@../com/mycompany/projectoop/primary.css" vbarPolicy="NEVER">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="491.0" prefWidth="575.0" styleClass="scrollpane-style" vbarPolicy="NEVER">
                      <content>
-                        <VBox prefHeight="557.0" prefWidth="539.0">
+                        <VBox prefHeight="558.0" prefWidth="522.0">
                            <children>
-                              <Label styleClass="title-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Edit Profile">
+                              <Label styleClass="title-label" text="Edit Profile">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -123,7 +128,7 @@
                               <HBox prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="First Name" />
-                                    <Pane prefHeight="18.0" prefWidth="220.0" />
+                                    <Pane prefHeight="18.0" prefWidth="214.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Last Name" />
                                  </children>
                               </HBox>
@@ -140,14 +145,14 @@
                               <HBox layoutX="15.0" layoutY="34.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Email" />
-                                    <Pane prefHeight="18.0" prefWidth="250.0" />
-                                    <Label layoutX="10.0" layoutY="10.0" text="Username" />
+                                    <Pane prefHeight="18.0" prefWidth="242.0" />
+                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="58.0" text="Username" />
                                  </children>
                               </HBox>
                               <HBox layoutX="15.0" layoutY="56.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
                                     <TextField fx:id="emailFieldFX" prefHeight="26.0" prefWidth="250.0" styleClass="line-textField" />
-                                    <Pane prefHeight="26.0" prefWidth="36.0" />
+                                    <Pane prefHeight="26.0" prefWidth="35.0" />
                                     <TextField fx:id="usernameFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="250.0" styleClass="line-textField" />
                                  </children>
                                  <padding>
@@ -159,13 +164,13 @@
                                     <Label text="Birthdate" />
                                     <Pane prefHeight="18.0" prefWidth="112.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Age" />
-                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="18.0" prefWidth="97.0" />
-                                    <Label layoutX="146.0" layoutY="10.0" text="Phone Number" />
+                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="18.0" prefWidth="87.0" />
+                                    <Label layoutX="146.0" layoutY="10.0" prefHeight="18.0" prefWidth="86.0" text="Phone Number" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <DatePicker fx:id="birthdateFieldFX" editable="true" onAction="#displayAge" prefHeight="25.0" prefWidth="129.0" />
+                                    <DatePicker fx:id="birthdateFieldFX" editable="true" onAction="#displayAge" prefHeight="26.0" prefWidth="144.0" styleClass="box-textField" />
                                     <Pane prefHeight="25.0" prefWidth="27.0" />
                                     <Label fx:id="calculatedAgeFX" alignment="CENTER" prefHeight="25.0" prefWidth="33.0" text="0" textAlignment="CENTER" />
                                     <Pane layoutX="127.0" layoutY="10.0" prefHeight="26.0" prefWidth="90.0" />
@@ -178,17 +183,17 @@
                               <HBox layoutX="15.0" layoutY="130.0" prefHeight="22.0" prefWidth="433.0">
                                  <children>
                                     <Label text="Region" />
-                                    <Pane prefHeight="19.0" prefWidth="106.0" />
+                                    <Pane prefHeight="18.0" prefWidth="102.0" />
                                     <Label layoutX="10.0" layoutY="10.0" text="Province" />
-                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="19.0" prefWidth="87.0" />
+                                    <Pane layoutX="60.0" layoutY="10.0" prefHeight="18.0" prefWidth="86.0" />
                                     <Label layoutX="146.0" layoutY="10.0" text="City" />
                                  </children>
                               </HBox>
                               <HBox layoutX="15.0" layoutY="104.0" prefHeight="23.0" prefWidth="433.0">
                                  <children>
-                                    <ChoiceBox fx:id="regionFieldFX" onAction="#getCorrespondingProvince" prefHeight="22.0" prefWidth="120.0" styleClass="box-textField" stylesheets="@../com/mycompany/projectoop/primary.css" />
+                                    <ChoiceBox fx:id="regionFieldFX" onAction="#getCorrespondingProvince" prefHeight="26.0" prefWidth="127.0" styleClass="box-textField" />
                                     <Pane prefHeight="26.0" prefWidth="25.0" />
-                                    <ChoiceBox fx:id="provinceFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" styleClass="box-textField" stylesheets="@../com/mycompany/projectoop/primary.css" />
+                                    <ChoiceBox fx:id="provinceFieldFX" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" styleClass="box-textField" />
                                     <Pane layoutX="113.0" layoutY="10.0" prefHeight="26.0" prefWidth="20.0" />
                                     <TextField fx:id="cityFieldFX" prefHeight="26.0" prefWidth="250.0" styleClass="line-textField" />
                                  </children>
@@ -198,7 +203,7 @@
                               </HBox>
                               <Label text="Address" />
                               <TextField fx:id="addressFieldFX" prefHeight="26.0" prefWidth="182.0" styleClass="line-textField" />
-                              <Label layoutX="15.0" layoutY="15.0" styleClass="title-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Change Password">
+                              <Label layoutX="15.0" layoutY="15.0" styleClass="title-label" text="Change Password">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -211,7 +216,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="oldPasswordFieldFX" layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField" stylesheets="@../com/mycompany/projectoop/primary.css">
+                              <TextField fx:id="oldPasswordFieldFX" layoutX="15.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField">
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
@@ -221,7 +226,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="passwordFieldFX" layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField" stylesheets="@../com/mycompany/projectoop/primary.css">
+                              <TextField fx:id="passwordFieldFX" layoutX="15.0" layoutY="305.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField">
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
@@ -231,7 +236,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="passwordVerificationFieldFX" layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField" stylesheets="@../com/mycompany/projectoop/primary.css">
+                              <TextField fx:id="passwordVerificationFieldFX" layoutX="15.0" layoutY="348.0" prefHeight="26.0" prefWidth="182.0" styleClass="box-textField">
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
@@ -239,9 +244,9 @@
                               <Label fx:id="statusTextFX" prefHeight="17.0" prefWidth="451.0" />
                               <HBox prefHeight="52.0" prefWidth="433.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#clickedSave" prefHeight="26.0" prefWidth="70.0" styleClass="button-one" stylesheets="@../com/mycompany/projectoop/primary.css" text="Save" />
+                                    <Button mnemonicParsing="false" onAction="#clickedSave" prefHeight="26.0" prefWidth="70.0" styleClass="button-one" text="Save" />
                                     <Pane prefHeight="26.0" prefWidth="20.0" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="26.0" prefWidth="69.0" styleClass="button-one" stylesheets="@../com/mycompany/projectoop/primary.css" text="Cancel" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="26.0" prefWidth="69.0" styleClass="button-three" text="Cancel" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />

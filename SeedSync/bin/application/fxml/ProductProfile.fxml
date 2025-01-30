@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -26,33 +27,21 @@
                         <VBox prefHeight="181.0" prefWidth="115.0">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/background.jpg" />
-                                 </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/background.jpg" />
-                                 </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/background.jpg" />
-                                 </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="60.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/background.jpg" />
-                                 </image>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
@@ -61,16 +50,10 @@
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
                                  </VBox.margin>
-                                 <image>
-                                    <Image url="@../assets/images/background.jpg" />
-                                 </image>
                               </ImageView>
                            </children>
                         </VBox>
                         <ImageView fitHeight="195.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/background.jpg" />
-                           </image>
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
@@ -79,12 +62,12 @@
                   </HBox>
                   <VBox prefHeight="445.0" prefWidth="465.0">
                      <children>
-                        <Label text="Richard and Melvin’s Oranges - 1kg">
+                        <Label styleClass="title-label" text="Richard and Melvin’s Oranges - 1kg">
                            <font>
-                              <Font name="System Bold" size="15.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label text="Richard and Melvin’s Farm">
+                        <Label styleClass="title-label-italicize" text="Richard and Melvin’s Farm">
                            <font>
                               <Font name="System Italic" size="13.0" />
                            </font>
@@ -111,7 +94,7 @@
                               <Insets />
                            </VBox.margin>
                         </Label>
-                        <Label text="\$200.00">
+                        <Label styleClass="title-label" text="\$200.00">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -124,9 +107,14 @@
                         </Label>
                         <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="445.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" text="Add to Cart" />
+                              <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" styleClass="button-one" text="Add to Cart" />
                               <Pane prefHeight="49.0" prefWidth="25.0" />
-                              <Button layoutX="10.0" layoutY="17.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" text="Buy Now" />
+                              <Button layoutX="10.0" layoutY="17.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" text="Buy Now">
+                                 <styleClass>
+                                    <String fx:value="button-three" />
+                                    <String fx:value="button-three:hover" />
+                                    <String fx:value="button-three:pressed" />
+                                 </styleClass></Button>
                            </children>
                         </HBox>
                      </children>
@@ -140,26 +128,19 @@
          <bottom>
             <HBox prefHeight="151.0" prefWidth="912.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="151.0" prefWidth="117.0">
-                     <children>
-                        <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/profileIcon.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="50.0" />
-                           </VBox.margin>
-                        </ImageView>
-                     </children>
-                  </VBox>
+                  <Circle fill="DODGERBLUE" radius="31.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="50.0" right="20.0" />
+                     </HBox.margin>
+                  </Circle>
                   <VBox prefHeight="151.0" prefWidth="795.0">
                      <children>
-                        <Label text="Richard and Melvin’s Farm">
+                        <Label styleClass="title-label" text="Richard and Melvin’s Farm">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="Follow Merchat">
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="title-label-italicize" text="Follow Merchat">
                            <font>
                               <Font size="12.0" />
                            </font>
@@ -167,7 +148,7 @@
                               <Insets bottom="5.0" top="5.0" />
                            </padding>
                         </Label>
-                        <Label layoutX="10.0" layoutY="27.0" text="Contact Merchant">
+                        <Label layoutX="10.0" layoutY="27.0" styleClass="title-label-italicize" text="Contact Merchant">
                            <font>
                               <Font size="12.0" />
                            </font>

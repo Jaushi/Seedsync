@@ -23,9 +23,9 @@
                      <content>
                         <VBox prefHeight="675.0" prefWidth="883.0">
                            <children>
-                              <Label layoutX="80.0" layoutY="30.0" text="Delivery Address">
+                              <Label layoutX="80.0" layoutY="30.0" styleClass="title-label" text="Delivery Address">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font size="13.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets left="70.0" top="20.0" />
@@ -44,9 +44,9 @@
                                     <Insets left="70.0" right="70.0" top="10.0" />
                                  </VBox.margin>
                               </Separator>
-                              <Label layoutX="80.0" layoutY="69.0" text="Products Ordered">
+                              <Label layoutX="80.0" layoutY="69.0" styleClass="title-label" text="Products Ordered">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font size="13.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="70.0" top="10.0" />
@@ -79,9 +79,9 @@
                                        <children>
                                           <Label text="Total Payment" />
                                           <Pane prefHeight="24.0" prefWidth="89.0" />
-                                          <Label layoutX="10.0" layoutY="10.0" text="\$2,100">
+                                          <Label layoutX="10.0" layoutY="10.0" styleClass="title-label" text="\$2,100">
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font size="15.0" />
                                              </font>
                                           </Label>
                                        </children>
