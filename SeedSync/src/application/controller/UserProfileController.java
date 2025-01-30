@@ -1,19 +1,25 @@
 package application.controller;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserCheckoutDetailsController extends UniversalController implements Initializable {
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+
+public class UserProfileController extends UniversalController implements Initializable{
+	
+	@FXML
+    private Label displayEmailFX;
+    @FXML
+    private Label displayNameFX;
+	
+	public void setAccount() {
+		displayEmailFX.setText(userSeller.getEmail());
+		displayNameFX.setText(userSeller.getFullName());
+	}
+	
 	
 	public void clickedLogo(MouseEvent event) throws Exception {
 		changeToProfile(event);

@@ -77,8 +77,8 @@ abstract class Users {
 		return age;
 	}
 	
-	public Stage getStage() {
-		return stage;
+	public String getFullName() {
+		return firstName + " " + lastName;
 	}
 	
 	//setters of all attributes

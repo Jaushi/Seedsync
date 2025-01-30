@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class UniversalController extends DatabaseQueries{
@@ -42,30 +43,14 @@ public class UniversalController extends DatabaseQueries{
 	
 	public void setUserSeller(Seller userSeller) {
 		this.userSeller = userSeller;
+		
 	}
 	
 	public void setUserBuyer(Buyer userBuyer) {
 		this.userBuyer = userBuyer;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//DITO V
-	
-	
-	
-	//changeToRegistration
+	//Scene Controller
 	public void changeToRegistration(ActionEvent event) throws Exception{
 
 		root = FXMLLoader.load(getClass().getResource("/application/fxml/Registration.fxml"));
@@ -73,11 +58,9 @@ public class UniversalController extends DatabaseQueries{
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 		
-		stage.setFullScreen(true);
 		stage.setScene(scene);
 	}
 	
-	//changeToLogin
 	public void changeToLogin(ActionEvent event) throws Exception{
 
 		root = FXMLLoader.load(getClass().getResource("/application/fxml/Login.fxml"));
@@ -85,11 +68,9 @@ public class UniversalController extends DatabaseQueries{
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 		
-		stage.setFullScreen(true);
 		stage.setScene(scene);
 	}
 	
-	//changeToEditProfile
 	public void changeToEditProfile(ActionEvent event) throws Exception{
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/EditProfile.fxml"));
@@ -97,22 +78,115 @@ public class UniversalController extends DatabaseQueries{
 		
 		EditProfileController controller = loader.getController();
 		
-		if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
-			controller.setUserSeller(userSeller);
-		}else if(userTypeAccount.equals("Buyer")) {
-			controller.setUserBuyer(userBuyer);
-		}
+		controller.setUserSeller(userSeller);
 		
 		controller.setAccount();
+		controller.setStartupProfile();
 		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 		
-		stage.setFullScreen(true);
 		stage.setScene(scene);
 	}
 	
-	//setProfile
+	//changeToEditProfile
+	public void changeToEditProfile(MouseEvent event) throws Exception{
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/EditProfile.fxml"));
+		root = loader.load();
+		
+		EditProfileController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		
+		controller.setAccount();
+		controller.setStartupProfile();
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		
+		stage.setScene(scene);
+	}
+	
+	//changeToProfile
+	public void changeToProfile(MouseEvent event) throws Exception{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/UserProfile.fxml"));
+		root = loader.load();
+		scene = new Scene(root);
+		
+		UserProfileController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		
+		controller.setAccount();
+
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		stage.setScene(scene);
+	}
+	
+	public void changeToUserShopList(MouseEvent event) throws Exception{
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/UserShopList.fxml"));
+		root = loader.load();
+		scene = new Scene(root);
+		
+		UserShopListController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		
+
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		stage.setScene(scene);
+	}
+	
+	public void changeToShoppingCart(MouseEvent event) throws Exception{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/UserShoppingCart.fxml"));
+		root = loader.load();
+		scene = new Scene(root);
+		
+		UserShoppingCartController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		
+
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		stage.setScene(scene);
+	}
+	
+	public void changeToUserCheckoutDetails(MouseEvent event) throws Exception{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/UserCheckoutDetails.fxml"));
+		root = loader.load();
+		scene = new Scene(root);
+		
+		UserCheckoutDetailsController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		
+
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		stage.setScene(scene);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+
 	
 }

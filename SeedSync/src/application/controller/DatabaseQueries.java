@@ -15,6 +15,10 @@ public class DatabaseQueries {
 	
 	private String userID;
 	
+	public String getUserID() {
+		return userID;
+	}
+	
 	public int getAccountCountDBS(String accountType) {
 		int count = 0;
 		
@@ -167,8 +171,6 @@ public class DatabaseQueries {
 	}
 	
 	public String searchAccountDBS(String loginUsernameEmail) {
-		String userID = "";
-		
 		query = "SELECT user_id "
 				+ "FROM users_account "
 				+ "WHERE username = ? "

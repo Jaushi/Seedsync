@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EditProfileController">
@@ -27,15 +28,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="491.0" prefWidth="374.0" styleClass="vbox-style" stylesheets="@../com/mycompany/projectoop/primary.css" HBox.hgrow="ALWAYS">
                      <children>
-                        <VBox prefHeight="100.0" prefWidth="242.0">
-                           <children>
-                              <ImageView fx:id="userProfileFX" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" styleClass="profile-picture">
-                                 <image>
-                                    <Image url="@../../../../../../Documents/sza.jpeg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
+                        <Circle fx:id="circle" fill="DODGERBLUE" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label fx:id="displayNameFX" alignment="CENTER" prefHeight="21.0" prefWidth="505.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="Sza Bartolome">
                            <font>
                               <Font name="System Bold" size="15.0" />
@@ -87,7 +80,7 @@
                                     <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="phoneNumberFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="162.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="********3647" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="phoneNumberFX" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="223.0" styleClass="vbox-label" stylesheets="@../com/mycompany/projectoop/primary.css" text="********3647" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -276,6 +269,48 @@
                </BorderPane.margin>
             </HBox>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="51.0" fitWidth="129.0" onMouseClicked="#clickedLogo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/headerLogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="63.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label onMouseClicked="#clickedProductShop" prefHeight="44.0" prefWidth="82.0" text="Product Shop" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="63.0" prefWidth="38.0" />
+                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" text="Product Ordered" />
+                  <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="356.0" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/shoppingCartIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/profileIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

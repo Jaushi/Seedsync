@@ -39,15 +39,14 @@ public class LoginController extends UniversalController{
 				String[] userDetail = getUserDetailDBS(userID);
 				String[] userAddress = getUserAddressDBS(userID);
 				
-				if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
-					userSeller = new Seller(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
-				}else if(userTypeAccount.equals("Buyer")) {
-					userBuyer = new Buyer(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
-					System.out.println(userBuyer.firstName);
-				}
-				
 				try {
-					changeToEditProfile(event);
+					if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
+						userSeller = new Seller(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
+						changeToEditProfile(event);
+					}else if(userTypeAccount.equals("Buyer")) {
+						userBuyer = new Buyer(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
+						System.out.println(userBuyer.firstName);
+					}		
 				}catch(Exception ex) {
 					ex.printStackTrace();
 				}

@@ -14,8 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 public class EditProfileController extends UniversalController implements Initializable{
 	
@@ -31,6 +34,14 @@ public class EditProfileController extends UniversalController implements Initia
     private BorderPane mainPane; 
     @FXML
     private ImageView userProfileFX;
+    @FXML
+    private Circle circle;
+    
+    public void setStartupProfile() {
+    	String username = userSeller.getUsername();
+		Image img = new Image("/application/assets/images/"+"user_profile_"+username+".jpg",false);
+		circle.setFill(new ImagePattern(img));
+    }
     
 	public void clickedEditPhoto(ActionEvent event) {
 		if(userSeller != null) {
@@ -138,15 +149,6 @@ public class EditProfileController extends UniversalController implements Initia
 	   calculatedAgeFX.setText(strAge);
 	   calculatedAgeFX.setStyle("-fx-background-color: D9D9D9;");
    }
-		
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		FxmlLoader object = new FxmlLoader();
-		Pane view = object.getPage("UserHeader");
-		mainPane.setTop(view);		
-	
-		regionFieldFX.getItems().addAll(regions);
-	}
 	
 	public void setAccount() {
 		//String userID = (userSeller != null) ? userSeller.userID:(userBuyer != null) ? userBuyer.userID:null;
@@ -264,38 +266,42 @@ public class EditProfileController extends UniversalController implements Initia
 			addressFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
 		}
 		
-		if((!oldPassword.isEmpty() && (password.isEmpty() || passwordVerification.isEmpty())) || (oldPassword.isEmpty() && (!password.isEmpty() || !passwordVerification.isEmpty()))) {
-			passwordFieldFX.setStyle("-fx-border-color: red;");
-			passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
-			isVerified = false;
-		}else if(!oldPassword.isEmpty()){
-			if(userSeller != null) {
-				if(oldPassword != userSeller.password && (!password.equals(passwordVerification) || password.length() < 8)){
-					oldPasswordFieldFX.setStyle("-fx-border-color: red;");
-					passwordFieldFX.setStyle("-fx-border-color: red;");
-					passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
-					isVerified = false;
-				}else {
-					oldPasswordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-					passwordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-					passwordVerificationFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-				}
-			}else if(userBuyer != null) {
-				if(oldPassword != userBuyer.password && (!password.equals(passwordVerification) || password.length() < 8)){
-					oldPasswordFieldFX.setStyle("-fx-border-color: red;");
-					passwordFieldFX.setStyle("-fx-border-color: red;");
-					passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
-					isVerified = false;
-				}else {
-					oldPasswordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-					passwordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-					passwordVerificationFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
-				}
-				
-			}
-			else {
-				changePassword = false;
-			}
+		if (oldPassword.isEmpty()) {
+		    if (!password.isEmpty() || !passwordVerification.isEmpty()) {
+		        passwordFieldFX.setStyle("-fx-border-color: red;");
+		        passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
+		        isVerified = false;
+		    } else {
+		        isVerified = true;
+		    }
+		} else {
+		    if (userSeller != null) {
+		        if (!oldPassword.equals(userSeller.password) || password.isEmpty() || !password.equals(passwordVerification)) {
+		            oldPasswordFieldFX.setStyle("-fx-border-color: red;");
+		            passwordFieldFX.setStyle("-fx-border-color: red;");
+		            passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
+		            isVerified = false;
+		        } else {
+		            oldPasswordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            passwordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            passwordVerificationFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            isVerified = true;
+		        }
+		    } else if (userBuyer != null) {
+		        if (!oldPassword.equals(userBuyer.password) || password.isEmpty() || !password.equals(passwordVerification)) {
+		            oldPasswordFieldFX.setStyle("-fx-border-color: red;");
+		            passwordFieldFX.setStyle("-fx-border-color: red;");
+		            passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
+		            isVerified = false;
+		        } else {
+		            oldPasswordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            passwordFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            passwordVerificationFieldFX.setStyle("-fx-border-color: -fx-dark-primary-color;");
+		            isVerified = true;
+		        }
+		    } else {
+		        changePassword = false;
+		    }
 		}
 		if(isVerified) {
 			statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: -fx-dark-primary-color;");
@@ -330,6 +336,35 @@ public class EditProfileController extends UniversalController implements Initia
 		    statusTextFX.setText("Oops! There was an issue. Make sure everything is correct.");
 		}
 	}
+	
+	//Change scene
+	public void clickedLogo(MouseEvent event) throws Exception {
+		changeToProfile(event);
+	}
+	
+	public void clickedProductShop(MouseEvent event) throws Exception{
+		changeToUserShopList(event);
+	}
+	
+	public void clickedShoppingCart(MouseEvent event) throws Exception{
+		changeToShoppingCart(event);
+	}
+	
+	public void clickedEditProfile(MouseEvent event) throws Exception{
+		changeToEditProfile(event);
+	}
+	
+	public void clickedProductOrdered(MouseEvent event) throws Exception{
+		changeToUserCheckoutDetails(event);
+	}
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {	
+		regionFieldFX.getItems().addAll(regions);
+	}
+	
+	
+	
 	
 	
 	

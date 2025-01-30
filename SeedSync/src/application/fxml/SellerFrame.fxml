@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SellerFrameController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="131.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="872.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="61.0" prefWidth="127.0">
+                                 <children>
+                                    <ImageView fitHeight="51.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                       <image>
+                                          <Image url="@../assets/images/headerLogo.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="70.0" prefWidth="50.0" />
+                              <ImageView fitHeight="18.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/SearchIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="149.0" layoutY="10.0" prefHeight="70.0" prefWidth="577.0" />
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator layoutX="169.0" orientation="VERTICAL" prefHeight="446.0" prefWidth="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="47.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="32.0">
+                           <image>
+                              <Image url="@../../../../../../Downloads/pexels-timmossholder-1738520-modified.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="18.0" layoutY="150.0" prefHeight="18.0" prefWidth="149.0" styleClass="seller-navigation-header-2" text="farmz.melvins@gmail.com" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="19.599999999999994" AnchorPane.topAnchor="150.0" />
+                        <Label layoutX="22.4" layoutY="132.0" prefHeight="18.0" prefWidth="140.0" style="-fx-font-weight: bold;" styleClass="seller-navigation-header" text="Melvin Farmz" textAlignment="CENTER" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="132.0" />
+                        <Button layoutX="18.0" layoutY="192.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Dashboard" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="192.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="18.0" layoutY="227.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="My Inventory" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="227.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="18.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Add/Edit Products" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="297.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="18.0" layoutY="262.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Customers" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="262.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="18.0" layoutY="332.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Edit Profile" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="332.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="21.0" layoutY="400.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="Logout" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="18.0">
+                           <styleClass>
+                              <String fx:value="seller-navigation-button" />
+                              <String fx:value="seller-navigation-button:hover" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -10,18 +10,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserShopListController">
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
-         <top>
-            <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
-         </top>
          <left>
             <VBox prefHeight="445.0" prefWidth="176.0" BorderPane.alignment="CENTER">
                <children>
@@ -32,14 +30,10 @@
                               <Image url="@../assets/images/SearchIcon.png" />
                            </image>
                            <HBox.margin>
-                              <Insets left="35.0" />
+                              <Insets left="10.0" right="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Search Filter">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
+                        <TextField prefHeight="25.0" prefWidth="132.0" />
                      </children>
                   </HBox>
                   <Label text="Category">
@@ -53,7 +47,7 @@
                         <Insets top="15.0" />
                      </padding>
                   </Label>
-                  <CheckBox mnemonicParsing="false" text="CheckBox">
+                  <CheckBox mnemonicParsing="false" text="Fish">
                      <VBox.margin>
                         <Insets bottom="10.0" left="35.0" />
                      </VBox.margin>
@@ -61,7 +55,7 @@
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" text="CheckBox">
+                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" text="Fruit">
                      <VBox.margin>
                         <Insets bottom="10.0" left="35.0" />
                      </VBox.margin>
@@ -69,7 +63,7 @@
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" text="CheckBox">
+                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" text="Livestock">
                      <VBox.margin>
                         <Insets bottom="10.0" left="35.0" />
                      </VBox.margin>
@@ -77,7 +71,7 @@
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" text="CheckBox">
+                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" text="Vegetable">
                      <VBox.margin>
                         <Insets bottom="10.0" left="35.0" />
                      </VBox.margin>
@@ -85,7 +79,7 @@
                         <Font size="12.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" text="CheckBox">
+                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" text="Crops">
                      <VBox.margin>
                         <Insets bottom="10.0" left="35.0" />
                      </VBox.margin>
@@ -165,7 +159,7 @@
                         <Font size="12.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" text="Filter">
+                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" text="Farmer">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -173,15 +167,7 @@
                         <Insets bottom="10.0" left="35.0" />
                      </padding>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" text="Filter">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="35.0" />
-                     </padding>
-                  </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="366.0" mnemonicParsing="false" text="Filter">
+                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" text="Middle Man">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -194,41 +180,6 @@
                         <Insets left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Separator>
-                  <Label layoutX="10.0" layoutY="323.0" text="Shipped From">
-                     <padding>
-                        <Insets bottom="5.0" left="35.0" />
-                     </padding>
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="15.0" />
-                     </VBox.margin>
-                  </Label>
-                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" text="Filter">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="35.0" />
-                     </padding>
-                  </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="425.0" mnemonicParsing="false" text="Filter">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="35.0" />
-                     </padding>
-                  </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="434.0" mnemonicParsing="false" text="Filter">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="35.0" />
-                     </padding>
-                  </CheckBox>
                </children>
                <padding>
                   <Insets top="10.0" />
@@ -236,57 +187,54 @@
             </VBox>
          </left>
          <center>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
                <content>
-                  <VBox prefHeight="1050.0" prefWidth="714.0">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="714.0">
-                           <children>
-                              <Label text="Search results for">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Pane prefHeight="39.0" prefWidth="8.0" />
-                              <Label layoutX="10.0" layoutY="10.0" text="'Banana'">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                        </HBox>
-                        <HBox prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="150.0" />
-                           </children>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="150.0" />
-                           </children>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="249.0" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="150.0" />
-                           </children>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="449.0" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="150.0" />
-                           </children>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="649.0" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="150.0" />
-                           </children>
-                        </HBox>
-                     </children></VBox>
+                  <FlowPane hgap="25.0" prefHeight="884.0" prefWidth="721.0" vgap="10.0" />
                </content>
             </ScrollPane>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="51.0" fitWidth="129.0" onMouseClicked="#clickedLogo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/headerLogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="63.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label onMouseClicked="#clickedProductShop" prefHeight="44.0" prefWidth="82.0" text="Product Shop" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="63.0" prefWidth="38.0" />
+                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" text="Product Ordered" />
+                  <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="356.0" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/shoppingCartIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/profileIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -8,17 +8,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserProfileController">
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
-         <top>
-            <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
-         </top>
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
@@ -29,12 +27,12 @@
                               <Image url="@../assets/images/profileIcon.png" />
                            </image>
                         </ImageView>
-                        <Label text="Sza Bartolome">
+                        <Label fx:id="displayNameFX" text="Sza Bartolome">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label text="szabartolome@gmail.com">
+                        <Label fx:id="displayEmailFX" text="szabartolome@gmail.com">
                            <padding>
                               <Insets bottom="10.0" />
                            </padding>
@@ -42,34 +40,78 @@
                         <Button mnemonicParsing="false" text="Edit Profile" />
                      </children>
                   </VBox>
-                  <ScrollPane prefHeight="270.0" prefWidth="912.0">
-                     <content>
-                        <VBox prefHeight="463.0" prefWidth="930.0">
+                  <VBox prefHeight="463.0" prefWidth="930.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="43.0" prefWidth="886.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="43.0" prefWidth="886.0">
-                                 <children>
-                                    <Label text="To Pay" />
-                                    <Pane prefHeight="43.0" prefWidth="220.0" />
-                                    <Label layoutX="10.0" layoutY="10.0" text="Shipping" />
-                                    <Pane layoutX="311.0" layoutY="10.0" prefHeight="43.0" prefWidth="220.0" />
-                                    <Label layoutX="48.0" layoutY="10.0" text="Dellivered" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="103.0" prefWidth="884.0">
-                                 <children>
-                                    <Pane prefHeight="100.0" prefWidth="200.0" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="53.0" prefHeight="103.0" prefWidth="884.0" />
-                              <HBox layoutX="10.0" layoutY="156.0" prefHeight="103.0" prefWidth="884.0" />
-                              <HBox layoutX="10.0" layoutY="259.0" prefHeight="103.0" prefWidth="884.0" />
+                              <Label text="To Pay" />
+                              <Pane prefHeight="43.0" prefWidth="220.0" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Shipping" />
+                              <Pane layoutX="311.0" layoutY="10.0" prefHeight="43.0" prefWidth="214.0" />
+                              <Label layoutX="48.0" layoutY="10.0" text="Dellivered" />
                            </children>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
+                        </HBox>
+                        <FlowPane hgap="45.0" prefHeight="254.0" prefWidth="912.0">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <children>
+                              <ScrollPane prefHeight="251.0" prefWidth="221.0">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </ScrollPane>
+                              <ScrollPane prefHeight="251.0" prefWidth="221.0" />
+                              <ScrollPane prefHeight="251.0" prefWidth="221.0" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
                </children>
             </VBox>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="51.0" fitWidth="129.0" onMouseClicked="#clickedLogo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/headerLogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="63.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label onMouseClicked="#clickedProductShop" prefHeight="44.0" prefWidth="82.0" text="Product Shop" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="63.0" prefWidth="38.0" />
+                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" text="Product Ordered" />
+                  <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="356.0" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/shoppingCartIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/profileIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

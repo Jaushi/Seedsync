@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,12 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.UserShoppingCartController">
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
-         <top>
-            <HBox prefHeight="80.0" prefWidth="912.0" BorderPane.alignment="CENTER" />
-         </top>
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
@@ -29,10 +28,7 @@
                               <Insets bottom="50.0" left="50.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <VBox prefHeight="107.0" prefWidth="558.0" />
-                        <VBox layoutX="10.0" layoutY="39.0" prefHeight="107.0" prefWidth="558.0" />
-                        <VBox layoutX="10.0" layoutY="146.0" prefHeight="107.0" prefWidth="558.0" />
-                        <VBox layoutX="10.0" layoutY="253.0" prefHeight="107.0" prefWidth="558.0" />
+                        <VBox prefHeight="381.0" prefWidth="558.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="335.0" prefWidth="324.0">
@@ -126,7 +122,7 @@
                               <Insets left="5.0" top="10.0" />
                            </VBox.margin>
                         </HBox>
-                        <Button fx:id="checkoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleCheckout" prefHeight="26.0" prefWidth="190.0" text="Checkout">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Checkout">
                            <VBox.margin>
                               <Insets left="70.0" top="50.0" />
                            </VBox.margin>
@@ -134,7 +130,7 @@
                               <Font size="12.0" />
                            </font>
                         </Button>
-                        <Label fx:id="continueShoppingButton" onDragDetected="#handleContinueShopping" text="Continue Shopping">
+                        <Label text="Continue Shopping">
                            <VBox.margin>
                               <Insets left="115.0" top="7.0" />
                            </VBox.margin>
@@ -150,6 +146,48 @@
                </children>
             </HBox>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="51.0" fitWidth="129.0" onMouseClicked="#clickedLogo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/headerLogo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="63.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Label onMouseClicked="#clickedProductShop" prefHeight="44.0" prefWidth="82.0" text="Product Shop" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="63.0" prefWidth="38.0" />
+                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" text="Product Ordered" />
+                  <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="356.0" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/shoppingCartIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../assets/images/profileIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>
