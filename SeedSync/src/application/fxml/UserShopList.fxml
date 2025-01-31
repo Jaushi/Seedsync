@@ -22,7 +22,7 @@
    <children>
       <BorderPane prefHeight="525.0" prefWidth="912.0">
          <left>
-            <VBox prefHeight="445.0" prefWidth="176.0" styleClass="vbox-style" BorderPane.alignment="CENTER">
+            <VBox prefHeight="445.0" prefWidth="176.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="176.0">
                      <children>
@@ -48,45 +48,66 @@
                         <Insets left="15.0" top="15.0" />
                      </padding>
                   </Label>
-                  <CheckBox mnemonicParsing="false" styleClass="shop-list-label" text="Fish">
+                  <CheckBox mnemonicParsing="false" text="Fish">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="check-box" />
+                        <String fx:value="box" />
+                     </styleClass>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" styleClass="shop-list-label" text="Fruit">
+                  <CheckBox layoutX="10.0" layoutY="55.0" mnemonicParsing="false" text="Fruit">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" styleClass="shop-list-label" text="Livestock">
+                  <CheckBox layoutX="10.0" layoutY="73.0" mnemonicParsing="false" text="Livestock">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" styleClass="shop-list-label" text="Vegetable">
+                  <CheckBox layoutX="10.0" layoutY="90.0" mnemonicParsing="false" text="Vegetable">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
                   </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" styleClass="shop-list-label" text="Crops">
+                  <CheckBox layoutX="10.0" layoutY="108.0" mnemonicParsing="false" text="Crops">
                      <VBox.margin>
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                      <font>
                         <Font size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
                   </CheckBox>
                   <Separator prefWidth="200.0">
                      <VBox.margin>
@@ -183,40 +204,40 @@
                         <Font size="12.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" styleClass="shop-list-label" text="Farmer">
+                  <CheckBox layoutX="45.0" layoutY="71.0" mnemonicParsing="false" text="Farmer">
                      <font>
                         <Font size="12.0" />
                      </font>
-                     <padding>
-                        <Insets bottom="10.0" left="15.0" />
-                     </padding>
-                  </CheckBox>
-                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" styleClass="shop-list-label" text="Middle Man">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="15.0" />
-                     </padding>
-                  </CheckBox>
-                  <Separator prefWidth="200.0">
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
                      <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
-                  </Separator>
+                  </CheckBox>
+                  <CheckBox layoutX="10.0" layoutY="345.0" mnemonicParsing="false" text="Middle Man">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="shop-list-label" />
+                        <String fx:value="box" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" />
+                     </VBox.margin>
+                  </CheckBox>
                </children>
                <padding>
                   <Insets top="10.0" />
                </padding>
+               <styleClass>
+                  <String fx:value="vbox-style" />
+                  <String fx:value="shadow" />
+               </styleClass>
             </VBox>
          </left>
-         <center>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
-               <content>
-                  <FlowPane hgap="25.0" prefHeight="884.0" prefWidth="721.0" vgap="10.0" />
-               </content>
-            </ScrollPane>
-         </center>
          <top>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="912.0" BorderPane.alignment="CENTER">
                <children>
@@ -233,11 +254,16 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="productShop:hover" />
+                        <String fx:value="productShop" />
+                        <String fx:value="productShop:pressed" />
+                     </styleClass>
                   </Label>
                   <Pane prefHeight="63.0" prefWidth="38.0" />
-                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" text="Product Ordered" />
+                  <Label onMouseClicked="#clickedProductOrdered" prefHeight="44.0" prefWidth="97.0" styleClass="productOrdered" text="Product Ordered" />
                   <Pane layoutX="156.0" layoutY="10.0" prefHeight="63.0" prefWidth="356.0" HBox.hgrow="ALWAYS" />
-                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                  <ImageView fitHeight="20.0" fitWidth="46.0" onMouseClicked="#clickedShoppingCart" pickOnBounds="true" preserveRatio="true" styleClass="cartIcon" HBox.hgrow="ALWAYS">
                      <image>
                         <Image url="@../assets/images/shoppingCartIcon.png" />
                      </image>
@@ -245,7 +271,7 @@
                         <Insets left="5.0" right="15.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                  <ImageView fitHeight="15.0" fitWidth="29.0" onMouseClicked="#clickedEditProfile" pickOnBounds="true" preserveRatio="true" styleClass="profileIcon" HBox.hgrow="ALWAYS">
                      <image>
                         <Image url="@../assets/images/profileIcon.png" />
                      </image>
@@ -259,6 +285,18 @@
                </padding>
             </HBox>
          </top>
+         <center>
+            <AnchorPane prefHeight="434.0" prefWidth="736.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane layoutX="42.0" layoutY="-4.0" prefHeight="466.0" prefWidth="736.0" style="-fx-border-color: transparent;" styleClass="dashboard-container" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0" />
+                  <FlowPane prefHeight="611.0" prefWidth="736.0" AnchorPane.bottomAnchor="-149.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+               <styleClass>
+                  <String fx:value="product-list-pane-style" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
