@@ -12,10 +12,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			Parent root = FXMLLoader.load(getClass().getResource("/application/fxml/components/UserProfileCard.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/application/fxml/ProductProfile.fxml"));
 //			 File path for components: "/application/fxml/components/component_name.fxml"
 
-			
 			Image logo = new Image(getClass().getResource("assets/images/logo.png").toExternalForm());
 			
 			Scene scene = new Scene(root);

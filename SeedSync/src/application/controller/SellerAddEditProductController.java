@@ -13,6 +13,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -29,6 +31,8 @@ public class SellerAddEditProductController extends UniversalController implemen
     private TextArea productDescriptionFX;
     @FXML
     private TextField productNameFX, productPriceFX, productShippingFeeFX, productLocationFX, productStockFX, productWeightFX;
+    @FXML
+    private ImageView productImageFX;
     
 	public void getSelectedFile(ActionEvent event) {
 		
@@ -44,6 +48,9 @@ public class SellerAddEditProductController extends UniversalController implemen
 		if(selectedFile == null) {
 			System.out.println("No file is selected");
 		}
+		Image img = new Image(selectedFile.toURI().toString());
+		productImageFX.setImage(img);
+		System.out.println(selectedFile.toURI().toString());
 	}
 	
 	public void enableProduct(ActionEvent event) {

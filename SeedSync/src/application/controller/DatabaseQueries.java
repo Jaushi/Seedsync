@@ -377,7 +377,29 @@ public class DatabaseQueries {
 		}
 	}
     
-    public int getProductCountDBS(String category) {
+	public int getProductCountUserDBS(String userID) {
+	    int count = 0;
+
+	    String query = "SELECT COUNT(product_id) AS count " 
+	                 + "FROM products "
+	                 + "WHERE user_id = ?";
+
+	    try {
+	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+	        preparedStatement.setString(1, userID);
+	        ResultSet result = preparedStatement.executeQuery();
+
+	        if (result.next()) {
+	            count = result.getInt("count");
+	        }
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	    }
+
+	    return count;
+	}
+	
+	public int getProductCountDBS(String productType) {
 	    int count = 0;
 
 	    String query = "SELECT COUNT(product_id) AS count " 
@@ -386,7 +408,7 @@ public class DatabaseQueries {
 
 	    try {
 	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-	        preparedStatement.setString(1, category);
+	        preparedStatement.setString(1, productType);
 
 	        ResultSet result = preparedStatement.executeQuery();
 
@@ -421,6 +443,7 @@ public class DatabaseQueries {
 	
 	public void addProductDBS(String name, String description, Float price, Float shippingFee, String dateHarvested, String consumeBefore, int stock, Float weight, String deliveryDate, String location, String category, String status, String userID) {
 		productID = productIDGeneratorDBS(category);
+		System.out.println(productID);
 		
 		query = "INSERT INTO products(product_id, name, description, price, shipping_fee, date_harvested, consume_before, stock, weight, delivery_date, location, category, status, user_id) "
 				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -543,6 +566,53 @@ public class DatabaseQueries {
             ex.printStackTrace();
         }
     }
+    
+    public List<Products> getInventoryDBS(String userID){
+    	List<Products> items = new ArrayList<>();
+    	
+    	query = "SELECT product_id, productURL, name, description, price, shipping_fee, date_harvested, consume_before, stock, weight, delivery_date, location, category, status, user_id "
+    			+ "FROM products "
+    			+ "WHERE user_id = ?";
+    	
+    	try {
+    		PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+    		preparedStatement.setString(1, userID);
+    		ResultSet result = preparedStatement.executeQuery();
+    		
+    		while(result.next()) {
+    			String productID = result.getString("product_id");
+    			String productURL = result.getString("productURL");
+    			String name = result.getString("name");
+    			String description = result.getString("description");
+    			Float price = result.getFloat("price");
+    			Float shippingFee = result.getFloat("shipping_fee");
+    			String dateHarvested = result.getString("date_harvested");
+    			String consumeBefore = result.getString("consume_before");
+    			int stock = result.getInt("stock");
+    			Float weight = result.getFloat("weight");
+    			String deliveryDate = result.getString("delivery_date");
+    			String location = result.getString("location");
+    			String category = result.getString("category");
+    			String status = result.getString("status");
+    			String sellerID = result.getString("user_id");
+    			
+    			if(category.equals("Livestock")) {
+    				items.add(new Livestock(productID, productURL, name, description, price, shippingFee, dateHarvested, consumeBefore, stock, weight, deliveryDate, location, category, status, sellerID));
+    			}else if(category.equals("Rice")) {
+    				items.add(new Rice(productID, productURL, name, description, price, shippingFee, dateHarvested, consumeBefore, stock, weight, deliveryDate, location, category, status, sellerID));
+    			}else if(category.equals("Fruit")) {
+    				items.add(new Fruit(productID, productURL, name, description, price, shippingFee, dateHarvested, consumeBefore, stock, weight, deliveryDate, location, category, status, sellerID));
+    			}else if(category.equals("Vegetable")) {
+    				items.add(new Vegetable(productID, productURL, name, description, price, shippingFee, dateHarvested, consumeBefore, stock, weight, deliveryDate, location, category, status, sellerID));
+    			}else if(category.equals("Fish")) {
+    				items.add(new Fish(productID, productURL, name, description, price, shippingFee, dateHarvested, consumeBefore, stock, weight, deliveryDate, location, category, status, sellerID));
+    			}	
+    		}
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
+    	return items;
+   	}
     
     
     

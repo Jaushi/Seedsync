@@ -31,7 +31,7 @@
                                        <children>
                                           <StackPane layoutX="21.0" layoutY="30.0" prefHeight="300.0" prefWidth="300.0" styleClass="add-image" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="35.0">
                                              <children>
-                                                <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" />
+                                                <ImageView fx:id="productImageFX" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" />
                                                 <Button mnemonicParsing="false" onAction="#getSelectedFile" styleClass="button-three" text="Add Image" />
                                              </children>
                                           </StackPane>

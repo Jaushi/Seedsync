@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -30,16 +31,23 @@ public class SellerFrameController extends UniversalController implements Initia
 		mainPane.setCenter(view);
 	}
 	
-	public void clickedInventory(ActionEvent event) {
-		FxmlLoader object = new FxmlLoader();
-		Pane view = object.getPage("SellerInventory");
+	public void clickedInventory(ActionEvent event) throws Exception{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/components/SellerInventory.fxml"));
+		root = loader.load();
 		
-		mainPane.setCenter(view);
+		SellerInventoryController controller = loader.getController();
+		
+		controller.setUserSeller(userSeller);
+		controller.setInventory();
+		
+		mainPane.setCenter(root);
 	}
 	
 	public void clickedCustomers(ActionEvent event) {
 		FxmlLoader object = new FxmlLoader();
 		Pane view = object.getPage("SellerCustomerPage");
+		
+		
 		
 		mainPane.setCenter(view);
 	}

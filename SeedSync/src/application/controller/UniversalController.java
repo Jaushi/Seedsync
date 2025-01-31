@@ -1,5 +1,7 @@
 package application.controller;
 
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,6 +18,7 @@ public class UniversalController extends DatabaseQueries{
 	public String userTypeAccount;
 	public Seller userSeller;
 	public Buyer userBuyer;
+	public List<Products> items;
 	
 	public String[] size = {"small", "medium", "large"};
 	public String[] quality = {"high", "medium", "low"};
@@ -33,11 +36,14 @@ public class UniversalController extends DatabaseQueries{
 	
 	public void setUserSeller(Seller userSeller) {
 		this.userSeller = userSeller;
-		
 	}
 	
 	public void setUserBuyer(Buyer userBuyer) {
 		this.userBuyer = userBuyer;
+	}
+	
+	public void setProduct(List<Products> items) {
+		this.items = items;
 	}
 	
 	//Scene Controller
