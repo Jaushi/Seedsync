@@ -1,5 +1,10 @@
 package application.controller;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,13 +17,11 @@ public class DatabaseQueries {
 	private Connection connectDatabase = connectNow.getConnection();
 	
 	private String query;
-	
 	private String userID;
+	private String productID;
 	
-	public String getUserID() {
-		return userID;
-	}
 	
+//---------------------------------------------USER SECTION--------------------------------------------
 	public int getAccountCountDBS(String accountType) {
 		int count = 0;
 		
@@ -217,130 +220,7 @@ public class DatabaseQueries {
 			ex.printStackTrace();
 		}
 		return verified;
-	}
-	
-	
-    public boolean addItemDBS(String pictureURL, String name, String location, float weight, float price, String user_id ) {
-		query = "INSERT INTO products(pictureURL, name, location, weight, price, user_id) "
-		+ "VALUES(?, ?, ?, ?, ?, ?)";
-
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, pictureURL);
-            preparedStatement.setString(2, name);
-            preparedStatement.setString(3, location);
-            preparedStatement.setFloat(4, weight);
-            preparedStatement.setFloat(5, price);
-            preparedStatement.setString(6, user_id);
-            
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean addItemLivestockDBS(String type, int age, String feed_diet, int product_count) {
-        query = "INSERT INTO livestock(type, age, feed_diet, product_count)"
-        + "VALUES(?, ?, ?, ?)";
-        
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, type);
-            preparedStatement.setInt(2, age);
-            preparedStatement.setString(3, feed_diet);
-            preparedStatement.setInt(4, product_count);
-                
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-    
-    public boolean addItemRiceDBS(String quality, String texture, String color, int product_count) {
-        query = "INSERT INTO rice(quality, texture, color, product_count)"
-        + "VALUES(?, ?, ?, ?)";
-        
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, quality);
-            preparedStatement.setString(2, texture);
-            preparedStatement.setString(3, color);
-            preparedStatement.setInt(4, product_count);
-            
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean addItemFruitDBS(String quality, String flavor, String size, int product_count) {
-        query = "INSERT INTO fruit(quality, flavor, size, product_count)"
-                + "VALUES(?, ?, ?, ?)";
-        
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, quality);
-            preparedStatement.setString(2, flavor);
-            preparedStatement.setString(3, size);
-            preparedStatement.setInt(4, product_count);
-                
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean addItemVegetableDBS(String quality, String size, int product_count) {
-        query = "INSERT INTO vegetable(quality, size, product_count)"
-                + "VALUES(?, ?, ?)";
-        
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, quality);
-            preparedStatement.setString(2, size);
-            preparedStatement.setInt(3, product_count);
-                
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean addItemFishDBS(String type, String source, String size, int product_count) {
-        query = "INSERT INTO fish(type, source, size, product_count)"
-                + "VALUES(?, ?, ?, ?)";
-        
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            
-            preparedStatement.setString(1, type);
-            preparedStatement.setString(2, source);
-            preparedStatement.setString(3, size);
-            preparedStatement.setInt(4, product_count);
-                
-            preparedStatement.executeUpdate();            
-            return true;
-        }catch(Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
-    
+	}    
     
     public boolean checkDuplicateDBS(String email, String username, String phone_number) {
         String query = "SELECT COUNT(*) FROM users WHERE email = ? AND username = ? AND phone_number = ?";
@@ -463,170 +343,380 @@ public class DatabaseQueries {
     }
     
     
-    
-    public List<Product> getItemsDBS() {
-        List<Product> items = new ArrayList<>();
-        query = "SELECT pictureURL, name, location, weight, price, user_id FROM products";
-    
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
-    
-            while (resultSet.next()) {
-                String pictureURL = resultSet.getString("pictureURL");
-                String name = resultSet.getString("name");
-                String location = resultSet.getString("location");
-                float weight = resultSet.getFloat("weight");
-                float price = resultSet.getFloat("price");
-                String user_id = resultSet.getString("user_id");
-    
-                items.add(new Product(pictureURL, name, location, weight, price, user_id));
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return items;
-    }
-    
-    public List<Product> getMatchItemDBS(String criteria, String value) {
-        List<Product> matchedItems = new ArrayList<>();
-        query = "SELECT * FROM products WHERE " + criteria + " = ?";
-    
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            preparedStatement.setString(1, value);
-            ResultSet resultSet = preparedStatement.executeQuery();
-    
-            while (resultSet.next()) {
-                String pictureURL = resultSet.getString("pictureURL");
-                String name = resultSet.getString("name");
-                String location = resultSet.getString("location");
-                float weight = resultSet.getFloat("weight");
-                float price = resultSet.getFloat("price");
-                String user_id = resultSet.getString("user_id");
-    
-                matchedItems.add(new Product(pictureURL, name, location, weight, price, user_id));
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return matchedItems;
-    }
+    // -----------------------------------PRODUCT SECTION------------------------------
+	public void addProductPicture(File selectedFile) {
+		String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf("."));
+		
+		String newFileName = "user_profile_" + productID + extension;
+		
+		Path destination = Paths.get("src/application/assets/images/products/" + newFileName);
+		try {
+			//Paste the selectedFile to the destination
+			Files.copy(selectedFile.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
+			System.out.println("Image saved successfully!");
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+		
+		String fileNameLocation = "src/application/assets/images/products/" + newFileName;
 
-    public boolean removeItemDBS(int itemID) {
-        query = "DELETE FROM products WHERE item_id = ?";
+		query = "UPDATE products "
+				+ "SET productURL = ? "
+				+ "WHERE product_id = ?";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, fileNameLocation);
+			preparedStatement.setString(2, productID);
+			
+			preparedStatement.executeUpdate();
+			
+			System.out.println("PICTURE ADDED");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
     
-        try {
-            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-            preparedStatement.setInt(1, itemID);
-    
-            int rowsAffected = preparedStatement.executeUpdate();
-            return rowsAffected > 0;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
+    public int getProductCountDBS(String category) {
+	    int count = 0;
 
-        public List<Product> sortProductsByPriceAscDBS() {
-            List<Product> sortedProducts = new ArrayList<>();
-            query = "SELECT * FROM products ORDER BY price ASC";
-            
-            try {
-                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
-                
-                while (resultSet.next()) {
-                    String name = resultSet.getString("name");
-                    float price = resultSet.getFloat("price");
-                    sortedProducts.add(new Product(name, price));
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            
-            return sortedProducts;
-        }
+	    String query = "SELECT COUNT(product_id) AS count " 
+	                 + "FROM products " 
+	                 + "WHERE category = ?";
+
+	    try {
+	        PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+	        preparedStatement.setString(1, category);
+
+	        ResultSet result = preparedStatement.executeQuery();
+
+	        if (result.next()) {
+	            count = result.getInt("count");
+	        }
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	    }
+
+	    return count;
+	}
+	
+	public String productIDGeneratorDBS(String category) {
+		int productNumber = getProductCountDBS(category) +1;
+		String generatedID = "";
+		
+		if(category.equals("Fish"))
+			generatedID = String.format("FS%03d", productNumber);
+		else if(category.equals("Fruit"))
+			generatedID = String.format("FT%03d", productNumber);
+		else if(category.equals("Livestock"))
+			generatedID = String.format("LS%03d", productNumber);
+		else if(category.equals("Rice"))
+			generatedID = String.format("RE%03d", productNumber);
+		else if(category.equals("Vegetable"))
+			generatedID = String.format("VG%03d", productNumber);
+		
+		
+		return generatedID;
+	}
+	
+	public void addProductDBS(String name, String description, Float price, Float shippingFee, String dateHarvested, String consumeBefore, int stock, Float weight, String deliveryDate, String location, String category, String status, String userID) {
+		productID = productIDGeneratorDBS(category);
+		
+		query = "INSERT INTO products(product_id, name, description, price, shipping_fee, date_harvested, consume_before, stock, weight, delivery_date, location, category, status, user_id) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, productID);
+			preparedStatement.setString(2, name);
+			preparedStatement.setString(3, description);
+			preparedStatement.setFloat(4, price);
+			preparedStatement.setFloat(5, shippingFee);
+			preparedStatement.setString(6,  dateHarvested);
+			preparedStatement.setString(7, consumeBefore);
+			preparedStatement.setInt(8, stock);
+			preparedStatement.setFloat(9, weight);
+			preparedStatement.setString(10, deliveryDate);
+			preparedStatement.setString(11, location);
+			preparedStatement.setString(12, category);
+			preparedStatement.setString(13, status);
+			preparedStatement.setString(14, userID);
+			
+			preparedStatement.executeUpdate();
+			
+			System.out.println("Account registered successfully.");
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public void addFishDBS(String type, String source) {
+		query = "INSERT INTO fish(type, source, product_id) "
+				+ "VALUES (?, ?, ?)";
+		
+		try {
+			PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+			preparedStatement.setString(1, type);
+			preparedStatement.setString(2, source);
+			preparedStatement.setString(3, productID);
+			
+			preparedStatement.executeUpdate();
+			
+			System.out.println("FISH ADDED");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+	}
+	
+    public void addLivestockDBS(String type, String feedDiet) {
+        query = "INSERT INTO livestock(type, feed_diet, product_id)"
+        + "VALUES(?, ?, ?)";
         
-        public List<Product> sortProductsByPriceDescDBS() {
-            List<Product> sortedProducts = new ArrayList<>();
-            query = "SELECT * FROM products ORDER BY price DESC";
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
             
-            try {
-                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.setString(1, type);
+            preparedStatement.setString(2, feedDiet);
+            preparedStatement.setString(3, productID);
                 
-                while (resultSet.next()) {
-                    String name = resultSet.getString("name");
-                    float price = resultSet.getFloat("price");
-                    sortedProducts.add(new Product(name, price));
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            
-            return sortedProducts;
+            preparedStatement.executeUpdate();            
+            System.out.println("ADDED LIVESTOCK");
+        }catch(Exception ex) {
+            ex.printStackTrace();
         }
-
-        public List<Product> sortProductsByPopularityRatingDBS() {
-            List<Product> sortedProducts = new ArrayList<>();
-            query = "SELECT * FROM products ORDER BY popularity_rating DESC"; 
+    }
+    
+    public void addRiceDBS(String quality, String texture, String color) {
+        query = "INSERT INTO rice(quality, texture, color, product_id)"
+        + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
             
-            try {
-                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, texture);
+            preparedStatement.setString(3, color);
+            preparedStatement.setString(4, productID);
+            
+            preparedStatement.executeUpdate();            
+            System.out.println("ADDED RICE");
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void addFruitDBS(String quality, String flavor, String size) {
+        query = "INSERT INTO fruit(quality, flavor, size, product_id)"
+                + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+            
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, flavor);
+            preparedStatement.setString(3, size);
+            preparedStatement.setString(4, productID);
                 
-                while (resultSet.next()) {
-                    String name = resultSet.getString("name");
-                    float price = resultSet.getFloat("price");
-
-                    sortedProducts.add(new Product(name, price));
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            
-            return sortedProducts;
+            preparedStatement.executeUpdate();            
+            System.out.println("FRUIT ADDED");
+        }catch(Exception ex) {
+            ex.printStackTrace();
         }
-
-        public List<Product> sortProductsByAttributesDBS(String attribute) {
-            List<Product> sortedProducts = new ArrayList<>();
-            query = "SELECT * FROM products ORDER BY " + attribute + " ASC"; 
+    }
+    
+    public void addVegetableDBS(String quality, String size) {
+        query = "INSERT INTO vegetable(quality, size, product_id)"
+                + "VALUES(?, ?, ?)";
+        
+        try {
+            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
             
-            try {
-                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.setString(1, quality);
+            preparedStatement.setString(2, size);
+            preparedStatement.setString(3, productID);
                 
-                while (resultSet.next()) {
-                    String name = resultSet.getString("name");
-                    float price = resultSet.getFloat("price");
-
-                    sortedProducts.add(new Product(name, price));
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            
-            return sortedProducts;
+            preparedStatement.executeUpdate();            
+            System.out.println("VEGETABLE ADDED");
+        }catch(Exception ex) {
+            ex.printStackTrace();
         }
-
-        public List<Product> sortProductsByDateAddedDBS() {
-            List<Product> sortedProducts = new ArrayList<>();
-            query = "SELECT * FROM products ORDER BY date_added DESC"; 
-            
-            try {
-                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
-                
-                while (resultSet.next()) {
-                    String name = resultSet.getString("name");
-                    float price = resultSet.getFloat("price");
-
-                    sortedProducts.add(new Product(name, price));
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            
-            return sortedProducts;
-        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    public List<Product> getItemsDBS() {
+//        List<Product> items = new ArrayList<>();
+//        query = "SELECT pictureURL, name, location, weight, price, user_id FROM products";
+//    
+//        try {
+//            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//    
+//            while (resultSet.next()) {
+//                String pictureURL = resultSet.getString("pictureURL");
+//                String name = resultSet.getString("name");
+//                String location = resultSet.getString("location");
+//                float weight = resultSet.getFloat("weight");
+//                float price = resultSet.getFloat("price");
+//                String user_id = resultSet.getString("user_id");
+//    
+//                items.add(new Product(pictureURL, name, location, weight, price, user_id));
+//            }
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        return items;
+//    }
+//    
+//    public List<Product> getMatchItemDBS(String criteria, String value) {
+//        List<Product> matchedItems = new ArrayList<>();
+//        query = "SELECT * FROM products WHERE " + criteria + " = ?";
+//    
+//        try {
+//            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//            preparedStatement.setString(1, value);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//    
+//            while (resultSet.next()) {
+//                String pictureURL = resultSet.getString("pictureURL");
+//                String name = resultSet.getString("name");
+//                String location = resultSet.getString("location");
+//                float weight = resultSet.getFloat("weight");
+//                float price = resultSet.getFloat("price");
+//                String user_id = resultSet.getString("user_id");
+//    
+//                matchedItems.add(new Product(pictureURL, name, location, weight, price, user_id));
+//            }
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        return matchedItems;
+//    }
+//
+//    public boolean removeItemDBS(int itemID) {
+//        query = "DELETE FROM products WHERE item_id = ?";
+//    
+//        try {
+//            PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//            preparedStatement.setInt(1, itemID);
+//    
+//            int rowsAffected = preparedStatement.executeUpdate();
+//            return rowsAffected > 0;
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//            return false;
+//        }
+//
+//        public List<Product> sortProductsByPriceAscDBS() {
+//            List<Product> sortedProducts = new ArrayList<>();
+//            query = "SELECT * FROM products ORDER BY price ASC";
+//            
+//            try {
+//                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//                ResultSet resultSet = preparedStatement.executeQuery();
+//                
+//                while (resultSet.next()) {
+//                    String name = resultSet.getString("name");
+//                    float price = resultSet.getFloat("price");
+//                    sortedProducts.add(new Product(name, price));
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            
+//            return sortedProducts;
+//        }
+//        
+//        public List<Product> sortProductsByPriceDescDBS() {
+//            List<Product> sortedProducts = new ArrayList<>();
+//            query = "SELECT * FROM products ORDER BY price DESC";
+//            
+//            try {
+//                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//                ResultSet resultSet = preparedStatement.executeQuery();
+//                
+//                while (resultSet.next()) {
+//                    String name = resultSet.getString("name");
+//                    float price = resultSet.getFloat("price");
+//                    sortedProducts.add(new Product(name, price));
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            
+//            return sortedProducts;
+//        }
+//
+//        public List<Product> sortProductsByPopularityRatingDBS() {
+//            List<Product> sortedProducts = new ArrayList<>();
+//            query = "SELECT * FROM products ORDER BY popularity_rating DESC"; 
+//            
+//            try {
+//                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//                ResultSet resultSet = preparedStatement.executeQuery();
+//                
+//                while (resultSet.next()) {
+//                    String name = resultSet.getString("name");
+//                    float price = resultSet.getFloat("price");
+//
+//                    sortedProducts.add(new Product(name, price));
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            
+//            return sortedProducts;
+//        }
+//
+//        public List<Product> sortProductsByAttributesDBS(String attribute) {
+//            List<Product> sortedProducts = new ArrayList<>();
+//            query = "SELECT * FROM products ORDER BY " + attribute + " ASC"; 
+//            
+//            try {
+//                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//                ResultSet resultSet = preparedStatement.executeQuery();
+//                
+//                while (resultSet.next()) {
+//                    String name = resultSet.getString("name");
+//                    float price = resultSet.getFloat("price");
+//
+//                    sortedProducts.add(new Product(name, price));
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            
+//            return sortedProducts;
+//        }
+//
+//        public List<Product> sortProductsByDateAddedDBS() {
+//            List<Product> sortedProducts = new ArrayList<>();
+//            query = "SELECT * FROM products ORDER BY date_added DESC"; 
+//            
+//            try {
+//                PreparedStatement preparedStatement = connectDatabase.prepareStatement(query);
+//                ResultSet resultSet = preparedStatement.executeQuery();
+//                
+//                while (resultSet.next()) {
+//                    String name = resultSet.getString("name");
+//                    float price = resultSet.getFloat("price");
+//
+//                    sortedProducts.add(new Product(name, price));
+//                }
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            
+//            return sortedProducts;
+//        }
 }

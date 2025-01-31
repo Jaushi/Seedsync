@@ -16,8 +16,8 @@ public class UserProfileController extends UniversalController implements Initia
     private Label displayNameFX;
 	
 	public void setAccount() {
-		displayEmailFX.setText(userSeller.getEmail());
-		displayNameFX.setText(userSeller.getFullName());
+		displayEmailFX.setText(userBuyer.getEmail());
+		displayNameFX.setText(userBuyer.getFullName());
 	}
 	
 	

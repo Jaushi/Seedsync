@@ -31,7 +31,7 @@ public class SellerProductsController extends UniversalController implements Ini
     @FXML
     private Button addButtonFX, cancelButtonFX, uploadButtonFX;
     @FXML
-    private ChoiceBox<String> fishSizeFX, fishSourceFX, fishTypeFX, fruitFlavorFX, fruitQualityFX, fruitSizeFX, livestockFeedDietFX, livestockTypeFX, riceColorFX, riceQualityFX, riceTextureFX, vegetableQualityFX, vegetableSizeFX, productTypeFX;
+    private ChoiceBox<String> fishSizeFX, fishSourceFX, fishTypeFX, fruitFlavorFX, fruitQualityFX, fruitSizeFX, livestockFeedDietFX, livestockTypeFX, riceColorFX, riceQualityFX, riceTextureFX, vegetableQualityFX, vegetableSizeFX, productTypeFX, productStatusFX;
     @FXML
     private TextField livestockAgeFX, productWeightFX, productNameFX, productLocationFX, productPriceFX;
     @FXML
@@ -49,20 +49,21 @@ public class SellerProductsController extends UniversalController implements Ini
 		Pane navBar = object.getPage("SellerNavigation");
 		mainPane.setLeft(navBar);
 		
-		fishSizeFX.getItems().addAll(fishSize);
+		fishSizeFX.getItems().addAll(size);
 		fishSourceFX.getItems().addAll(fishSource);
 		fishTypeFX.getItems().addAll(fishType);
 		fruitFlavorFX.getItems().addAll(fruitFlavor);
-		fruitQualityFX.getItems().addAll(fruitQuality);
-		fruitSizeFX.getItems().addAll(fruitSize);
+		fruitQualityFX.getItems().addAll(quality);
+		fruitSizeFX.getItems().addAll(size);
 		livestockTypeFX.getItems().addAll(livestockType);
 		livestockFeedDietFX.getItems().addAll(livestockFeedDiet);
-		riceQualityFX.getItems().addAll(riceQuality);
+		riceQualityFX.getItems().addAll(quality);
 		riceTextureFX.getItems().addAll(riceTexture);
 		riceColorFX.getItems().addAll(riceColor);
-		vegetableQualityFX.getItems().addAll(vegetableQuality);
-		vegetableSizeFX.getItems().addAll(vegetableSize);
+		vegetableQualityFX.getItems().addAll(quality);
+		vegetableSizeFX.getItems().addAll(size);
 		
+		productStatusFX.getItems().addAll();
 		productTypeFX.getItems().addAll(productType);
 	}
     

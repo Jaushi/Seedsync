@@ -42,10 +42,11 @@ public class LoginController extends UniversalController{
 				try {
 					if(userTypeAccount.equals("Farmer") || userTypeAccount.equals("Middle Man")) {
 						userSeller = new Seller(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
-						changeToEditProfile(event);
+						changeToSellerFrame(event);
 					}else if(userTypeAccount.equals("Buyer")) {
 						userBuyer = new Buyer(userID, userAccount[0], userAccount[1], userAccount[2], userAccount[3], userDetail[0], userDetail[1], userDetail[2], Integer.parseInt(userDetail[3]), userDetail[4], userAddress[0], userAddress[1], userAddress[2], userAddress[3]);
 						System.out.println(userBuyer.firstName);
+						changeToEditProfile(event);
 					}		
 				}catch(Exception ex) {
 					ex.printStackTrace();

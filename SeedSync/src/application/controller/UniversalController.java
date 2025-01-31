@@ -17,28 +17,18 @@ public class UniversalController extends DatabaseQueries{
 	public Seller userSeller;
 	public Buyer userBuyer;
 	
+	public String[] size = {"small", "medium", "large"};
+	public String[] quality = {"high", "medium", "low"};
 	public String[] productType = {"Livestock", "Rice", "Fruit", "Vegetable", "Fish"};
 	public String[] productOrderStatus = {"To pay", "Shipping", "Delivered"};
-	public String[] productsStatus = {"available", "out of stock"};
-
+	public String[] productStatus = {"available", "out of stock"};
 	public String[] livestockType = {"cow", "chicken", "pig", "goat"};
 	public String[] livestockFeedDiet = {"grain-fed", "grass-fed"};
-
-	public String[] riceQuality = {"high", "medium", "low"};
 	public String[] riceTexture = {"soft", "medium", "hard"};
 	public String[] riceColor = {"white", "brown", "red"};
-
-	public String[] fruitQuality = {"high", "medium", "low"};
 	public String[] fruitFlavor = {"sweet", "sour"};
-	public String[] fruitSize = {"small", "medium", "large"};
-
-	public String[] vegetableQuality = {"high", "medium", "low"};
-	public String[] vegetableSize = {"small", "medium", "large"};
-
 	public String[] fishType = {"freshwater", "saltwater"};
 	public String[] fishSource = {"farm-raised", "wild-caught"};
-	public String[] fishSize = {"small", "medium", "large"};
-	
 	public String[] regions = {"Region I", "Region II", "Region III", "Region IV", "MIMAROPA", "Region V", "Region VI", "Region VII", "Region VIII", "Region IX", "Region X", "Region XI", "Region XII", "Region XIII", "NIR", "NCR", "CAR", "BARMM"};
 	
 	public void setUserSeller(Seller userSeller) {
@@ -75,10 +65,10 @@ public class UniversalController extends DatabaseQueries{
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/EditProfile.fxml"));
 		root = loader.load();
-		
+
 		EditProfileController controller = loader.getController();
 		
-		controller.setUserSeller(userSeller);
+		controller.setUserBuyer(userBuyer);
 		
 		controller.setAccount();
 		controller.setStartupProfile();
@@ -90,7 +80,6 @@ public class UniversalController extends DatabaseQueries{
 		stage.setScene(scene);
 	}
 	
-	//changeToEditProfile
 	public void changeToEditProfile(MouseEvent event) throws Exception{
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/EditProfile.fxml"));
@@ -98,7 +87,7 @@ public class UniversalController extends DatabaseQueries{
 		
 		EditProfileController controller = loader.getController();
 		
-		controller.setUserSeller(userSeller);
+		controller.setUserBuyer(userBuyer);
 		
 		controller.setAccount();
 		controller.setStartupProfile();
@@ -118,7 +107,7 @@ public class UniversalController extends DatabaseQueries{
 		
 		UserProfileController controller = loader.getController();
 		
-		controller.setUserSeller(userSeller);
+		controller.setUserBuyer(userBuyer);
 		
 		controller.setAccount();
 
@@ -135,9 +124,8 @@ public class UniversalController extends DatabaseQueries{
 		
 		UserShopListController controller = loader.getController();
 		
-		controller.setUserSeller(userSeller);
+		controller.setUserBuyer(userBuyer);
 		
-
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 		stage.setScene(scene);
@@ -150,8 +138,7 @@ public class UniversalController extends DatabaseQueries{
 		
 		UserShoppingCartController controller = loader.getController();
 		
-		controller.setUserSeller(userSeller);
-		
+		controller.setUserBuyer(userBuyer);
 
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
@@ -165,9 +152,24 @@ public class UniversalController extends DatabaseQueries{
 		
 		UserCheckoutDetailsController controller = loader.getController();
 		
+		controller.setUserBuyer(userBuyer);	
+
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
+		stage.setScene(scene);
+	}
+	
+	public void changeToSellerFrame(ActionEvent event) throws Exception{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/SellerFrame.fxml"));
+		root = loader.load();
+		scene = new Scene(root);
+		
+		SellerFrameController controller = loader.getController();
+		
 		controller.setUserSeller(userSeller);
 		
-
+		controller.setAccount();
+		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 		stage.setScene(scene);

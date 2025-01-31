@@ -14,11 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
-public class EditProfileController extends UniversalController implements Initializable{
+public class SellerEditProfileController extends UniversalController implements Initializable {
 	
 	@FXML
     private TextField emailFieldFX, usernameFieldFX, firstNameFieldFX, lastNameFieldFX, phoneNumberFieldFX, cityFieldFX, addressFieldFX, passwordFieldFX, passwordVerificationFieldFX, oldPasswordFieldFX;
@@ -34,19 +33,19 @@ public class EditProfileController extends UniversalController implements Initia
     private Circle circle;
     
     public void setStartupProfile() {
-    	String username = userBuyer.getUsername();
+    	String username = userSeller.getUsername();
 		Image img = new Image("/application/assets/images/"+"user_profile_"+username+".jpg",false);
 		circle.setFill(new ImagePattern(img));
     }
     
 	public void clickedEditPhoto(ActionEvent event) {
-			userBuyer.setProfile(event);
+			userSeller.setProfile(event);
 			setProfileFXML();
 
 	}
 	
 	public void setProfileFXML() {
-		Image profile = new Image(getClass().getResource("/application/assets/images/user_profile_"+ userBuyer.getUsername() + ".jpg").toExternalForm());
+		Image profile = new Image(getClass().getResource("/application/assets/images/user_profile_"+ userSeller.getUsername() + ".jpg").toExternalForm());
 		userProfileFX.setImage(profile);
 	}
     
@@ -144,20 +143,20 @@ public class EditProfileController extends UniversalController implements Initia
    }
 	
 	public void setAccount() {
-		//String userID = userBuyer.getUserID();
-		//String password = userBuyer.getPassword();
-		//String accountType = userBuyer.getAccountType();
-		String email = userBuyer.getEmail();
-		String username = userBuyer.getUsername();
-		String firstName = userBuyer.getFirstName();
-		String lastName = userBuyer.getLastName();
-		String birthdate = userBuyer.getBirthdate();
-		String age = String.valueOf(userBuyer.getAge());
-		String phoneNumber = userBuyer.getPhoneNumber();
-		String region = userBuyer.getRegion();
-		String province = userBuyer.getProvince();
-		String city = userBuyer.getCity();
-		String address = userBuyer.getAddress();
+		//String userID = userSeller.getUserID();
+		//String password = userSeller.getPassword();
+		//String accountType = userSeller.getAccountType();
+		String email = userSeller.getEmail();
+		String username = userSeller.getUsername();
+		String firstName = userSeller.getFirstName();
+		String lastName = userSeller.getLastName();
+		String birthdate = userSeller.getBirthdate();
+		String age = String.valueOf(userSeller.getAge());
+		String phoneNumber = userSeller.getPhoneNumber();
+		String region = userSeller.getRegion();
+		String province = userSeller.getProvince();
+		String city = userSeller.getCity();
+		String address = userSeller.getAddress();
 		
 		//Set values to the field
 		LocalDate date = LocalDate.parse(birthdate);
@@ -268,7 +267,7 @@ public class EditProfileController extends UniversalController implements Initia
 		        isVerified = true;
 		    }
 		} else {
-			if(!oldPassword.equals(userBuyer.getPassword()) || password.isEmpty() || !password.equals(passwordVerification)) {
+			if(!oldPassword.equals(userSeller.getPassword()) || password.isEmpty() || !password.equals(passwordVerification)) {
 				oldPasswordFieldFX.setStyle("-fx-border-color: red;");
 				passwordFieldFX.setStyle("-fx-border-color: red;");
 				passwordVerificationFieldFX.setStyle("-fx-border-color: red;");
@@ -289,7 +288,7 @@ public class EditProfileController extends UniversalController implements Initia
 			//database processing
 			duplicateAccount = checkDuplicatePhoneNumberDBS(phoneNumber);
 			
-			if (duplicateAccount && phoneNumber != userBuyer.getPhoneNumber()) {
+			if (duplicateAccount && phoneNumber != userSeller.getPhoneNumber()) {
 				statusTextFX.setStyle("-fx-opacity: 1; -fx-text-fill: red;");
 				statusTextFX.setText("Oops! There was an issue. Please verify your input and ensure it’s not a duplicate account.");
 				return;
@@ -302,37 +301,10 @@ public class EditProfileController extends UniversalController implements Initia
 			statusTextFX.setText("Oops! There was an issue. Make sure everything is correct.");
 		}
 	}
-	
-	//Change scene
-	public void clickedLogo(MouseEvent event) throws Exception {
-		changeToProfile(event);
-	}
-	
-	public void clickedProductShop(MouseEvent event) throws Exception{
-		changeToUserShopList(event);
-	}
-	
-	public void clickedShoppingCart(MouseEvent event) throws Exception{
-		changeToShoppingCart(event);
-	}
-	
-	public void clickedEditProfile(MouseEvent event) throws Exception{
-		changeToEditProfile(event);
-	}
-	
-	public void clickedProductOrdered(MouseEvent event) throws Exception{
-		changeToUserCheckoutDetails(event);
-	}
-	
+
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {	
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		regionFieldFX.getItems().addAll(regions);
+		
 	}
-	
-	
-	
-	
-	
-	
-	
 }
